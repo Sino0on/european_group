@@ -1,0 +1,3682 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-02 20:49+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: core/settings.py:127
+msgid "Russian"
+msgstr ""
+
+#: core/settings.py:128
+msgid "Kyrgyz"
+msgstr ""
+
+#: core/settings.py:129
+msgid "English"
+msgstr ""
+
+#: templates/base.html:114
+msgid "Миграция"
+msgstr ""
+
+#: templates/base.html:126 templates/base.html:275 templates/index.html:170
+#: templates/index.html:563 templates/jobs.html:16 templates/jobs.html:503
+msgid "Работа в Европе"
+msgstr "Европада иштөө"
+
+#: templates/base.html:128 templates/jobs.html:505
+msgid "Визовая поддержка"
+msgstr "Визалык колдоо"
+
+#: templates/base.html:130 templates/jobs.html:504
+msgid "Учеба за рубежом"
+msgstr ""
+
+#: templates/base.html:139
+msgid "Бизнес и Право"
+msgstr ""
+
+#: templates/base.html:150 templates/index.html:226
+msgid "Юридический консалтинг"
+msgstr ""
+
+#: templates/base.html:152 templates/company.html:4 templates/law.html:83
+msgid "Регистрация компаний"
+msgstr ""
+
+#: templates/base.html:161
+msgid "Отдых"
+msgstr ""
+
+#: templates/base.html:172
+msgid "Туры"
+msgstr ""
+
+#: templates/base.html:180
+msgid "Обучение"
+msgstr ""
+
+#: templates/base.html:206 templates/base.html:312
+msgid "Срочная консультация"
+msgstr ""
+
+#: templates/base.html:228
+msgid ""
+"Профессиональный консалтинг в сфере миграции, образования и бизнеса. Мы "
+"открываем границы и возможности."
+msgstr ""
+
+#: templates/base.html:250
+msgid "Контакты"
+msgstr "Байланыштар"
+
+#: templates/base.html:253
+msgid "Адрес:"
+msgstr ""
+
+#: templates/base.html:254
+msgid "г. Бишкек, ул. Примерная 123, БЦ \"Пример\", офис 404"
+msgstr ""
+
+#: templates/base.html:257
+msgid "Телефон:"
+msgstr ""
+
+#: templates/base.html:261
+msgid "Email:"
+msgstr ""
+
+#: templates/base.html:265
+msgid "Режим:"
+msgstr ""
+
+#: templates/base.html:266
+msgid "Пн-Пт: 09:00 - 18:00"
+msgstr ""
+
+#: templates/base.html:273
+msgid "Навигация"
+msgstr ""
+
+#: templates/base.html:277
+msgid "Образование за рубежом"
+msgstr ""
+
+#: templates/base.html:278 templates/index.html:208
+msgid "Визовый центр"
+msgstr ""
+
+#: templates/base.html:279
+msgid "Для бизнеса"
+msgstr ""
+
+#: templates/base.html:280
+msgid "Политика конфиденциальности"
+msgstr ""
+
+#: templates/base.html:287
+msgid "&copy; 2024 European Group ОсОО. Все права защищены."
+msgstr ""
+
+#: templates/base.html:313
+msgid "Оставьте заявку, и мы свяжемся с вами в течение 10 минут."
+msgstr ""
+
+#: templates/base.html:317 templates/jobs.html:513 templates/study.html:265
+msgid "Спасибо! Заявка отправлена."
+msgstr ""
+
+#: templates/base.html:319 templates/company.html:261 templates/index.html:940
+#: templates/jobs.html:418 templates/jobs.html:488
+#: templates/lang_courses.html:256 templates/law.html:321
+#: templates/tour.html:248
+msgid "Ваше имя"
+msgstr ""
+
+#: templates/base.html:322
+msgid "Азамат"
+msgstr ""
+
+#: templates/base.html:325
+msgid "Номер телефона"
+msgstr ""
+
+#: templates/base.html:331
+msgid "Вопрос (необязательно)"
+msgstr ""
+
+#: templates/base.html:334
+msgid "Меня интересует виза в..."
+msgstr ""
+
+#: templates/base.html:338 templates/index.html:946 templates/jobs.html:480
+#: templates/law.html:30 templates/visa.html:308
+msgid "Получить консультацию"
+msgstr ""
+
+#: templates/company.html:18
+msgid "Откройте бизнес легко и быстро"
+msgstr ""
+
+#: templates/company.html:21
+msgid ""
+"Регистрация ОсОО, ИП и филиалов под ключ. Полное юридическое и бухгалтерское "
+"сопровождение вашего стартапа."
+msgstr ""
+
+#: templates/company.html:27
+msgid "дня на открытие"
+msgstr ""
+
+#: templates/company.html:31
+msgid "ошибок в документах"
+msgstr ""
+
+#: templates/company.html:35
+msgid "открытых фирм"
+msgstr ""
+
+#: templates/company.html:39
+msgid "поддержка"
+msgstr ""
+
+#: templates/company.html:49
+msgid "Тарифы на регистрацию"
+msgstr ""
+
+#: templates/company.html:59
+msgid "Базовый"
+msgstr ""
+
+#: templates/company.html:60
+msgid "Только подготовка документов"
+msgstr ""
+
+#: templates/company.html:70
+msgid "Подготовка Устава и Решения"
+msgstr ""
+
+#: templates/company.html:75
+msgid "Заявление на регистрацию"
+msgstr ""
+
+#: templates/company.html:80
+msgid "Подача в Минюст"
+msgstr ""
+
+#: templates/company.html:85 templates/company.html:121
+msgid "Изготовление печати"
+msgstr ""
+
+#: templates/company.html:89 templates/company.html:168
+msgid "Выбрать"
+msgstr "Тандоо"
+
+#: templates/company.html:98
+msgid "ПОПУЛЯРНЫЙ"
+msgstr ""
+
+#: templates/company.html:100
+msgid "Стандарт"
+msgstr ""
+
+#: templates/company.html:101
+msgid "Полная регистрация под ключ"
+msgstr ""
+
+#: templates/company.html:111
+msgid "Подготовка всех документов"
+msgstr ""
+
+#: templates/company.html:116
+msgid "Сопровождение в Минюсте"
+msgstr ""
+
+#: templates/company.html:126
+msgid "Постановка на учет в налоговой"
+msgstr ""
+
+#: templates/company.html:130
+msgid "Заказать"
+msgstr ""
+
+#: templates/company.html:138
+msgid "Бизнес-старт"
+msgstr ""
+
+#: templates/company.html:139
+msgid "Регистрация + Счет + Адрес"
+msgstr ""
+
+#: templates/company.html:149
+msgid "Все услуги тарифа \"Стандарт\""
+msgstr ""
+
+#: templates/company.html:154
+msgid "Открытие расчётного счета"
+msgstr ""
+
+#: templates/company.html:159
+msgid "Юридический адрес на 6 мес."
+msgstr ""
+
+#: templates/company.html:164
+msgid "Консультация бухгалтера"
+msgstr ""
+
+#: templates/company.html:178
+msgid "Дополнительные услуги"
+msgstr ""
+
+#: templates/company.html:184
+msgid "Юридический адрес"
+msgstr ""
+
+#: templates/company.html:185
+msgid "Предоставление надежного юрадреса для регистрации."
+msgstr ""
+
+#: templates/company.html:190
+msgid "ЭЦП и Токены"
+msgstr ""
+
+#: templates/company.html:191
+msgid "Помощь в получении электронной подписи."
+msgstr ""
+
+#: templates/company.html:196
+msgid "Ликвидация"
+msgstr ""
+
+#: templates/company.html:197
+msgid "Официальное закрытие фирм без долгов."
+msgstr ""
+
+#: templates/company.html:202
+msgid "Бухгалтерия"
+msgstr ""
+
+#: templates/company.html:203
+msgid "Аутсорсинг бухгалтерского учета."
+msgstr ""
+
+#: templates/company.html:213
+msgid "Этапы регистрации"
+msgstr ""
+
+#: templates/company.html:214
+msgid "Весь процесс занимает от 3 рабочих дней"
+msgstr ""
+
+#: templates/company.html:225 templates/jobs.html:264
+msgid "Заявка"
+msgstr ""
+
+#: templates/company.html:226
+msgid "Вы оставляете заявку и присылаете копии паспортов учредителей."
+msgstr ""
+
+#: templates/company.html:232
+msgid "Документы"
+msgstr ""
+
+#: templates/company.html:233
+msgid "Мы готовим устав, решение и заявление для Минюста."
+msgstr ""
+
+#: templates/company.html:239
+msgid "Регистрация"
+msgstr "Каттоо"
+
+#: templates/company.html:240
+msgid "Подача документов в регистрирующий орган и получение свидетельства."
+msgstr ""
+
+#: templates/company.html:246
+msgid "Старт"
+msgstr ""
+
+#: templates/company.html:247
+msgid "Выдача печати, открытие счета и начало работы."
+msgstr ""
+
+#: templates/company.html:257
+msgid "Начните свой бизнес сейчас"
+msgstr ""
+
+#: templates/company.html:264
+msgid "Игорь"
+msgstr ""
+
+#: templates/company.html:267 templates/lang_courses.html:259
+#: templates/law.html:324 templates/study.html:239 templates/tour.html:254
+#: templates/visa.html:288
+msgid "Телефон"
+msgstr "Телефон"
+
+#: templates/company.html:275
+msgid "Название компании (варианты)"
+msgstr ""
+
+#: templates/company.html:278
+msgid "ОсОО \\"
+msgstr ""
+
+#: templates/company.html:279
+msgid "Мы проверим название на уникальность."
+msgstr ""
+
+#: templates/company.html:283
+msgid "Выбранный тариф"
+msgstr ""
+
+#: templates/company.html:286
+msgid "Стандарт (10 000 с)"
+msgstr ""
+
+#: templates/company.html:287
+msgid "Базовый (5 000 с)"
+msgstr ""
+
+#: templates/company.html:288
+msgid "Бизнес-старт (25 000 с)"
+msgstr ""
+
+#: templates/company.html:289
+msgid "Нужна консультация"
+msgstr ""
+
+#: templates/company.html:293
+msgid "Заявка на регистрацию принята!"
+msgstr ""
+
+#: templates/company.html:295 templates/jobs.html:514 templates/study.html:267
+msgid "Отправить заявку"
+msgstr ""
+
+#: templates/index.html:4
+msgid "European Group | Профессиональные решения в КР и за рубежом"
+msgstr "European Group | Кыргыз Республикасында жана чет өлкөлөрдө кесипкөй чечимдер"
+
+#: templates/index.html:21
+msgid "Профессиональные решения в КР и за рубежом"
+msgstr "Кыргыз Республикасында жана чет өлкөлөрдө кесипкөй чечимдер"
+
+#: templates/index.html:25
+msgid ""
+"От трудоустройства в Европе до комплексного юридического сопровождения "
+"бизнеса."
+msgstr "Европада жумушка орношуудан баштап бизнести ар тараптуу укуктук колдоого чейин."
+
+#: templates/index.html:26
+msgid "10 лет"
+msgstr "10 жыл"
+
+#: templates/index.html:26
+msgid "помогаем расти, учиться и путешествовать."
+msgstr "биз сизге өсүүгө, үйрөнүүгө жана саякаттоого жардам беребиз."
+
+#: templates/index.html:32
+msgid "Подобрать услугу"
+msgstr "Кызматты тандаңыз"
+
+#: templates/index.html:40 templates/index.html:150
+msgid "Наши направления"
+msgstr "Биздин багыттар"
+
+#: templates/index.html:53
+msgid "Одобренных виз"
+msgstr "Бекитилген визалар"
+
+#: templates/index.html:58
+msgid "Трудоустроенных в год"
+msgstr "Жылына иштеген"
+
+#: templates/index.html:63
+msgid "Стран-партнеров"
+msgstr "Өнөктөш өлкөлөр"
+
+#: templates/index.html:68
+msgid "Лет опыта"
+msgstr "Көп жылдык тажрыйба"
+#: templates/index.html:74
+msgid "Лицензия на трудоустройство №000000"
+msgstr "Ишке орноштуруу лицензиясы №000000"
+
+#: templates/index.html:76
+msgid "Лицензия юр. консалтинг №000000"
+msgstr "Юридикалык консалтинг лицензиясы №000000"
+
+#: templates/index.html:86
+msgid "Мы сотрудничаем с лучшими"
+msgstr "Биз мыктылар менен кызматташабыз"
+
+#: templates/index.html:153
+msgid "Комплексный подход к вашим целям"
+msgstr "Сиздин максаттарыңызга комплекстүү мамиле"
+
+#: templates/index.html:171
+msgid "Литва, Польша, Германия..."
+msgstr "Литва, Польша, Германия..."
+
+#: templates/index.html:172
+msgid ""
+"Официальное трудоустройство, ВНЖ, полное юридическое сопровождение "
+"контрактов."
+msgstr "Расмий ишке орноштуруу, жашоого уруксат (ВНЖ), келишимдерди толук юридикалык коштоо."
+
+#: templates/index.html:190 templates/lang_courses.html:81
+msgid "Образование"
+msgstr "Билим берүү"
+
+#: templates/index.html:191
+msgid "Корея, США, Италия..."
+msgstr "Корея, АКШ, Италия..."
+
+#: templates/index.html:192
+msgid "Поступление в топовые ВУЗы, помощь с грантами и стипендиями."
+msgstr "Алдыңкы ЖОЖдорго кирүү, гранттар жана стипендиялар боюнча жардам."
+
+#: templates/index.html:209
+msgid "Весь мир (Schengen, USA)"
+msgstr "Бүткүл дүйнө (Шенген, АКШ)"
+
+#: templates/index.html:210
+msgid ""
+"Профессиональная подготовка документов, запись на собеседование, рабочие и "
+"турвизы."
+msgstr "Документтерди профессионалдуу даярдоо, маектешүүгө жазылуу, жумушчу жана туристтик визалар."
+
+#: templates/index.html:227
+msgid "Для бизнеса и физлиц"
+msgstr "Бизнес жана жеке жактар үчүн"
+
+#: templates/index.html:228
+msgid "Регистрация ОсОО, судебные иски, защита прав, сопровождение бизнеса."
+msgstr "ЖЧК каттоо, соттук доолор, укуктарды коргоо, бизнести коштоо."
+
+#: templates/index.html:244
+msgid "Туризм"
+msgstr "Туризм"
+
+#: templates/index.html:246
+msgid "Таиланд, Египет, Вьетнам..."
+msgstr "Таиланд, Египет, Вьетнам..."
+
+#: templates/index.html:247
+msgid "Горящие туры, авиабилеты, бронирование отелей и трансферы."
+msgstr "Ыкчам турлар, авиабилеттер, мейманканаларды ээлөө жана трансферлер."
+
+#: templates/index.html:263
+msgid "Языковая школа"
+msgstr "Тил мектеби"
+
+#: templates/index.html:264
+msgid "4 основных языка"
+msgstr "4 негизги тил"
+
+#: templates/index.html:265
+msgid ""
+"Подготовка к международным экзаменам TOEFL, IELTS и разговорная практика."
+msgstr "TOEFL, IELTS эл аралык сынактарына даярдоо жана сүйлөө практикасы."
+
+#: templates/index.html:295
+#, python-format
+msgid "100%% Результат"
+msgstr "100%% Жыйынтык"
+
+#: templates/index.html:296
+msgid "Гарантия поступления"
+msgstr "Окууга кирүү кепилдиги"
+
+#: templates/index.html:306
+msgid "Featured Program"
+msgstr "Тандалган программа"
+
+#: templates/index.html:309
+msgid "Комплексная подготовка"
+msgstr "Комплекстүү даярдык"
+
+#: templates/index.html:309
+msgid "к будущему в Европе"
+msgstr "Европадагы келечекке"
+
+#: templates/index.html:312
+msgid ""
+"Уникальная программа, разработанная для подготовки студентов к жизни и учебе "
+"за рубежом. Мы не просто оформляем документы — мы даем навыки, мышление и "
+"уверенность для успешной международной карьеры."
+msgstr ""
+"Студенттерди чет өлкөдө жашоого жана окууга даярдоо үчүн иштелип чыккан уникалдуу программа. "
+"Биз жөн гана документтерди толтурбастан, ийгиликтүү эл аралык карьера үчүн көндүмдөрдү, "
+"ой жүгүртүүнү жана ишенимди беребиз."
+
+#: templates/index.html:327
+msgid "Экспертное наставничество"
+msgstr "Эксперттик насаатчылык"
+
+#: templates/index.html:328
+msgid "Поддержка профессионалов на каждом этапе."
+msgstr "Ар бир этапта адистердин колдоосу."
+
+#: templates/index.html:341
+msgid "Практические навыки"
+msgstr "Практикалык көндүмдөр"
+
+#: templates/index.html:342
+msgid "Реальная подготовка к карьере."
+msgstr "Карьерага реалдуу даярдык."
+
+#: templates/index.html:355
+msgid "Сертификация"
+msgstr "Сертификаттоо"
+
+#: templates/index.html:356
+msgid "Признанные международные сертификаты."
+msgstr "Таанылган эл аралык сертификаттар."
+
+#: templates/index.html:369
+msgid "Карьерный путь"
+msgstr "Карьера жолу"
+
+#: templates/index.html:370
+msgid "Прямые возможности трудоустройства."
+msgstr "Түз ишке орношуу мүмкүнчүлүктөрү."
+
+#: templates/index.html:378
+msgid "Узнать больше о программе"
+msgstr "Программа жөнүндө көбүрөөк билүү"
+
+#: templates/index.html:394
+msgid "Наши Университеты"
+msgstr "Биздин университеттер"
+
+#: templates/index.html:396
+msgid "Выберите страну и университет для поступления"
+msgstr "Окууга кирүү үчүн өлкөнү жана университетти тандаңыз"
+
+#: templates/index.html:403 templates/index.html:1094 templates/study.html:110
+msgid "Корея"
+msgstr "Корея"
+
+#: templates/index.html:407 templates/index.html:572 templates/jobs.html:35
+#: templates/jobs.html:437 templates/study.html:114
+msgid "Словакия"
+msgstr "Словакия"
+
+#: templates/index.html:411 templates/index.html:1093 templates/study.html:118
+#: templates/study.html:251 templates/visa.html:298
+msgid "США"
+msgstr "АКШ"
+
+#: templates/index.html:415 templates/study.html:122
+msgid "Италия"
+msgstr "Италия"
+
+#: templates/index.html:419 templates/study.html:126 templates/study.html:253
+msgid "Китай"
+msgstr "Кытай"
+
+#: templates/index.html:438 templates/study.html:145
+msgid "Выберите университет из списка"
+msgstr "Тизмеден университетти тандаңыз"
+
+#: templates/index.html:449 templates/study.html:298
+msgid ""
+"Один из ведущих частных университетов в Сеуле, известный своими программами "
+"по гостеприимству, туризму и анимации."
+msgstr ""
+"Сеулдагы алдыңкы жеке университеттердин бири, меймандостук, туризм жана анимация "
+"программалары менен белгилүү."
+
+#: templates/index.html:450 templates/study.html:299
+msgid "Крупный университет с сильным медицинским факультетом и программами IT."
+msgstr "Күчтүү медициналык факультети жана IT программалары бар ири университет."
+
+#: templates/index.html:451 templates/study.html:300
+msgid "Один из университетов SKY, престижнейшее учебное заведение Южной Кореи."
+msgstr "Түштүк Кореянын эң абройлуу SKY университеттеринин бири."
+
+#: templates/index.html:454 templates/study.html:303
+msgid ""
+"Ведущий технический университет, предлагающий качественное инженерное "
+"образование в Европе."
+msgstr "Европада сапаттуу инженердик билим берген алдыңкы техникалык университет."
+
+#: templates/index.html:455 templates/study.html:304
+msgid "Старейший и крупнейший университет Словакии."
+msgstr "Словакиянын эң эски жана ири университети."
+
+#: templates/index.html:458 templates/study.html:307
+msgid "Частный университет в самом центре Манхэттена с фокусом на карьеру."
+msgstr "Манхэттендин так ортосунда жайгашкан, карьерага багытталган жеке университет."
+
+#: templates/index.html:459 templates/study.html:308
+msgid "Инновационный университет №1 в США."
+msgstr "АКШдагы №1 инновациялык университет."
+
+#: templates/index.html:462 templates/study.html:311
+msgid "Один из старейших университетов мира, основанный в 1303 году."
+msgstr "1303-жылы негизделген дүйнөдөгү эң эски университеттердин бири."
+
+#: templates/index.html:465 templates/study.html:314
+msgid "Главный университет Китая для изучения китайского языка иностранцами."
+msgstr "Чет өлкөлүктөр үчүн кытай тилин үйрөтүү боюнча Кытайдын башкы университети."
+
+#: templates/index.html:498 templates/study.html:342
+msgid "Нет данных"
+msgstr "Маалымат жок"
+
+#: templates/index.html:535 templates/study.html:377
+#: templates/university_detail.html:94
+msgid "Об университете"
+msgstr "Университет жөнүндө"
+
+#: templates/index.html:541 templates/study.html:383
+msgid "Программы:"
+msgstr "Программалар:"
+
+#: templates/index.html:541 templates/study.html:383
+msgid "Бакалавриат, Магистратура"
+msgstr "Бакалавриат, Магистратура"
+
+#: templates/index.html:544 templates/study.html:386
+msgid "Узнать подробнее"
+msgstr "Кененирээк билүү"
+
+#: templates/index.html:565
+msgid "Легальное трудоустройство с полным сопровождением"
+msgstr "Толук коштоо менен мыйзамдуу ишке орноштуруу"
+
+#: templates/index.html:570 templates/index.html:1092 templates/jobs.html:31
+#: templates/jobs.html:436
+msgid "Литва"
+msgstr "Литва"
+
+#: templates/index.html:574 templates/index.html:1090 templates/jobs.html:39
+#: templates/jobs.html:438
+msgid "Германия"
+msgstr "Германия"
+
+#: templates/index.html:576 templates/jobs.html:43 templates/jobs.html:439
+msgid "Финляндия"
+msgstr "Финляндия"
+
+#: templates/index.html:578 templates/jobs.html:47 templates/jobs.html:440
+msgid "Эстония"
+msgstr "Эстония"
+
+#: templates/index.html:582 templates/index.html:1091 templates/jobs.html:51
+#: templates/jobs.html:441
+msgid "Польша"
+msgstr "Польша"
+
+#: templates/index.html:596 templates/jobs.html:65
+msgid "Работа в Литве"
+msgstr "Литвада иштөө"
+#: templates/index.html:597 templates/jobs.html:66
+msgid ""
+"Литва — одна из самых популярных стран для трудоустройства граждан СНГ. "
+"Простая процедура получения ВНЖ, схожий менталитет и высокий спрос на "
+"специалистов."
+msgstr ""
+"Литва — КМШ жарандарын ишке орноштуруу үчүн эң популярдуу өлкөлөрдүн бири. "
+"Жашоого уруксат алуунун жөнөкөй процедурасы, окшош менталитет жана "
+"адистерге болгон жогорку суроо-талап."
+
+#: templates/index.html:599 templates/jobs.html:68
+msgid "Быстрое оформление ВНЖ (1-2 месяца)"
+msgstr "Жашоого уруксатты (ВНЖ) тез тариздөө (1-2 ай)"
+
+#: templates/index.html:600 templates/jobs.html:69
+msgid "Нет языкового барьера (многие говорят по-русски)"
+msgstr "Тил тоскоолдугу жок (көпчүлүгү орусча сүйлөшөт)"
+
+#: templates/index.html:601 templates/jobs.html:70
+msgid "Возможность перевезти семью через 6 месяцев"
+msgstr "6 айдан кийин үй-бүлөнү көчүрүп келүү мүмкүнчүлүгү"
+
+#: templates/index.html:604 templates/jobs.html:73
+msgid "Водитель-дальнобойщик (CE)"
+msgstr "Алыскы каттамдагы айдоочу (CE)"
+
+#: templates/index.html:605 templates/jobs.html:74
+msgid "Сварщик MIG/MAG"
+msgstr "Ширетүүчү (сварщик) MIG/MAG"
+
+#: templates/index.html:606 templates/jobs.html:75
+msgid "Строитель-универсал"
+msgstr "Универсал куруучу"
+
+#: templates/index.html:610 templates/jobs.html:79
+msgid "Работа в Словакии"
+msgstr "Словакияда иштөө"
+
+#: templates/index.html:611 templates/jobs.html:80
+msgid ""
+"Стабильная экономика, комфортный климат и возможность получить ВНЖ на 2 года "
+"сразу. Идеально для тех, кто ищет спокойную жизнь в центре Европы."
+msgstr ""
+"Туруктуу экономика, жагымдуу климат жана дароо 2 жылга жашоого уруксат алуу мүмкүнчүлүгү. "
+"Европанын борборунда тынч жашоону каалагандар үчүн идеалдуу."
+
+#: templates/index.html:613 templates/jobs.html:82
+msgid "ВНЖ сразу на 1-2 года"
+msgstr "Дароо 1-2 жылга жашоого уруксат (ВНЖ)"
+
+#: templates/index.html:614 templates/jobs.html:83
+msgid "Бесплатная медицина и соцпакет"
+msgstr "Акысыз медицина жана социалдык пакет"
+
+#: templates/index.html:615 templates/jobs.html:84
+msgid "Возможность путешествовать по всему Шенгену"
+msgstr "Бүткүл Шенген аймагы боюнча саякаттоо мүмкүнчүлүгү"
+
+#: templates/index.html:618 templates/jobs.html:87
+msgid "Оператор на автозавод (JLR, VW)"
+msgstr "Автозаводдун оператору (JLR, VW)"
+
+#: templates/index.html:619 templates/jobs.html:88
+msgid "Водитель погрузчика"
+msgstr "Жүктөгүчтүн (погрузчик) айдоочусу"
+
+#: templates/index.html:620 templates/jobs.html:89
+msgid "Сборщик на склад электроники"
+msgstr "Электроника кампасына чогултуучу"
+
+#: templates/index.html:624 templates/jobs.html:93
+msgid "Работа в Германии"
+msgstr "Германияда иштөө"
+
+#: templates/index.html:625 templates/jobs.html:94
+msgid ""
+"Локомотив экономики Евросоюза. Высокие зарплаты, строгие стандарты, но и "
+"лучшие социальные гарантии."
+msgstr ""
+"Европа Биримдигинин экономикасынын локомотиви. Жогорку айлык акылар, катуу стандарттар "
+"жана мыкты социалдык кепилдиктер."
+
+#: templates/index.html:627 templates/jobs.html:96
+msgid "Самые высокие зарплаты в ЕС"
+msgstr "ЕБдеги эң жогорку айлык акылар"
+
+#: templates/index.html:628 templates/jobs.html:97
+msgid "Возможность карьерного роста"
+msgstr "Карьералык өсүү мүмкүнчүлүгү"
+
+#: templates/index.html:629 templates/jobs.html:98
+msgid "Высокий уровень жизни"
+msgstr "Жашоонун жогорку деңгээли"
+
+#: templates/index.html:632 templates/jobs.html:101
+msgid "Медсестра / Медбрат"
+msgstr "Медайым / Медбрат"
+
+#: templates/index.html:633 templates/jobs.html:102
+msgid "IT Специалист"
+msgstr "IT адиси"
+
+#: templates/index.html:634 templates/jobs.html:103
+msgid "Электрик / Инженер"
+msgstr "Электрик / Инженер"
+
+#: templates/index.html:638 templates/jobs.html:107
+msgid "Работа в Финляндии"
+msgstr "Финляндияда иштөө"
+
+#: templates/index.html:639 templates/jobs.html:108
+msgid ""
+"Скандинавский уровень жизни, экология и безопасность. Популярны сезонные "
+"работы и сфера обслуживания."
+msgstr ""
+"Скандинавиялык жашоо деңгээли, экология жана коопсуздук. Сезондук жумуштар "
+"жана тейлөө чөйрөсү популярдуу."
+
+#: templates/index.html:641 templates/jobs.html:110
+msgid "Высокая почасовая оплата"
+msgstr "Жогорку сааттык төлөм"
+
+#: templates/index.html:642 templates/jobs.html:111
+msgid "Идеальная экология"
+msgstr "Идеалдуу экология"
+
+#: templates/index.html:643 templates/jobs.html:112
+msgid "Сезонные работы до 9 месяцев"
+msgstr "9 айга чейинки сезондук жумуштар"
+
+#: templates/index.html:646 templates/jobs.html:115
+msgid "Сборщик ягод (сезон)"
+msgstr "Мөмө терүүчү (сезондук)"
+
+#: templates/index.html:646 templates/jobs.html:115
+msgid "€1000 - €2500 (сдельная)"
+msgstr "€1000 - €2500 (иштин көлөмүнө жараша)"
+
+#: templates/index.html:647 templates/jobs.html:116
+msgid "Уборщик помещений"
+msgstr "Имарат тазалоочу"
+
+#: templates/index.html:648 templates/jobs.html:117
+msgid "Разнорабочий на ферму"
+msgstr "Фермадагы жумушчу"
+
+#: templates/index.html:652 templates/jobs.html:121
+msgid "Работа в Эстонии"
+msgstr "Эстонияда иштөө"
+
+#: templates/index.html:653 templates/jobs.html:122
+msgid ""
+"Цифровое государство с растущей экономикой. Простой документооборот и "
+"близость к странам СНГ."
+msgstr ""
+"Экономикасы өсүп жаткан санариптик мамлекет. Документтерди жүгүртүүнүн жөнөкөйлүгү "
+"жана КМШ өлкөлөрүнө жакындыгы."
+
+#: templates/index.html:655 templates/jobs.html:124
+msgid "Электронное резидентство"
+msgstr "Электрондук резиденттик"
+
+#: templates/index.html:656 templates/jobs.html:125
+msgid "Русскоязычная среда"
+msgstr "Орус тилдүү чөйрө"
+
+#: templates/index.html:657 templates/jobs.html:126
+msgid "Зарплаты выше, чем в Восточной Европе"
+msgstr "Чыгыш Европага караганда жогорку айлык акы"
+
+#: templates/index.html:660 templates/jobs.html:129
+msgid "Строитель"
+msgstr "Куруучу"
+
+#: templates/index.html:661 templates/jobs.html:130
+msgid "Водитель категории C"
+msgstr "C категориясындагы айдоочу"
+
+#: templates/index.html:662 templates/jobs.html:131
+msgid "Работник на производство"
+msgstr "Өндүрүш кызматкери"
+
+#: templates/index.html:666 templates/jobs.html:135
+msgid "Работа в Польше"
+msgstr "Польшада иштөө"
+
+#: templates/index.html:667 templates/jobs.html:136
+msgid ""
+"Самый доступный старт для работы в Европе. Огромный выбор вакансий для "
+"специалистов и разнорабочих."
+msgstr ""
+"Европада иштөө үчүн эң жеткиликтүү старт. Адистер жана жумушчулар үчүн "
+"вакансиялардын абдан чоң тандоосу."
+
+#: templates/index.html:669 templates/jobs.html:138
+msgid "Самое простое оформление"
+msgstr "Эң жөнөкөй тариздөө"
+
+#: templates/index.html:670 templates/jobs.html:139
+msgid "Много вакансий без знания языка"
+msgstr "Тил билбестен көптөгөн бош орундар"
+
+#: templates/index.html:671 templates/jobs.html:140
+msgid "Бесплатное жилье (часто)"
+msgstr "Акысыз турак жай (көбүнчө)"
+
+#: templates/index.html:674 templates/jobs.html:143
+msgid "Упаковщик на склад (Amazon/DPD)"
+msgstr "Кампага таңгактоочу (Amazon/DPD)"
+
+#: templates/index.html:675 templates/jobs.html:144
+msgid "Повар"
+msgstr "Ашпозчу"
+
+#: templates/index.html:676 templates/jobs.html:145
+msgid "Мясокомбинат"
+msgstr "Эт комбинаты"
+
+#: templates/index.html:712 templates/jobs.html:181
+msgid "Зарплата:"
+msgstr "Айлык акы:"
+
+#: templates/index.html:736 templates/jobs.html:205
+msgid "Преимущества"
+msgstr "Артыкчылыктар"
+
+#: templates/index.html:743 templates/jobs.html:212
+#: templates/university_detail.html:73
+msgid "Подать заявку"
+msgstr "Тапшыруу"
+
+#: templates/index.html:754 templates/jobs.html:223
+msgid "Популярные вакансии"
+msgstr "Популярдуу бош орундар"
+
+#: templates/index.html:760 templates/jobs.html:229
+msgid "Смотреть все вакансии →"
+msgstr "Бардык бош орундарды көрүү →"
+
+#: templates/index.html:779
+msgid "Языковые курсы"
+msgstr "Тил курстары"
+
+#: templates/index.html:781 templates/lang_courses.html:94
+msgid "Изучайте языки для карьеры и жизни без границ"
+msgstr "Чексиз жашоо жана карьера үчүн тилдерди үйрөнүңүз"
+
+#: templates/index.html:793
+msgid "Top Choice"
+msgstr ""
+
+#: templates/index.html:797 templates/lang_courses.html:26
+msgid "Иностранные языки"
+msgstr "Чет тилдери"
+
+#: templates/index.html:799 templates/lang_courses.html:114
+msgid "Корейский язык"
+msgstr "Корей тили"
+#: templates/index.html:800 templates/lang_courses.html:115
+msgid "Интенсивный курс для поступления в ВУЗы Кореи (TOPIK I, II)."
+msgstr "Кореянын ЖОЖдоруна кирүү үчүн интенсивдүү курс (TOPIK I, II)."
+
+#: templates/index.html:803
+msgid "3-6 месяцев"
+msgstr "3-6 ай"
+
+#: templates/index.html:804 templates/index.html:824 templates/index.html:844
+#: templates/index.html:868 templates/lang_courses.html:119
+#: templates/lang_courses.html:233
+msgid "Сертификат"
+msgstr "Сертификат"
+
+#: templates/index.html:817
+msgid "Работа и Учеба"
+msgstr "Иш жана Окуу"
+
+#: templates/index.html:819 templates/lang_courses.html:135
+msgid "Немецкий язык"
+msgstr "Немис тили"
+
+#: templates/index.html:820
+msgid "Подготовка к Goethe-Zertifikat (A1-C1) для работы и учебы в Германии."
+msgstr "Германияда иштөө жана окуу үчүн Goethe-Zertifikat (A1-C1) сынагына даярдоо."
+
+#: templates/index.html:823
+msgid "4-8 месяцев"
+msgstr "4-8 ай"
+
+#: templates/index.html:837
+msgid "Культура и Карьера"
+msgstr "Маданият жана Карьера"
+
+#: templates/index.html:839 templates/lang_courses.html:156
+msgid "Японский язык"
+msgstr "Жапон тили"
+
+#: templates/index.html:840
+msgid "Изучение языка с нуля до уровня N2 для работы в Японии."
+msgstr "Жапонияда иштөө үчүн тилди нөлдөн баштап N2 деңгээлине чейин үйрөтүү."
+
+#: templates/index.html:843
+msgid "6-12 месяцев"
+msgstr "6-12 ай"
+
+#: templates/index.html:857
+msgid "Popular"
+msgstr "Популярдуу"
+
+#: templates/index.html:861 templates/lang_courses.html:178
+msgid "Международный"
+msgstr "Эл аралык"
+
+#: templates/index.html:863 templates/lang_courses.html:180
+msgid "Английский язык"
+msgstr "Англис тили"
+
+#: templates/index.html:864
+msgid "General English и подготовка к IELTS/TOEFL для любой страны."
+msgstr "General English жана каалаган өлкө үчүн IELTS/TOEFL сынактарына даярдоо."
+
+#: templates/index.html:867
+msgid "3+ месяца"
+msgstr "3+ ай"
+
+#: templates/index.html:889
+msgid "Special Service"
+msgstr "Атайын кызмат"
+
+#: templates/index.html:890
+msgid "Для иностранных граждан в КР"
+msgstr "КРдагы чет өлкөлүк жарандар үчүн"
+
+#: templates/index.html:892
+msgid ""
+"Мы предоставляем полный спектр услуг для нерезидентов: от визовой поддержки "
+"до открытия бизнеса «под ключ». Работаем с инвесторами и экспатами, "
+"обеспечивая юридическую чистоту и комфорт."
+msgstr ""
+"Биз нерезиденттер үчүн визалык колдоодон баштап, бизнести «толугу менен» ачууга чейинки "
+"кызматтардын толук спектрин сунуштайбыз. Инвесторлор жана экспаттар менен иш алып барып, "
+"юридикалык тазалыкты жана ыңгайлуулукту камсыз кылабыз."
+
+#: templates/index.html:902
+msgid "Визовая поддержка и регистрация"
+msgstr "Визалык колдоо жана каттоо"
+
+#: templates/index.html:910
+msgid "Открытие компаний (ОсОО) для нерезидентов"
+msgstr "Нерезиденттер үчүн компанияларды ачуу (ЖЧК)"
+
+#: templates/index.html:918
+msgid "Юридическая защита интересов"
+msgstr "Кызыкчылыктарды юридикалык коргоо"
+
+#: templates/index.html:924
+msgid "Подробнее об услугах"
+msgstr "Кызматтар тууралуу кененирээк"
+
+#: templates/index.html:938
+msgid "Запись на консультацию"
+msgstr "Консультацияга жазылуу"
+
+#: templates/index.html:942
+msgid "Номер WhatsApp"
+msgstr "WhatsApp номери"
+
+#: templates/index.html:964
+msgid "Истории успеха"
+msgstr "Ийгилик окуялары"
+
+#: templates/index.html:966
+msgid "Что говорят наши клиенты, которые уже достигли своих целей"
+msgstr "Өз максаттарына жеткен кардарларыбыздын пикирлери"
+
+#: templates/index.html:991
+msgid "Алина, 20 лет"
+msgstr "Алина, 20 жашта"
+
+#: templates/index.html:1010
+msgid ""
+"\"Оформили рабочую визу в Великобританию за 2 месяца. Работаю на складе, "
+"условия отличные, зарплата достойная. Спасибо за честность и профессионализм!"
+"\""
+msgstr ""
+"\"Улуу Британияга жумушчу визасын 2 айдын ичинде даярдап беришти. Кампасында иштеп жатам, "
+"шарттары эң жакшы, айлыгы болсо татыктуу. Чынчылдыгыңыздар жана кесипкөйлүгүңүздөр үчүн рахмат!\""
+
+#: templates/index.html:1019
+msgid "Кубат, 40 лет"
+msgstr "Кубат, 40 жашта"
+
+#: templates/index.html:1020
+msgid "Работа (Англия)"
+msgstr "Жумуш (Англия)"
+
+#: templates/index.html:1036
+msgid ""
+"\"Думали, что получить визу в Америку нереально, но нас отлично подготовили "
+"к собеседованию. Одобрили всей семье! Мечта сбылась.\""
+msgstr ""
+"\"Америкага виза алуу мүмкүн эмес деп ойлогонбуз, бирок бизди маектешүүгө абдан жакшы даярдашты. "
+"Бүт үй-бүлөбүзгө виза берилди! Кыялыбыз орундалды.\""
+
+#: templates/index.html:1045
+msgid "Семья Исаевых"
+msgstr "Исаевдердин үй-бүлөсү"
+
+#: templates/index.html:1046
+msgid "Виза (США)"
+msgstr "Виза (АКШ)"
+
+#: templates/index.html:1062
+msgid "Подберите идеальное решение"
+msgstr "Идеалдуу чечимди тандаңыз"
+
+#: templates/index.html:1064
+msgid "Ответьте на 2 вопроса, и мы предложим лучшие варианты"
+msgstr "2 суроого жооп бериңиз, биз мыкты варианттарды сунуштайбыз"
+
+#: templates/index.html:1069
+msgid "Переход к результатам (Заглушка)"
+msgstr "Жыйынтыктарга өтүү (Заглушка)"
+
+#: templates/index.html:1074
+msgid "Я хочу..."
+msgstr "Мен каалайм..."
+
+#: templates/index.html:1077
+msgid "Работать за рубежом"
+msgstr "Чет өлкөдө иштөө"
+
+#: templates/index.html:1078
+msgid "Учиться в Европе/Азии"
+msgstr "Европада/Азияда окуу"
+
+#: templates/index.html:1079
+msgid "Открыть бизнес / Релокация"
+msgstr "Бизнес ачуу / Релокация"
+
+#: templates/index.html:1080
+msgid "Отдохнуть (Туризм)"
+msgstr "Эс алуу (Туризм)"
+
+#: templates/index.html:1086
+msgid "В стране..."
+msgstr "Өлкөдө..."
+
+#: templates/index.html:1089
+msgid "Любая страна ЕС"
+msgstr "ЕБдин каалаган өлкөсү"
+
+#: templates/index.html:1102
+msgid "Найти решение"
+msgstr "Чечим табуу"
+
+#: templates/index.html:1112
+msgid ""
+"Для точного подбора вы будете перенаправлены на страницу с детальной анкетой."
+msgstr "Так тандоо үчүн сиз деталдуу анкета барагына багытталасыз."
+
+#: templates/jobs.html:4
+msgid "Работа в Европе | European Group"
+msgstr "Европада иштөө | European Group"
+#: templates/jobs.html:19
+msgid "Легальное трудоустройство, визовая поддержка и полное сопровождение."
+msgstr "Мыйзамдуу ишке орноштуруу, визалык колдоо жана толук коштоо."
+
+#: templates/jobs.html:19
+msgid "Ваш уверенный шаг к новой жизни."
+msgstr "Жаңы жашоого ишенимдүү кадам."
+
+#: templates/jobs.html:247 templates/law.html:246
+msgid "Как мы работаем"
+msgstr "Биз кантип иштейбиз"
+
+#: templates/jobs.html:249
+msgid "4 простых шага к работе вашей мечты"
+msgstr "Кыялыңыздагы жумушка 4 жөнөкөй кадам"
+
+#: templates/jobs.html:265
+msgid ""
+"Оставьте заявку на сайте или свяжитесь с нами для первичной консультации."
+msgstr "Сайтка билдирме калтырыңыз же алгачкы консультация үчүн биз менен байланышыңыз."
+
+#: templates/jobs.html:276
+msgid "Подбор"
+msgstr "Тандоо"
+
+#: templates/jobs.html:277
+msgid ""
+"Подбираем вакансию, готовим резюме и проходим собеседование с работодателем."
+msgstr "Вакансия тандайбыз, резюме даярдайбыз жана иш берүүчү менен маектешүүдөн өткөрөбүз."
+
+#: templates/jobs.html:288
+msgid "Виза & Контракт"
+msgstr "Виза жана Контракт"
+
+#: templates/jobs.html:289
+msgid "Оформляем трудовой контракт и подаем документы на визу/ВНЖ."
+msgstr "Эмгек келишимин түзөбүз жана визага/жашоого уруксатка (ВНЖ) документтерди тапшырабыз."
+
+#: templates/jobs.html:300
+msgid "Выезд"
+msgstr "Чыгуу (Учуу)"
+
+#: templates/jobs.html:301
+msgid "Организуем трансфер, встречаем в стране назначения и заселяем."
+msgstr "Трансферди уюштурабыз, барган өлкөдөн тосуп алабыз жана жайгаштырабыз."
+
+#: templates/jobs.html:318
+msgid "Почему выбирают Европу?"
+msgstr "Эмне үчүн Европаны тандашат?"
+
+#: templates/jobs.html:320
+msgid ""
+"Европейский Союз — это не только высокие зарплаты, но и стабильность, "
+"безопасность и уверенность в завтрашнем дне. Мы открываем для вас двери к "
+"возможностям, которые изменят вашу жизнь."
+msgstr ""
+"Европа Биримдиги — бул жогорку айлык акы гана эмес, бул туруктуулук, коопсуздук "
+"жана эртеңки күнгө болгон ишеним. Биз сиздин жашооңузду өзгөртө турган "
+"мүмкүнчүлүктөргө жол ачабыз."
+
+#: templates/jobs.html:333
+msgid "Высокий доход"
+msgstr "Жогорку киреше"
+
+#: templates/jobs.html:334
+msgid "Зарплаты от 1000€ до 4000€ в месяц даже для стартовых позиций."
+msgstr "Ал тургай баштапкы кызматтарда айына 1000€дон 4000€го чейинки айлыктар."
+
+#: templates/jobs.html:346
+msgid "Свобода передвижения"
+msgstr "Эркин жүрүү"
+
+#: templates/jobs.html:347
+msgid "С ВНЖ вы можете путешествовать по 27 странам Шенгена без виз."
+msgstr "Жашоого уруксат (ВНЖ) менен Шенгендин 27 өлкөсүнө визасыз саякаттай аласыз."
+
+#: templates/jobs.html:358
+msgid "Social guarantees"
+msgstr "Социалдык кепилдиктер"
+
+#: templates/jobs.html:359
+msgid "Медицинская страховка, оплачиваемый отпуск и пенсионные накопления."
+msgstr "Медициналык камсыздандыруу, акы төлөнүүчү өргүү жана пенсиялык топтоолор."
+
+#: templates/jobs.html:386
+msgid "Начните свой путь сегодня"
+msgstr "Жолуңузду бүгүн баштаңыз"
+
+#: templates/jobs.html:387
+msgid ""
+"Заполните анкету, и наш менеджер свяжется с вами для бесплатной консультации."
+msgstr "Анкетаны толтуруңуз, биздин менеджер акысыз консультация үчүн сиз менен байланышат."
+
+#: templates/jobs.html:421 templates/jobs.html:491
+msgid "Иван Иванов"
+msgstr "Асан Асанов"
+
+#: templates/jobs.html:433
+msgid "Желаемая страна"
+msgstr "Каалаган өлкө"
+
+#: templates/jobs.html:442
+msgid "Пока не определился"
+msgstr "Азырынча чече элекмин"
+
+#: templates/jobs.html:447
+msgid "Комментарий (необязательно)"
+msgstr "Комментарий (милдеттүү эмес)"
+
+#: templates/jobs.html:450
+msgid "Например: интересует работа водителем..."
+msgstr "Мисалы: айдоочу болуп иштөөгө кызыгам..."
+
+#: templates/jobs.html:454
+msgid "Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время."
+msgstr "Рахмат! Сиздин билдирмеңиз кабыл алынды. Биз жакында сиз менен байланышабыз."
+
+#: templates/jobs.html:456
+msgid "Отправить анкету"
+msgstr "Анкетаны жөнөтүү"
+
+#: templates/jobs.html:458
+msgid ""
+"Нажимая кнопку, вы соглашаетесь с условиями обработки персональных данных."
+msgstr "Баскычты басуу менен сиз персоналдык маалыматтарды иштеп чыгуу шарттарына макулдугуңузду бересиз."
+
+#: templates/jobs.html:484
+msgid "Оставьте заявку, и наш специалист свяжется с вами в течение 15 минут."
+msgstr "Билдирме калтырыңыз, биздин адис 15 мүнөттүн ичинде сиз менен байланышат."
+
+#: templates/jobs.html:494
+msgid "Номер телефона (WhatsApp)"
+msgstr "Телефон номери (WhatsApp)"
+
+#: templates/jobs.html:500
+msgid "Интересующая услуга"
+msgstr "Кызыктырган кызмат"
+
+#: templates/jobs.html:506 templates/law.html:138
+msgid "Бизнес-консалтинг"
+msgstr "Бизнес-консалтинг"
+
+#: templates/jobs.html:507 templates/visa.html:302
+msgid "Другое"
+msgstr "Башка"
+
+#: templates/lang_courses.html:4
+msgid "Языковые курсы | European Group"
+msgstr "Тил курстары | European Group"
+
+#: templates/lang_courses.html:29
+msgid "Говорите со всем миром"
+msgstr "Дүйнө менен сүйлөшүңүз"
+
+#: templates/lang_courses.html:29
+msgid "на одном языке"
+msgstr "бир тилде"
+
+#: templates/lang_courses.html:32
+msgid ""
+"Курсы корейского, немецкого, английского и японского языков. Подготовка к "
+"TOPIK, IELTS, TestDaF для учебы и работы за границей."
+msgstr "Корей, немис, англис жана жапон тилдеринин курстары. Чет өлкөдө окуу жана иштөө үчүн TOPIK, IELTS, TestDaF сынактарына даярдоо."
+
+#: templates/lang_courses.html:37
+msgid "Выбрать курс"
+msgstr "Курсту тандоо"
+
+#: templates/lang_courses.html:41
+msgid "Методика обучения"
+msgstr "Окутуу методикасы"
+
+#: templates/lang_courses.html:51
+msgid "Зачем учить языки?"
+msgstr "Тилдерди эмне үчүн үйрөнүү керек?"
+
+#: templates/lang_courses.html:63
+msgid "Свобода путешествий"
+msgstr "Саякаттоо эркиндиги"
+
+#: templates/lang_courses.html:64
+msgid ""
+"Путешествуйте без языкового барьера, заводите новые знакомства и "
+"погружайтесь в культуру."
+msgstr "Тил тоскоолдугусуз саякаттаңыз, жаңы тааныштарды табыңыз жана маданиятка сүңгүңүз."
+
+#: templates/lang_courses.html:72
+msgid "Карьера"
+msgstr "Карьера"
+
+#: templates/lang_courses.html:73
+#, python-format
+msgid ""
+"Сотрудники со знанием иностранных языков зарабатывают на 30-50%% больше."
+msgstr "Чет тилдерин билген кызматкерлер 30-50%% көбүрөөк киреше табышат."
+
+#: templates/lang_courses.html:82
+msgid ""
+"Поступление в зарубежные вузы требует сертификатов (IELTS, TOPIK, JLPT)."
+msgstr "Чет өлкөлүк ЖОЖдорго кирүү үчүн сертификаттар (IELTS, TOPIK, JLPT) талап кылынат."
+
+#: templates/lang_courses.html:92
+msgid "Наши программы"
+msgstr "Биздин программалар"
+
+#: templates/lang_courses.html:111 templates/lang_courses.html:153
+msgid "Азия"
+msgstr "Азия"
+
+#: templates/lang_courses.html:118 templates/lang_courses.html:139
+#: templates/lang_courses.html:160 templates/lang_courses.html:184
+msgid "месяцев"
+msgstr "ай"
+
+#: templates/lang_courses.html:132
+msgid "Европа"
+msgstr "Европа"
+
+#: templates/lang_courses.html:136
+msgid "Подготовка к Goethe-Zertifikat, TestDaF для работы и учебы."
+msgstr "Иштөө жана окуу үчүн Goethe-Zertifikat, TestDaF сынактарына даярдоо."
+
+#: templates/lang_courses.html:157
+msgid "Подготовка к JLPT N5-N2. Разговорная практика с носителями."
+msgstr "JLPT N5-N2 сынактарына даярдоо. Тил ээлери менен сүйлөшүү практикасы."
+
+#: templates/lang_courses.html:181
+msgid "General English, IELTS, TOEFL. Группы всех уровней."
+msgstr "General English, IELTS, TOEFL. Бардык деңгээлдер үчүн топтор."
+
+#: templates/lang_courses.html:197
+msgid "Как проходит обучение"
+msgstr "Окутуу кандай өтөт"
+
+#: templates/lang_courses.html:212
+msgid "Тестирование"
+msgstr "Тест тапшыруу"
+
+#: templates/lang_courses.html:213
+msgid "Определяем ваш текущий уровень знаний для подбора идеальной группы."
+msgstr "Сизге идеалдуу топту тандоо үчүн учурдагы билим деңгээлиңизди аныктайбыз."
+
+#: templates/lang_courses.html:219
+msgid "Занятия"
+msgstr "Сабактар"
+
+#: templates/lang_courses.html:220
+msgid "Интерактивные уроки с упором на разговорную практику и грамматику."
+msgstr "Сүйлөө практикасына жана грамматикага басым жасалган интерактивдүү сабактар."
+
+#: templates/lang_courses.html:226
+msgid "Разговорный клуб"
+msgstr "Сүйлөшүү клубу"
+
+#: templates/lang_courses.html:227
+msgid "Еженедельные встречи с носителями языка для преодоления барьера."
+msgstr "Тил тоскоолдугун жеңүү үчүн тил ээлери менен жума сайын өтүүчү жолугушуулар."
+
+#: templates/lang_courses.html:234
+msgid ""
+"Сдача финального экзамена и получение сертификата установленного образца."
+msgstr "Финалдык сынак тапшыруу жана белгиленген үлгүдөгү сертификат алуу."
+
+#: templates/lang_courses.html:246
+msgid "Записаться на пробный урок"
+msgstr "Сыноо сабагына жазылуу"
+
+#: templates/lang_courses.html:248
+msgid "Первое занятие бесплатно!"
+msgstr "Биринчи сабак акысыз!"
+
+#: templates/lang_courses.html:253 templates/visa.html:282
+msgid "Имя"
+msgstr "Атыңыз"
+
+#: templates/lang_courses.html:262 templates/study.html:242
+#: templates/tour.html:257 templates/tour.html:307 templates/visa.html:291
+msgid "+996..."
+msgstr "+996..."
+
+#: templates/lang_courses.html:265
+msgid "Какой язык хотите изучать?"
+msgstr "Кайсы тилди үйрөнгүңүз келет?"
+
+#: templates/lang_courses.html:268
+msgid "Корейский"
+msgstr "Корей тили"
+
+#: templates/lang_courses.html:269
+msgid "Немецкий"
+msgstr "Немис тили"
+
+#: templates/lang_courses.html:270
+msgid "Английский"
+msgstr "Англис тили"
+
+#: templates/lang_courses.html:271
+msgid "Японский"
+msgstr "Жапон тили"
+
+#: templates/lang_courses.html:274
+msgid "Вы записаны на пробный урок!"
+msgstr "Сиз сыноо сабагына жазылдыңыз!"
+
+#: templates/lang_courses.html:276
+msgid "Записаться бесплатно"
+msgstr "Акысыз жазылуу"
+
+#: templates/lang_courses.html:278
+msgid "Мы не передаем ваши данные третьим лицам."
+msgstr "Биз сиздин маалыматтарды үчүнчү жактарга бербейбиз."
+
+#: templates/law.html:4
+msgid "Юридический консалтинг | European Group"
+msgstr "Юридикалык консалтинг | European Group"
+
+#: templates/law.html:19
+msgid "Юридический бутик"
+msgstr "Юридикалык бутик"
+
+#: templates/law.html:22
+msgid "Надежная правовая"
+msgstr "Ишенимдүү укуктук"
+
+#: templates/law.html:22
+msgid "защита вашего бизнеса"
+msgstr "бизнесиңизди коргоо"
+
+#: templates/law.html:25
+msgid ""
+"Комплексное юридическое сопровождение, регистрация компаний, защита активов "
+"и международный арбитраж. Мы решаем сложные задачи, пока вы строите бизнес."
+msgstr "Комплекстүү юридикалык коштоо, компанияларды каттоо, активдерди коргоо жана эл аралык арбитраж. Сиз бизнес куруп жатканда, биз татаал маселелерди чечебиз."
+
+#: templates/law.html:34
+msgid "Наси услуги"
+msgstr "Биздин кызматтар"
+
+#: templates/law.html:53
+msgid "15+ лет опыта"
+msgstr "15+ жылдык тажрыйба"
+
+#: templates/law.html:54
+msgid "Успешной практики"
+msgstr "Ийгиликтүү практика"
+
+#: templates/law.html:70
+msgid "Наши компетенции"
+msgstr "Биздин компетенциялар"
+
+#: templates/law.html:72
+msgid "Полный спектр юридических услуг для частных лиц и корпораций"
+msgstr "Жеке жактар жана корпорациялар үчүн юридикалык кызматтардын толук спектри"
+
+#: templates/law.html:84
+msgid ""
+"Открытие ООО, АО, представительств иностранных компаний. Подготовка устава, "
+"протоколов и печати."
+msgstr "ЖЧК, АК жана чет өлкөлүк компаниялардын өкүлчүлүктөрүн ачуу. Уставды, протоколдорду даярдоо жана мөөр жасоо."
+
+#: templates/law.html:87 templates/law.html:105 templates/law.html:123
+#: templates/law.html:141 templates/law.html:159
+msgid "Подробнее"
+msgstr "Кененирээк"
+
+#: templates/law.html:102
+msgid "Договорное право"
+msgstr "Келишим укугу"
+
+#: templates/law.html:103
+msgid ""
+"Разработка и аудит договоров, контрактов ВЭД, соглашений о "
+"конфиденциальности (NDA)."
+msgstr "Келишимдерди, тышкы экономикалык ишмердүүлүк контракттарын, купуялуулук жөнүндө келишимдерди (NDA) иштеп чыгуу жана аудит жүргүзүү."
+
+#: templates/law.html:120
+msgid "Судебная защита"
+msgstr "Соттук коргоо"
+
+#: templates/law.html:121
+msgid ""
+"Представительство в судах всех инстанций. Арбитраж, взыскание долгов, "
+"трудовые споры."
+msgstr "Бардык инстанциядагы соттордо өкүлчүлүк кылуу. Арбитраж, карыздарды өндүрүү, эмгек талаш-тартыштары."
+
+#: templates/law.html:139
+msgid ""
+"Оптимизация налогообложения, кадровый аудит, сопровождение проверок "
+"госорганов."
+msgstr "Салык салууну оптималдаштыруу, кадрдык аудит, мамлекеттик органдардын текшерүүлөрүн коштоо."
+
+#: templates/law.html:156
+msgid "Сделки с недвижимостью"
+msgstr "Кыймылсыз мүлк менен бүтүмдөр"
+
+#: templates/law.html:157
+msgid ""
+"Юридическая проверка объектов, сопровождение купли-продажи жилой и "
+"коммерческой недвижимости."
+msgstr "Объекттерди юридикалык текшерүү, турак жай жана коммерциялык кыймылсыз мүлктү сатып алуу-сатууну коштоо."
+
+#: templates/law.html:173
+msgid "Индивидуальный запрос"
+msgstr "Жеке суроо-талап"
+
+#: templates/law.html:174
+msgid ""
+"У вас нестандартная ситуация? Опишите вашу задачу, и мы предложим "
+"персональное решение."
+msgstr "Сизде стандарттуу эмес кырдаалбы? Маселеңизди жазыңыз, биз персоналдык чечим сунуштайбыз."
+
+#: templates/law.html:177
+msgid "Связаться с нами"
+msgstr "Биз менен байланышуу"
+
+#: templates/law.html:190
+msgid "Почему нам доверяют"
+msgstr "Эмне үчүн бизге ишенишет"
+
+#: templates/law.html:204
+msgid "Конфиденциальность"
+msgstr "Купуялуулук"
+
+#: templates/law.html:205
+msgid "Гарантируем полную защиту вашей информации и коммерческой тайны."
+msgstr "Сиздин маалыматыңыздын жана коммерциялык сырыңыздын толук корголушуна кепилдик беребиз."
+
+#: templates/law.html:220
+msgid "Оперативность"
+msgstr "Тездик"
+
+#: templates/law.html:221
+msgid ""
+"Ценим ваше время. Строго соблюдаем сроки подготовки документов и подачи "
+"отчетности."
+msgstr "Сиздин убактыңызды баалайбыз. Документтерди даярдоо жана отчетторду тапшыруу мөөнөттөрүн так сактайбыз."
+
+#: templates/law.html:237
+msgid "Экспертность"
+msgstr "Эксперттүүлүк"
+
+#: templates/law.html:238
+msgid ""
+"Наши юристы имеют более 10 лет опыта работы в корпоративном и международном "
+"праве."
+msgstr "Биздин юристтер корпоративдик жана эл аралык укук тармагында 10 жылдан ашык иш тажрыйбасына ээ."
+
+#: templates/law.html:252
+msgid "1. Анализ ситуации"
+msgstr "1. Кырдаалды талдоо"
+
+#: templates/law.html:253
+msgid "Проводим первичную консультацию, изучаем документы и оцениваем риски."
+msgstr "Алгачкы консультацияны өткөрөбүз, документтерди изилдейбиз жана тобокелдиктерди баалайбыз."
+
+#: templates/law.html:259
+msgid "2. Разработка стратегии"
+msgstr "2. Стратегияны иштеп чыгуу"
+
+#: templates/law.html:260
+msgid "Предлагаем оптимальное правовое решение и согласовываем план действий."
+msgstr "Оптималдуу укуктук чечим сунуштайбыз жана иш-аракеттер планын макулдашабыз."
+
+#: templates/law.html:266
+msgid "3. Реализация"
+msgstr "3. Ишке ашыруу"
+
+#: templates/law.html:267
+msgid ""
+"Готовим документы, взаимодействуем с госорганами, представляем ваши интересы."
+msgstr "Документтерди даярдайбыз, мамлекеттик органдар менен иш алып барабыз жана сиздин кызыкчылыгыңызды коргойбуз."
+
+#: templates/law.html:273
+msgid "4. Результат"
+msgstr "4. Жыйынтык"
+
+#: templates/law.html:274
+msgid "Передаем готовые документы или решение суда."
+msgstr "Даяр документтерди же соттун чечимин өткөрүп беребиз."
+
+#: templates/law.html:295 templates/study.html:178 templates/visa.html:35
+msgid "Бесплатная консультация"
+msgstr "Акысыз консультация"
+
+#: templates/law.html:296
+msgid ""
+"Оставьте контакты, и наш юрист свяжется с вами в течение 30 минут для "
+"конфиденциального обсуждения вашего вопроса."
+msgstr "Байланыш маалыматыңызды калтырыңыз, биздин юрист маселеңизди купуя талкуулоо үчүн 30 мүнөттүн ичинде байланышат."
+
+#: templates/law.html:327
+msgid "Краткое описание ситуации"
+msgstr "Кырдаалдын кыскача сүрөттөлүшү"
+
+#: templates/law.html:329
+msgid "Запрос отправлен. Мы свяжемся с вами."
+msgstr "Суроо-талап жөнөтүлдү. Биз сиз менен байланышабыз."
+
+#: templates/law.html:331
+msgid "Отправить запрос"
+msgstr "Суроо-талап жөнөтүү"
+
+#: templates/law.html:333
+msgid "Гарантируем полную анонимность"
+msgstr "Толук анонимдүүлүккө кепилдик беребиз"
+
+#: templates/study.html:19
+msgid "Образование без границ"
+msgstr "Чексиз билим берүү"
+
+#: templates/study.html:22
+msgid "Учеба в лучших"
+msgstr "Мыкты"
+
+#: templates/study.html:22
+msgid "вузах мира"
+msgstr "ЖОЖдордо окуу"
+
+#: templates/study.html:25
+msgid ""
+"Поступление в университеты Европы, Азии и США. Гранты, стипендии и полное "
+"сопровождение от подачи документов до заселения в общежитие."
+msgstr "Европа, Азия жана АКШнын университеттерине кирүү. Гранттар, стипендиялар жана документ тапшыруудан баштап жатаканага жайгашканга чейинки толук коштоо."
+
+#: templates/study.html:30
+msgid "Выбрать университет"
+msgstr "Университетти тандоо"
+
+#: templates/study.html:34
+msgid "Как поступить"
+msgstr "Кантип тапшыруу керек"
+
+#: templates/study.html:44
+msgid "Почему стоит учиться за границей?"
+msgstr "Эмне үчүн чет өлкөдө окуу керек?"
+
+#: templates/study.html:60
+msgid "Международный диплом"
+msgstr "Эл аралык диплом"
+
+#: templates/study.html:61
+msgid ""
+"Дипломы европейских и азиатских вузов признаются во всем мире, открывая "
+"двери в международные компании."
+msgstr "Европа жана Азия ЖОЖдорунун дипломдору бүткүл дүйнөдө таанылат жана эл аралык компанияларга жол ачат."
+
+#: templates/study.html:75
+msgid "Языковые навыки"
+msgstr "Тил көндүмдөрү"
+
+#: templates/study.html:76
+msgid ""
+"Полное погружение в языковую среду позволит вам в совершенстве овладеть "
+"иностранным языком за короткий срок."
+msgstr "Тилдик чөйрөгө толук сүңгүү чет тилин кыска мөөнөттө эң жогорку деңгээлде өздөштүрүүгө мүмкүндүк берет."
+
+#: templates/study.html:90
+msgid "Карьера и стажировки"
+msgstr "Карьера жана стажировкалар"
+
+#: templates/study.html:91
+msgid ""
+"Возможность проходить стажировки в крупных корпорациях (Samsung, BMW, "
+"Google) во время учебы."
+msgstr "Окуу учурунда ири корпорацияларда (Samsung, BMW, Google) стажировкадан өтүү мүмкүнчүлүгү."
+
+#: templates/study.html:101
+msgid "Каталог учебных заведений"
+msgstr "Окуу жайлардын каталогу"
+
+#: templates/study.html:102
+msgid "Выберите университет"
+msgstr "Университетти тандаңыз"
+
+#: templates/study.html:168
+msgid "Этапы поступления"
+msgstr "Тапшыруу этаптары"
+
+#: templates/study.html:179
+msgid ""
+"Определяем ваши цели, бюджет и подбираем подходящую страну и университет."
+msgstr "Сиздин максаттарыңызды, бюджетиңизди аныктайбыз жана ылайыктуу өлкөнү, университетти тандайбыз."
+
+#: templates/study.html:190 templates/visa.html:198
+msgid "Сбор документов"
+msgstr "Документтерди чогултуу"
+
+#: templates/study.html:191
+msgid ""
+"Наши специалисты помогают собрать, перевести и апостилировать все "
+"необходимые документы."
+msgstr "Биздин адистер бардык керектүү документтерди чогултууга, которууга жана апостиль коюуга жардам беришет."
+
+#: templates/study.html:202
+msgid "Подача заявки и зачисление"
+msgstr "Билдирме берүү жана кабыл алуу"
+
+#: templates/study.html:203
+msgid ""
+"Отправляем документы в университет и получаем официальное приглашение "
+"(Acceptance Letter)."
+msgstr "Документтерди университетке жөнөтөбүз жана расмий чакыруу (Acceptance Letter) алабыз."
+
+#: templates/study.html:214
+msgid "Виза и вылет"
+msgstr "Виза жана учуу"
+
+#: templates/study.html:215
+msgid "Готовим к собеседованию в посольстве, получаем визу и организуем вылет."
+msgstr "Элчиликтеги маектешүүгө даярдайбыз, виза алабыз жана учууну уюштурабыз."
+
+#: templates/study.html:227
+msgid "Подайте заявку на обучение"
+msgstr "Окууга билдирме бериңиз"
+
+#: templates/study.html:228
+msgid "Сделайте первый шаг к международному образованию прямо сейчас."
+msgstr "Эл аралык билим алууга биринчи кадамыңызды азыр жасаңыз."
+
+#: templates/study.html:233
+msgid "Имя и Фамилия"
+msgstr "Аты-жөнү"
+
+#: templates/study.html:236
+msgid "Введите имя"
+msgstr "Атыңызды жазыңыз"
+
+#: templates/study.html:247
+msgid "Интересующая страна"
+msgstr "Кызыктырган өлкө"
+
+#: templates/study.html:250
+msgid "Южная Корея"
+msgstr "Түштүк Корея"
+
+#: templates/study.html:252
+msgid "Европа (Словакия, Италия)"
+msgstr "Европа (Словакия, Италия)"
+
+#: templates/study.html:254
+msgid "Пока не знаю"
+msgstr "Азырынча билбейм"
+
+#: templates/study.html:259
+msgid "Комментарий"
+msgstr "Комментарий"
+
+#: templates/study.html:262
+msgid "Например: хочу изучать IT..."
+msgstr "Мисалы: IT багытында окугум келет..."
+
+#: templates/study.html:283 templates/visa.html:325
+msgid "Свяжитесь с нами"
+msgstr "Биз менен байланышыңыз"
+
+#: templates/study.html:284 templates/visa.html:326
+msgid "Мы перезвоним вам в ближайшее время."
+msgstr "Биз сизге жакын арада чалабыз."
+
+#: templates/study.html:287 templates/visa.html:329
+msgid "Закрыть"
+msgstr "Жабуу"
+
+#: templates/tour.html:22
+msgid "Путешествуй без границ"
+msgstr "Чексиз саякаттаңыз"
+
+#: templates/tour.html:26
+msgid "Откройте мир"
+msgstr "Дүйнөнү ачыңыз"
+
+#: templates/tour.html:26
+msgid "вместе с нами"
+msgstr "биз менен чогуу"
+
+#: templates/tour.html:29
+msgid ""
+"Лучшие курорты Тайланда, Египта, Турции и Вьетнама по самым выгодным ценам."
+msgstr "Тайланд, Египет, Түркия жана Вьетнамдын мыкты курорттору эң ыңгайлуу баада."
+
+#: templates/tour.html:33
+msgid "Выбрать направление"
+msgstr "Багытты тандоо"
+
+#: templates/tour.html:43
+msgid "Популярные направления"
+msgstr "Популярдуу багыттар"
+
+#: templates/tour.html:46
+msgid "Куда вы хотите полететь в этом сезоне?"
+msgstr "Бул сезондо кайда учкуңуз келет?"
+
+#: templates/tour.html:60 templates/tour.html:267
+msgid "Тайланд"
+msgstr "Тайланд"
+
+#: templates/tour.html:61
+msgid "Пхукет, Паттайя, Самуи"
+msgstr "Пхукет, Паттайя, Самуи"
+
+#: templates/tour.html:62 templates/tour.html:78 templates/tour.html:93
+#: templates/tour.html:108 templates/visa.html:75 templates/visa.html:104
+#: templates/visa.html:133 templates/visa.html:163
+msgid "от"
+msgstr "баштап"
+
+#: templates/tour.html:76 templates/tour.html:268
+msgid "Египет"
+msgstr "Египет"
+
+#: templates/tour.html:77
+msgid "Шарм-эль-Шейх, Хургада"
+msgstr "Шарм-эль-Шейх, Хургада"
+
+#: templates/tour.html:91 templates/tour.html:269
+msgid "Турция"
+msgstr "Түркия"
+
+#: templates/tour.html:92
+msgid "Анталья, Кемер, Аланья"
+msgstr "Анталья, Кемер, Аланья"
+
+#: templates/tour.html:106 templates/tour.html:270
+msgid "Вьетнам"
+msgstr "Вьетнам"
+
+#: templates/tour.html:107
+msgid "Нячанг, Фукуок"
+msgstr "Нячанг, Фукуок"
+
+#: templates/tour.html:120
+msgid "Горящие туры"
+msgstr "Күйүп жаткан турлар"
+
+#: templates/tour.html:121
+msgid "Успейте забронировать по специальной цене"
+msgstr "Атайын баада ээлеп калууга жетишиңиз"
+
+#: templates/tour.html:137
+msgid "Египет, Ультра все включено"
+msgstr "Египет, Ультра баары камтылган"
+
+#: templates/tour.html:145 templates/tour.html:167 templates/tour.html:189
+msgid "ночей"
+msgstr "түн"
+
+#: templates/tour.html:159
+msgid "Турция, Кемер"
+msgstr "Түркия, Кемер"
+
+#: templates/tour.html:181
+msgid "Тайланд, Завтраки"
+msgstr "Тайланд, Эртең мененки тамак"
+
+#: templates/tour.html:205
+msgid "Лучшие цены"
+msgstr "Мыкты баалар"
+
+#: templates/tour.html:206
+msgid "Прямые контракты с отелями и авиакомпаниями."
+msgstr "Мейманканалар жана авиакомпаниялар менен түз контракттар."
+
+#: templates/tour.html:212
+msgid "24/7 Поддержка"
+msgstr "24/7 Колдоо"
+
+#: templates/tour.html:213
+msgid "Мы на связи на протяжении всего вашего путешествия."
+msgstr "Биз саякатыңыздын башынан аягына чейин байланышта болобуз."
+
+#: templates/tour.html:219
+msgid "Надежность"
+msgstr "Ишенимдүүлүк"
+
+#: templates/tour.html:220
+msgid "Работаем только с проверенными туроператорами."
+msgstr "Биз ишенимдүү туроператорлор менен гана иштейбиз."
+
+#: templates/tour.html:226
+msgid "Бонусы"
+msgstr "Бонустар"
+
+#: templates/tour.html:227
+msgid "Дарим страховку и трансфер к каждому туру."
+msgstr "Ар бир турга камсыздандыруу жана трансфер белекке беребиз."
+
+#: templates/tour.html:240
+msgid "Подберите мне идеальный тур"
+msgstr "Мага идеалдуу тур тандап бериңиз"
+
+#: templates/tour.html:242
+msgid "Оставьте заявку, и мы пришлем вам подборку лучших отелей."
+msgstr "Билдирме калтырыңыз, биз сизге мыкты мейманканалардын топтомун жөнөтөбүз."
+
+#: templates/tour.html:251
+msgid "Алина"
+msgstr "Алина"
+
+#: templates/tour.html:263
+msgid "Куда хотите?"
+msgstr "Кайда каалайсыз?"
+
+#: templates/tour.html:266
+msgid "Не важно / Посоветуйте"
+msgstr "Маанилүү эмес / Кеңеш бериңиз"
+
+#: templates/tour.html:271
+msgid "ОАЭ"
+msgstr "БАЭ"
+
+#: templates/tour.html:279
+msgid "до $500"
+msgstr "$500 чейин"
+
+#: templates/tour.html:282
+msgid "VIP"
+msgstr "VIP"
+
+#: templates/tour.html:287
+msgid "Спасибо! Мы скоро пришлем варианты."
+msgstr "Рахмат! Биз жакында варианттарды жөнөтөбүз."
+
+#: templates/tour.html:289
+msgid "Найти тур мечты"
+msgstr "Кыялыңыздагы турду табыңыз"
+
+#: templates/tour.html:305
+msgid "Быстрый подбор тура"
+msgstr "Турду тез тандоо"
+
+#: templates/tour.html:306
+msgid "Оставьте номер, и мы перезвоним в течение 5 минут."
+msgstr "Номериңизди калтырыңыз, биз 5 мүнөттүн ичинде кайра чалабыз."
+
+#: templates/university_detail.html:19
+msgid "Главная"
+msgstr "Башкы бет"
+
+#: templates/university_detail.html:21
+msgid "Университеты"
+msgstr "Университеттер"
+
+#: templates/university_detail.html:30
+msgid "Сеул, Южная Корея"
+msgstr "Сеул, Түштүк Корея"
+
+#: templates/university_detail.html:36
+msgid ""
+"Один из самых престижных частных университетов Кореи, известный своими "
+"передовыми исследованиями и сильными программами в области гостеприимства и "
+"искусств."
+msgstr "Кореянын эң абройлуу жеке университеттеринин бири, өзүнүн алдыңкы изилдөөлөрү, меймандостук жана искусство тармагындагы күчтүү программалары менен белгилүү."
+
+#: templates/university_detail.html:49
+msgid "TOP 50"
+msgstr "ТОП 50"
+
+#: templates/university_detail.html:50
+msgid "В Азии"
+msgstr "Азияда"
+
+#: templates/university_detail.html:63 templates/university_detail.html:220
+msgid "14,000+"
+msgstr "14,000+"
+
+#: templates/university_detail.html:64
+msgid "Студентов"
+msgstr "Студенттер"
+
+#: templates/university_detail.html:77
+msgid "Смотреть программы"
+msgstr "Программаларды көрүү"
+
+#: templates/university_detail.html:96
+msgid ""
+"Университет Седжонг (Sejong University) — частный университет, расположенный "
+"в Сеуле, Южная Корея. Основанный в 1940 году, он назван в честь Седжонга "
+"Великого, четвертого короля династии Чосон и создателя корейского алфавита "
+"Хангыль."
+msgstr ""
+
+#: templates/university_detail.html:99
+msgid ""
+"Университет славится своим колледжем гостеприимства и туризма, который "
+"считается одним из лучших в Корее. Кампус университета расположен в районе "
+"Кванджингу, рядом с Большим детским парком, предлагая студентам прекрасную "
+"зеленую территорию в центре мегаполиса."
+msgstr ""
+
+#: templates/university_detail.html:107
+msgid "Факультеты и программы"
+msgstr "Факультеттер жана программалар"
+
+#: templates/university_detail.html:121
+msgid "Бизнес и Экономика"
+msgstr "Бизнес жана Экономика"
+
+#: templates/university_detail.html:122
+msgid "BBA, MBA, Международная торговля"
+msgstr ""
+
+#: templates/university_detail.html:135
+msgid "Гостеприимство"
+msgstr "Конок тосуу (Гостеприимство)"
+
+#: templates/university_detail.html:136
+msgid "Отельный менеджмент, Туризм"
+msgstr ""
+
+#: templates/university_detail.html:149
+msgid "IT и Инженерия"
+msgstr "IT жана Инженерия"
+
+#: templates/university_detail.html:150
+msgid "Computer Science, AI, Робототехника"
+msgstr ""
+
+#: templates/university_detail.html:163
+msgid "Искусство"
+msgstr "Искусство"
+
+#: templates/university_detail.html:164
+msgid "Дизайн, Мода, Анимация"
+msgstr ""
+
+#: templates/university_detail.html:171
+msgid "Требования к поступлению"
+msgstr "Тапшыруу талаптары"
+
+#: templates/university_detail.html:179
+msgid "Аттестат о среднем образовании (GPA 3.0+)"
+msgstr ""
+
+#: templates/university_detail.html:187
+msgid "Сертификат IELTS 5.5 или TOPIK 3"
+msgstr ""
+
+#: templates/university_detail.html:195
+msgid "Мотивационное письмо и рекомендации"
+msgstr ""
+
+#: templates/university_detail.html:208
+msgid "Детали"
+msgstr "Деталдар"
+
+#: templates/university_detail.html:211
+msgid "Основан:"
+msgstr "Негизделген:"
+
+#: templates/university_detail.html:212
+msgid "1940 год"
+msgstr "1940-жыл"
+
+#: templates/university_detail.html:215
+msgid "Тип:"
+msgstr "Түрү:"
+
+#: templates/university_detail.html:216
+msgid "Частный"
+msgstr "Жеке (Частный)"
+
+#: templates/university_detail.html:219
+msgid "Студентов:"
+msgstr "Студенттер:"
+
+#: templates/university_detail.html:223
+msgid "Иностранцев:"
+msgstr "Чет элдиктер:"
+
+#: templates/university_detail.html:224
+msgid "2,000+"
+msgstr ""
+
+#: templates/university_detail.html:227
+msgid "Стоимость (год):"
+msgstr "Баасы (жылына):"
+
+#: templates/university_detail.html:235
+msgid "Сроки подачи"
+msgstr "Тапшыруу мөөнөттөрү"
+
+#: templates/university_detail.html:240
+msgid "СЕН"
+msgstr "СЕН"
+
+#: templates/university_detail.html:244
+msgid "Осенний семестр"
+msgstr "Күзгү семестр"
+
+#: templates/university_detail.html:245
+msgid "Прием документов до 15.09"
+msgstr "Документтерди кабыл алуу 15.09га чейин"
+
+#: templates/university_detail.html:251
+msgid "МАР"
+msgstr "МАР"
+
+#: templates/university_detail.html:255
+msgid "Весенний семестр"
+msgstr "Жазгы семестр"
+
+#: templates/university_detail.html:256
+msgid "Прием документов до 20.03"
+msgstr "Документтерди кабыл алуу 20.03кө чейин"
+
+#: templates/university_detail.html:264
+msgid "Хотите поступить?"
+msgstr "Тапшыргыңыз келеби?"
+
+#: templates/university_detail.html:265
+msgid "Оставьте заявку, и мы бесплатно оценим ваши шансы на грант."
+msgstr ""
+
+#: templates/university_detail.html:269 templates/visa.html:189
+msgid "Консультация"
+msgstr "Консультация"
+
+#: templates/visa.html:20
+#, python-format
+msgid "98%% Одобренных виз"
+msgstr ""
+
+#: templates/visa.html:23
+msgid "Ваша виза —"
+msgstr "Сиздин виза —"
+
+#: templates/visa.html:23
+msgid "наша забота"
+msgstr "биздин камкордук"
+
+#: templates/visa.html:26
+msgid ""
+"Оформление виз в Европу (Шенген), США, Азию и Великобританию. Полное "
+"сопровождение: от сбора документов до получения паспорта с визой."
+msgstr ""
+
+#: templates/visa.html:31
+msgid "Виды виз"
+msgstr "Виза түрлөрү"
+
+#: templates/visa.html:45
+msgid "Оформляем визы по всему миру"
+msgstr "Дүйнө жүзү боюнча визаларды тариздейбиз"
+
+#: templates/visa.html:48
+msgid "Выберите направление для оформления визы"
+msgstr "Виза тариздөө үчүн багытты тандаңыз"
+
+#: templates/visa.html:59
+msgid "Шенгенская виза"
+msgstr "Шенген визасы"
+
+#: templates/visa.html:67
+msgid "27 стран Европы"
+msgstr "Европанын 27 өлкөсү"
+
+#: templates/visa.html:72
+msgid "Туризм, Бизнес, Гости"
+msgstr "Туризм, Бизнес, Конок"
+
+#: templates/visa.html:76 templates/visa.html:134 templates/visa.html:164
+msgid "дней"
+msgstr "күн"
+
+#: templates/visa.html:88
+msgid "Виза в США"
+msgstr "АКШга виза"
+
+#: templates/visa.html:96
+msgid "B1/B2 (Туризм/Бизнес)"
+msgstr "B1/B2 (Туризм/Бизнес)"
+
+#: templates/visa.html:101
+msgid "Запись на собеседование"
+msgstr "Маектешүүгө жазылуу"
+
+#: templates/visa.html:105
+msgid "Индивидуально"
+msgstr "Жекече"
+
+#: templates/visa.html:117
+msgid "Страны Азии"
+msgstr "Азия өлкөлөрү"
+
+#: templates/visa.html:125
+msgid "Южная Корея, Япония, Китай"
+msgstr "Түштүк Корея, Жапония, Кытай"
+
+#: templates/visa.html:130
+msgid "Электронные разрешения (K-ETA)"
+msgstr "Электрондук уруксаттар (K-ETA)"
+
+#: templates/visa.html:155
+msgid "Сложные кейсы"
+msgstr "Татаал учурлар (кейстер)"
+
+#: templates/visa.html:160
+msgid "Долгосрочные визы"
+msgstr "Узак мөөнөттүү визалар"
+
+#: templates/visa.html:175
+msgid "Процесс оформления"
+msgstr "Тариздөө процесси"
+
+#: templates/visa.html:190
+msgid "Анализ вашей ситуации и выбор типа визы."
+msgstr ""
+
+#: templates/visa.html:199
+msgid "Заполнение анкет, переводы, бронирование билетов и отелей."
+msgstr ""
+
+#: templates/visa.html:207
+msgid "Подача"
+msgstr "Белгилөө (Подача)"
+
+#: templates/visa.html:208
+msgid "Запись в консульство и подача документов (лично или без присутствия)."
+msgstr ""
+
+#: templates/visa.html:216
+msgid "Успех"
+msgstr "Ийгилик"
+
+#: templates/visa.html:217
+msgid "Получение паспорта с готовой визой."
+msgstr ""
+
+#: templates/visa.html:236
+msgid "Высокая проходимость"
+msgstr "Жогорку өтүмдүүлүк"
+
+#: templates/visa.html:237
+#, python-format
+msgid "Мы знаем все тонкости оформления и минимизируем риск отказа до 1-2%%."
+msgstr ""
+
+#: templates/visa.html:249
+msgid "Срочное оформление"
+msgstr "Шашылыш тариздөө"
+
+#: templates/visa.html:250
+msgid "Готовим полный пакет документов за 24 часа для горящих поездок."
+msgstr ""
+
+#: templates/visa.html:263
+msgid "Оплата за результат"
+msgstr "Натыйжа үчүн төлөм"
+
+#: templates/visa.html:264
+msgid "Для некоторых типов виз мы работаем без предоплаты."
+msgstr ""
+
+#: templates/visa.html:276
+msgid "Нужна виза?"
+msgstr "Виза керекпи?"
+
+#: templates/visa.html:277
+msgid "Оставьте заявку, и мы бесплатно оценим ваши шансы на получение визы."
+msgstr ""
+
+#: templates/visa.html:285
+msgid "Иван"
+msgstr "Иван"
+
+#: templates/visa.html:294
+msgid "Куда планируете поездку?"
+msgstr "Саякатты кайда пландап жатасыз?"
+
+#: templates/visa.html:297
+msgid "Шенген (Европа)"
+msgstr "Шенген (Европа)"
+
+#: templates/visa.html:299
+msgid "Великобритания"
+msgstr "Улуу Британия"
+
+#: templates/visa.html:300
+msgid "Канада"
+msgstr "Канада"
+
+#: templates/visa.html:301
+msgid "Азия (Китай, Япония, Корея)"
+msgstr "Азия (Кытай, Жапония, Корея)"
+
+#: templates/visa.html:306
+msgid "Заявка отправлена!"
+msgstr "Билдирме жөнөтүлдү!"
+
+#: venv/lib/python3.13/site-packages/django/contrib/messages/apps.py:16
+msgid "Messages"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/contrib/sitemaps/apps.py:8
+msgid "Site Maps"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/contrib/staticfiles/apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/contrib/syndication/apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: venv/lib/python3.13/site-packages/django/core/paginator.py:33
+msgid "…"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/paginator.py:35
+msgid "That page number is not an integer"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/paginator.py:36
+msgid "That page number is less than 1"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/paginator.py:37
+msgid "That page contains no results"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:22
+msgid "Enter a valid value."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:70
+msgid "Enter a valid domain name."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:153
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:774
+msgid "Enter a valid URL."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:200
+msgid "Enter a valid integer."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:211
+msgid "Enter a valid email address."
+msgstr ""
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: venv/lib/python3.13/site-packages/django/core/validators.py:289
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:297
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:309
+#: venv/lib/python3.13/site-packages/django/core/validators.py:318
+#: venv/lib/python3.13/site-packages/django/core/validators.py:332
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2220
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:311
+msgid "IPv4"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:320
+#: venv/lib/python3.13/site-packages/django/utils/ipv6.py:43
+msgid "IPv6"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:334
+msgid "IPv4 or IPv6"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:375
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:381
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:416
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:425
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:434
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:441
+#, python-format
+msgid ""
+"Ensure this value is a multiple of step size %(limit_value)s, starting from "
+"%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:473
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:491
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:514
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:365
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:404
+msgid "Enter a number."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:516
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:521
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:526
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:597
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/core/validators.py:659
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/base.py:1631
+#: venv/lib/python3.13/site-packages/django/forms/models.py:932
+msgid "and"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/base.py:1633
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/constraints.py:20
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:134
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:135
+msgid "This field cannot be null."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:136
+msgid "This field cannot be blank."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:137
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:141
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:180
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1161
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1162
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1164
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1214
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1216
+msgid "String (unlimited)"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1325
+msgid "Comma-separated integers"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1426
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1430
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1565
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1434
+msgid "Date (without time)"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1561
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1569
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1574
+msgid "Date (with time)"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1701
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1703
+msgid "Decimal number"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1864
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1868
+msgid "Duration"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1920
+msgid "Email address"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1945
+msgid "File path"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2023
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2025
+msgid "Floating point number"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2065
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2067
+msgid "Integer"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2163
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2180
+msgid "Small integer"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2188
+msgid "IPv4 address"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2219
+msgid "IP address"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2310
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2311
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2313
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2364
+msgid "Positive big integer"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2379
+msgid "Positive integer"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2394
+msgid "Positive small integer"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2410
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2446
+msgid "Text"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2526
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2530
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2534
+msgid "Time"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2642
+msgid "URL"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2666
+msgid "Raw binary data"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2731
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2733
+msgid "Universally unique identifier"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/files.py:244
+msgid "File"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/files.py:420
+msgid "Image"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/json.py:24
+msgid "A JSON object"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/json.py:26
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:978
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r is not a valid choice."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:981
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:1275
+msgid "One-to-one relationship"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:1332
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:1334
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/db/models/fields/related.py:1382
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to
+#. the label
+#: venv/lib/python3.13/site-packages/django/forms/boundfield.py:188
+msgid ":?.!"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:92
+msgid "This field is required."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:314
+msgid "Enter a whole number."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:485
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1251
+msgid "Enter a valid date."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:508
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1252
+msgid "Enter a valid time."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:535
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:569
+msgid "Enter a valid duration."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:570
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:639
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:640
+msgid "No file was submitted."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:641
+msgid "The submitted file is empty."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:643
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:648
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:716
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:872
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:959
+#: venv/lib/python3.13/site-packages/django/forms/models.py:1621
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:961
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1080
+#: venv/lib/python3.13/site-packages/django/forms/models.py:1619
+msgid "Enter a list of values."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1081
+msgid "Enter a complete value."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1323
+msgid "Enter a valid UUID."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/fields.py:1353
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: venv/lib/python3.13/site-packages/django/forms/forms.py:97
+msgid ":"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/forms.py:239
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:61
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:65
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:70
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:484
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:491
+msgid "Order"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/formsets.py:499
+msgid "Delete"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:925
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:930
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:937
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:946
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:1383
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:1474
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/models.py:1623
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/utils.py:229
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:528
+msgid "Clear"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:529
+msgid "Currently"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:530
+msgid "Change"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:869
+msgid "Unknown"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:870
+msgid "Yes"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/forms/widgets.py:871
+msgid "No"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/tasks/base.py:34
+msgctxt "Task"
+msgid "Ready"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/tasks/base.py:36
+msgctxt "Task"
+msgid "Running"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/tasks/base.py:38
+msgctxt "Task"
+msgid "Failed"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/tasks/base.py:40
+msgctxt "Task"
+msgid "Successful"
+msgstr ""
+
+#. Translators: Please do not add spaces around commas.
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:878
+msgid "yes,no,maybe"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:908
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:925
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:927
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:929
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:931
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:933
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/template/defaultfilters.py:935
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:74
+msgid "p.m."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:75
+msgid "a.m."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:80
+msgid "PM"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:81
+msgid "AM"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:153
+msgid "midnight"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dateformat.py:155
+msgid "noon"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:7
+msgid "Monday"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:8
+msgid "Tuesday"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:9
+msgid "Wednesday"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:10
+msgid "Thursday"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:11
+msgid "Friday"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:12
+msgid "Saturday"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:13
+msgid "Sunday"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:16
+msgid "Mon"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:17
+msgid "Tue"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:18
+msgid "Wed"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:19
+msgid "Thu"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:20
+msgid "Fri"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:21
+msgid "Sat"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:22
+msgid "Sun"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:25
+msgid "January"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:26
+msgid "February"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:27
+msgid "March"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:28
+msgid "April"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:29
+msgid "May"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:30
+msgid "June"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:31
+msgid "July"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:32
+msgid "August"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:33
+msgid "September"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:34
+msgid "October"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:35
+msgid "November"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:36
+msgid "December"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:39
+msgid "jan"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:40
+msgid "feb"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:41
+msgid "mar"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:42
+msgid "apr"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:43
+msgid "may"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:44
+msgid "jun"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:45
+msgid "jul"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:46
+msgid "aug"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:47
+msgid "sep"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:48
+msgid "oct"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:49
+msgid "nov"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:50
+msgid "dec"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:55
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:69
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:75
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:77
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/dates.py:78
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/ipv6.py:20
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/text.py:76
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/text.py:287
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: venv/lib/python3.13/site-packages/django/utils/text.py:306
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:135
+msgid ", "
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:8
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:9
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:10
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:11
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:12
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/utils/timesince.py:13
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:29
+msgid "Forbidden"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:30
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:34
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:40
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:45
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:54
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:60
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/csrf.py:66
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:44
+msgid "No year specified"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:64
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:115
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:214
+msgid "Date out of range"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:94
+msgid "No month specified"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:147
+msgid "No day specified"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:194
+msgid "No week specified"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:353
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:384
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:680
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/dates.py:720
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/generic/list.py:173
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/static.py:49
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/static.py:51
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/static.py:68
+#: venv/lib/python3.13/site-packages/django/views/templates/directory_index.html:8
+#: venv/lib/python3.13/site-packages/django/views/templates/directory_index.html:11
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:7
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:204
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:208
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
+"configured any URLs."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:217
+msgid "Django Documentation"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:218
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:226
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:227
+msgid "Get started with Django"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:235
+msgid "Django Community"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:236
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:14
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:54
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:62
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:72
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:82
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:86
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:118
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:137
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:364
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:369
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:379
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:399
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:416
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:435
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:441
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:458
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:470
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:478
+msgid "title"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:18
+msgid "password"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:245
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:264
+msgid "title a"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:249
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:275
+msgid "title b"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:253
+msgid "title c"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:257
+msgid "title d"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/models.py:380
+msgid "visits"
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/modeltranslation/tests/translation.py:62
+msgid "Sorry, translation is not available."
+msgstr ""
+
+#: venv/lib/python3.13/site-packages/modeltranslation/widgets.py:32
+msgid "None"
+msgstr ""
