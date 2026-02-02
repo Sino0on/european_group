@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+<html lang="ru" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" href="{% static 'assets/logo/logo2.png' %}" type="image/png">
+
+    <!-- Fonts: Montserrat (Headers) and Lato (Body) for a professional, international feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS (CDN for rapid prototyping as requested) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        eu: {
+                            blue: '#003399', // Official EU Blue
+                            dark: '#0a1a3b', // Deep rich blue for backgrounds
+                            gold: '#FFCC00', // EU Gold
+                            gold_hover: '#e6b800',
+                            text: '#1e293b', // Slate 800
+                            light: '#f8fafc', // Slate 50
+                        },
+                        tropical: {
+                            teal: '#14b8a6',
+                            orange: '#f97316',
+                            sand: '#fffbeb',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        serif: ['Montserrat', 'sans-serif'], // Replacing Serif with Montserrat for headers as requested
+                    },
+                    boxShadow: {
+                        'premium': '0 10px 40px -10px rgba(0,0,0,0.1)',
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Utilities for that extra polish */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #0a1a3b 0%, #003399 100%);
+        }
+
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(to right, #FFCC00, #ffdb4d);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-scroll {
+            animation: scroll 30s linear infinite;
+        }
+    </style>
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body class="{% block body_class %}bg-slate-50{% endblock %} text-slate-800 font-sans antialiased">
+
+    <!-- 1. Header (Navigation) -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300 bg-[#224096] border-b border-white/10"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <!-- Placeholder for actual logo -->
+                    <a href="{% url 'index' %}">
+                        <img class="h-10 w-auto" src="{% static 'assets/logo/logo.png' %}" alt="European Group Logo"
+                            style="height: 5rem;"
+                            onerror="this.onerror=null; this.src='https://placehold.co/200x60?text=European+Group';">
+                    </a>
+                    <!-- <div class="hidden md:block">
+                        <span class="block text-lg font-serif font-bold text-white leading-none">EUROPEAN</span>
+                        <span class="block text-xs uppercase tracking-widest text-eu-gold">Group</span>
+                    </div> -->
+                </div>
+
+                <!-- Mega Menu Links (Central) -->
+                <nav class="hidden lg:flex space-x-8">
+                    <!-- Migration -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center text-gray-100 hover:text-eu-gold font-medium transition-colors py-8">
+                            {% trans "Миграция" %}
+                            <svg class="ml-1 w-4 h-4 text-gray-300 group-hover:text-eu-gold transition-transform group-hover:rotate-180"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <!-- Dropdown -->
+                        <div
+                            class="absolute left-1/2 transform -translate-x-1/2 mt-0 w-64 bg-white rounded-xl shadow-premium opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100 overflow-hidden">
+                            <div class="py-2">
+                                <a href="{% url 'jobs' %}"
+                                    class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-eu-blue">{% trans "Работа в Европе" %}</a>
+                                <a href="{% url 'visa' %}"
+                                    class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-eu-blue">{% trans "Визовая поддержка" %}</a>
+                                <a href="{% url 'study' %}"
+                                    class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-eu-blue">{% trans "Учеба за рубежом" %}</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Business & Law -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center text-gray-100 hover:text-eu-gold font-medium transition-colors py-8">
+                            {% trans "Бизнес и Право" %}
+                            <svg class="ml-1 w-4 h-4 text-gray-300 group-hover:text-eu-gold transition-transform group-hover:rotate-180"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute left-1/2 transform -translate-x-1/2 mt-0 w-64 bg-white rounded-xl shadow-premium opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100 overflow-hidden">
+                            <div class="py-2">
+                                <a href="{% url 'law' %}"
+                                    class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-eu-blue">{% trans "Юридический консалтинг" %}</a>
+                                <a href="{% url 'company' %}"
+                                    class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-eu-blue">{% trans "Регистрация компаний" %}</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Leisure -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center text-gray-100 hover:text-eu-gold font-medium transition-colors py-8">
+                            {% trans "Отдых" %}
+                            <svg class="ml-1 w-4 h-4 text-gray-300 group-hover:text-eu-gold transition-transform group-hover:rotate-180"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute left-1/2 transform -translate-x-1/2 mt-0 w-64 bg-white rounded-xl shadow-premium opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100 overflow-hidden">
+                            <div class="py-2">
+                                <a href="{% url 'tour' %}"
+                                    class="block px-6 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-eu-blue">{% trans "Туры" %}</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <a href="{% url 'lang_courses' %}"
+                        class="flex items-center text-gray-100 hover:text-eu-gold font-medium transition-colors py-8">
+                        {% trans "Обучение" %}
+                    </a>
+                </nav>
+
+                <!-- Right Actions -->
+                <div class="flex items-center gap-6">
+                    <!-- Language Switcher -->
+                    {% get_current_language as CURRENT_LANGUAGE %}
+                    {% load static i18n %}
+                    {% get_current_language as LANGUAGE_CODE %}
+                    <div class="flex items-center text-sm font-medium text-gray-300 gap-2">
+                        <a href="/ru/"><button
+                                class="{% if LANGUAGE_CODE == 'ru' %}text-white font-bold{% else %}hover:text-white transition-colors{% endif %}">RU</button></a>
+                        <span class="text-white/20">|</span>
+                        <a href="/ky/"><button
+                                class="{% if LANGUAGE_CODE == 'ky' %}text-white font-bold{% else %}hover:text-white transition-colors{% endif %}">KG</button></a>
+                        <span class="text-white/20">|</span>
+                        <a href="/en/"><button
+                                class="{% if LANGUAGE_CODE == 'en' %}text-white font-bold{% else %}hover:text-white transition-colors{% endif %}">EN</button></a>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <!-- CTA Button that triggers Modal -->
+                    <button
+                        onclick="document.getElementById('consultModal').classList.remove('hidden'); document.getElementById('consultModal').classList.add('flex');"
+                        class="hidden md:inline-flex items-center justify-center px-6 py-2.5 border border-white/20 text-sm font-medium rounded-full text-eu-blue bg-white hover:bg-gray-100 transition-all duration-200 shadow-lg">
+                        {% trans "Срочная консультация" %}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- 7. Footer -->
+    <footer class="bg-slate-900 text-gray-300 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Info -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <img class="h-9 w-auto" src="{% static 'assets/logo/logo3.png' %}" alt="European Group Logo"
+                            onerror="this.onerror=null; this.src='https://placehold.co/200x60/transparent/white?text=European+Group';">
+                        <span class="text-white text-lg font-serif font-bold">EUROPEAN Group</span>
+                    </div>
+                    <p class="text-sm leading-relaxed text-gray-400 mb-6">
+                        {% trans "Профессиональный консалтинг в сфере миграции, образования и бизнеса. Мы открываем границы и возможности." %}
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-eu-gold transition-colors">
+                            <span class="sr-only">Instagram</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-eu-gold transition-colors">
+                            <span class="sr-only">Telegram</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contacts -->
+                <div>
+                    <h3 class="text-white font-bold mb-6">{% trans "Контакты" %}</h3>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start">
+                            <span class="text-eu-gold w-24 flex-shrink-0">{% trans "Адрес:" %}</span>
+                            <span>{% trans 'г. Бишкек, ул. Примерная 123, БЦ "Пример", офис 404' %}</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-eu-gold w-24 flex-shrink-0">{% trans "Телефон:" %}</span>
+                            <span>+996 555 00 00 00</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-eu-gold w-24 flex-shrink-0">{% trans "Email:" %}</span>
+                            <span>info@europeangroup.kg</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-eu-gold w-24 flex-shrink-0">{% trans "Режим:" %}</span>
+                            <span>{% trans "Пн-Пт: 09:00 - 18:00" %}</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h3 class="text-white font-bold mb-6">{% trans "Навигация" %}</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="{% url 'jobs' %}" class="hover:text-white transition-colors">{% trans "Работа в Европе" %}</a>
+                        </li>
+                        <li><a href="{% url 'lang_courses' %}" class="hover:text-white transition-colors">{% trans "Образование за рубежом" %}</a></li>
+                        <li><a href="{% url 'visa' %}" class="hover:text-white transition-colors">{% trans "Визовый центр" %}</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">{% trans "Для бизнеса" %}</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">{% trans "Политика конфиденциальности" %}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 text-center text-xs text-gray-500">
+                <p>{% trans "&copy; 2024 European Group ОсОО. Все права защищены." %}</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Modal for Urgent Consultation -->
+    <div id="consultModal"
+        class="hidden fixed inset-0 z-[60] overflow-y-auto w-full h-full bg-slate-900/80 backdrop-blur-sm items-center justify-center p-4">
+        <div class="relative w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 transform transition-all scale-100">
+            <!-- Close Button -->
+            <button
+                onclick="document.getElementById('consultModal').classList.add('hidden'); document.getElementById('consultModal').classList.remove('flex');"
+                class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-6 h-6 text-eu-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-serif font-bold text-gray-900">{% trans "Срочная консультация" %}</h3>
+                <p class="text-sm text-gray-500 mt-2">{% trans "Оставьте заявку, и мы свяжемся с вами в течение 10 минут." %}</p>
+            </div>
+
+            <form class="space-y-4"
+                onsubmit="event.preventDefault(); alert('{% trans 'Спасибо! Заявка отправлена.' %}'); document.getElementById('consultModal').classList.add('hidden'); document.getElementById('consultModal').classList.remove('flex');">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">{% trans "Ваше имя" %}</label>
+                    <input type="text" required
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-eu-blue focus:border-eu-blue outline-none transition-all"
+                        placeholder="{% trans 'Азамат' %}">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">{% trans "Номер телефона" %}</label>
+                    <input type="tel" required
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-eu-blue focus:border-eu-blue outline-none transition-all"
+                        placeholder="+996 555 123 456">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">{% trans "Вопрос (необязательно)" %}</label>
+                    <textarea
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-eu-blue focus:border-eu-blue outline-none transition-all"
+                        rows="3" placeholder="{% trans 'Меня интересует виза в...' %}"></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full bg-eu-blue hover:bg-blue-800 text-white font-bold py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5">
+                    {% trans "Получить консультацию" %}
+                </button>
+            </form>
+        </div>
+    </div>
+    {% block extra_scripts %}{% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,333 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}Визовая поддержка | European Group{% endblock %}
+
+{% block content %}
+<!-- 2. Hero Section -->
+<section class="relative pt-32 pb-20 bg-eu-dark overflow-hidden">
+    <!-- Abstract Background -->
+    <div class="absolute inset-0 w-full h-full overflow-hidden">
+        <div class="absolute inset-0 bg-[url('{% static 'assets/world.webp' %}')] bg-cover bg-center opacity-10">
+        </div>
+        <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-eu-dark to-transparent"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div
+            class="inline-block px-4 py-1.5 rounded-full bg-green-500/20 backdrop-blur-sm border border-green-500/30 text-green-300 text-xs font-bold uppercase tracking-wider mb-6">
+            {% trans "98% Одобренных виз" %}
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight mb-6">
+            {% trans "Ваша виза —" %} <br>{% trans "наша забота" %}
+        </h1>
+        <p class="max-w-2xl mx-auto text-lg text-gray-300 font-light mb-10">
+            {% trans "Оформление виз в Европу (Шенген), США, Азию и Великобританию. Полное сопровождение: от сбора документов до получения паспорта с визой." %}
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#visa-types"
+                class="inline-flex items-center justify-center px-8 py-4 bg-eu-gold text-eu-dark font-bold rounded-lg hover:bg-yellow-400 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+                {% trans "Виды виз" %}
+            </a>
+            <a href="#consultation"
+                class="inline-flex items-center justify-center px-8 py-4 border border-white/30 text-white font-medium rounded-lg hover:bg-white/10 transition-colors">
+                {% trans "Бесплатная консультация" %}
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- 3. Visa Types Section -->
+<section id="visa-types" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-serif font-bold text-eu-dark mb-4">{% trans "Оформляем визы по всему миру" %}
+            </h2>
+            <div class="h-1 w-20 bg-eu-gold mx-auto rounded-full"></div>
+            <p class="mt-4 text-gray-500">{% trans "Выберите направление для оформления визы" %}</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Card 1: Schengen -->
+            <div
+                class="group bg-white rounded-2xl shadow-card hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://placehold.co/400x300/e2e8f0/1e293b?text=Schengen" alt="Schengen Visa"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <h3 class="absolute bottom-4 left-4 text-xl font-bold text-white">{% trans "Шенгенская виза" %}</h3>
+                </div>
+                <div class="p-6">
+                    <ul class="text-sm text-gray-600 space-y-2 mb-4">
+                        <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg> {% trans "27 стран Европы" %}</li>
+                        <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg> {% trans "Туризм, Бизнес, Гости" %}</li>
+                    </ul>
+                    <div class="border-t border-gray-100 pt-4 flex justify-between items-center">
+                        <span class="text-eu-blue font-bold">{% trans "от" %} 150€</span>
+                        <span class="text-gray-400 text-sm">~15 {% trans "дней" %}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: USA -->
+            <div
+                class="group bg-white rounded-2xl shadow-card hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://placehold.co/400x300/e2e8f0/1e293b?text=USA" alt="USA Visa"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <h3 class="absolute bottom-4 left-4 text-xl font-bold text-white">{% trans "Виза в США" %}</h3>
+                </div>
+                <div class="p-6">
+                    <ul class="text-sm text-gray-600 space-y-2 mb-4">
+                        <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg> {% trans "B1/B2 (Туризм/Бизнес)" %}</li>
+                        <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg> {% trans "Запись на собеседование" %}</li>
+                    </ul>
+                    <div class="border-t border-gray-100 pt-4 flex justify-between items-center">
+                        <span class="text-eu-blue font-bold">{% trans "от" %} 200$</span>
+                        <span class="text-gray-400 text-sm">{% trans "Индивидуально" %}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Asia -->
+            <div
+                class="group bg-white rounded-2xl shadow-card hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://placehold.co/400x300/e2e8f0/1e293b?text=Asia" alt="Asia Visa"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <h3 class="absolute bottom-4 left-4 text-xl font-bold text-white">{% trans "Страны Азии" %}</h3>
+                </div>
+                <div class="p-6">
+                    <ul class="text-sm text-gray-600 space-y-2 mb-4">
+                        <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg> {% trans "Южная Корея, Япония, Китай" %}</li>
+                        <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg> {% trans "Электронные разрешения (K-ETA)" %}</li>
+                    </ul>
+                    <div class="border-t border-gray-100 pt-4 flex justify-between items-center">
+                        <span class="text-eu-blue font-bold">{% trans "от" %} 50$</span>
+                        <span class="text-gray-400 text-sm">3-7 {% trans "дней" %}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: UK & Canada -->
+            <div
+                class="group bg-white rounded-2xl shadow-card hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden">
+                <div class="h-48 overflow-hidden relative">
+                    <img src="https://placehold.co/400x300/e2e8f0/1e293b?text=UK+Canada" alt="UK Visa"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <h3 class="absolute bottom-4 left-4 text-xl font-bold text-white">{% trans "Великобритания и Канада"
+                        %}</h3>
+                </div>
+                <div class="p-6">
+                    <ul class="text-sm text-gray-600 space-y-2 mb-4">
+                        <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg> {% trans "Сложные кейсы" %}</li>
+                        <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg> {% trans "Долгосрочные визы" %}</li>
+                    </ul>
+                    <div class="border-t border-gray-100 pt-4 flex justify-between items-center">
+                        <span class="text-eu-blue font-bold">{% trans "от" %} 250$</span>
+                        <span class="text-gray-400 text-sm">~30 {% trans "дней" %}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. Process Section -->
+<section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-serif font-bold text-eu-dark mb-12 text-center">{% trans "Процесс оформления" %}</h2>
+
+        <div class="relative">
+            <!-- Connector Line -->
+            <div
+                class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -z-10 transform -translate-y-1/2">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center border border-gray-100 relative">
+                    <div
+                        class="w-12 h-12 bg-eu-blue text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4 border-4 border-white shadow-sm">
+                        1</div>
+                    <h4 class="font-bold text-lg mb-2">{% trans "Консультация" %}</h4>
+                    <p class="text-sm text-gray-500">{% trans "Анализ вашей ситуации и выбор типа визы." %}</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center border border-gray-100 relative">
+                    <div
+                        class="w-12 h-12 bg-eu-blue text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4 border-4 border-white shadow-sm">
+                        2</div>
+                    <h4 class="font-bold text-lg mb-2">{% trans "Сбор документов" %}</h4>
+                    <p class="text-sm text-gray-500">{% trans "Заполнение анкет, переводы, бронирование билетов и отелей." %}</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center border border-gray-100 relative">
+                    <div
+                        class="w-12 h-12 bg-eu-blue text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4 border-4 border-white shadow-sm">
+                        3</div>
+                    <h4 class="font-bold text-lg mb-2">{% trans "Подача" %}</h4>
+                    <p class="text-sm text-gray-500">{% trans "Запись в консульство и подача документов (лично или без присутствия)." %}</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm text-center border border-gray-100 relative">
+                    <div
+                        class="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4 border-4 border-white shadow-sm">
+                        4</div>
+                    <h4 class="font-bold text-lg mb-2">{% trans "Успех" %}</h4>
+                    <p class="text-sm text-gray-500">{% trans "Получение паспорта с готовой визой." %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. Features (Why Us) -->
+<section class="py-20 bg-eu-dark text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+            <div class="flex flex-col md:flex-row items-center md:items-start">
+                <div class="mb-4 md:mb-0 md:mr-6 p-4 bg-white/10 rounded-2xl">
+                    <svg class="w-8 h-8 text-eu-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">{% trans "Высокая проходимость" %}</h3>
+                    <p class="text-gray-400 text-sm">{% trans "Мы знаем все тонкости оформления и минимизируем риск отказа до 1-2%." %}</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center md:items-start">
+                <div class="mb-4 md:mb-0 md:mr-6 p-4 bg-white/10 rounded-2xl">
+                    <svg class="w-8 h-8 text-eu-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">{% trans "Срочное оформление" %}</h3>
+                    <p class="text-gray-400 text-sm">{% trans "Готовим полный пакет документов за 24 часа для горящих поездок." %}</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center md:items-start">
+                <div class="mb-4 md:mb-0 md:mr-6 p-4 bg-white/10 rounded-2xl">
+                    <svg class="w-8 h-8 text-eu-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">{% trans "Оплата за результат" %}</h3>
+                    <p class="text-gray-400 text-sm">{% trans "Для некоторых типов виз мы работаем без предоплаты." %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 6. Consultation Form -->
+<section id="consultation" class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-slate-50 rounded-2xl p-8 md:p-12 shadow-lg border border-gray-100">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-serif font-bold text-eu-dark mb-2">{% trans "Нужна виза?" %}</h2>
+                <p class="text-gray-500">{% trans "Оставьте заявку, и мы бесплатно оценим ваши шансы на получение визы." %}</p>
+            </div>
+
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="col-span-1">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">{% trans "Имя" %}</label>
+                    <input type="text"
+                        class="w-full rounded-lg border-gray-300 shadow-sm focus:border-eu-blue focus:ring focus:ring-eu-blue/20 p-3 border"
+                        placeholder="{% trans 'Иван' %}">
+                </div>
+                <div class="col-span-1">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">{% trans "Телефон" %}</label>
+                    <input type="tel"
+                        class="w-full rounded-lg border-gray-300 shadow-sm focus:border-eu-blue focus:ring focus:ring-eu-blue/20 p-3 border"
+                        placeholder="{% trans '+996...' %}">
+                </div>
+                <div class="col-span-1 md:col-span-2">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">{% trans "Куда планируете поездку?" %}</label>
+                    <select
+                        class="w-full rounded-lg border-gray-300 shadow-sm focus:border-eu-blue focus:ring focus:ring-eu-blue/20 p-3 border bg-white">
+                        <option>{% trans "Шенген (Европа)" %}</option>
+                        <option>{% trans "США" %}</option>
+                        <option>{% trans "Великобритания" %}</option>
+                        <option>{% trans "Канада" %}</option>
+                        <option>{% trans "Азия (Китай, Япония, Корея)" %}</option>
+                        <option>{% trans "Другое" %}</option>
+                    </select>
+                </div>
+                <div class="col-span-1 md:col-span-2">
+                    <button type="button" onclick='alert("{% trans "Заявка отправлена!" %}")'
+                        class="w-full py-4 bg-eu-blue text-white font-bold rounded-lg hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl">
+                        {% trans "Получить консультацию" %}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Consultation Modal -->
+<div id="consultModal" class="hidden fixed inset-0 z-[60] overflow-y-auto" aria-labelledby="modal-title" role="dialog"
+    aria-modal="true">
+    <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <div class="fixed inset-0 bg-gray-900 bg-opacity-75"
+            onclick="document.getElementById('consultModal').classList.add('hidden'); document.getElementById('consultModal').classList.remove('flex');">
+        </div>
+        <div
+            class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full p-6">
+            <h3 class="text-lg font-bold mb-4">{% trans "Свяжитесь с нами" %}</h3>
+            <p class="mb-4">{% trans "Мы перезвоним вам в ближайшее время." %}</p>
+            <button
+                onclick="document.getElementById('consultModal').classList.add('hidden'); document.getElementById('consultModal').classList.remove('flex');"
+                class="bg-gray-200 px-4 py-2 rounded">{% trans "Закрыть" %}</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

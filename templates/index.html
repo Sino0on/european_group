@@ -1,0 +1,1117 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans "European Group | Профессиональные решения в КР и за рубежом" %}{% endblock %}
+{% block content %}
+<!-- 2. Hero Section -->
+<section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-eu-dark">
+    <!-- Abstract Background Elements (No stock photos of people) -->
+    <div class="absolute inset-0 w-full h-full overflow-hidden">
+        <div class="absolute top-0 right-0 w-2/3 h-full bg-eu-blue/10 transform -skew-x-12 translate-x-20"></div>
+        <div class="absolute bottom-0 left-0 w-1/2 h-1/2 bg-eu-gold/5 rounded-full blur-3xl"></div>
+        <!-- Grid Pattern Overlay -->
+        <div
+            class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-20">
+        </div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight mb-6">
+            <span class="block">European Group</span>
+            <span class="block text-2xl md:text-3xl lg:text-4xl mt-4 font-sans font-light text-gray-300">{% trans "Профессиональные решения в КР и за рубежом" %}</span>
+        </h1>
+
+        <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-300 leading-relaxed font-light">
+            {% trans "От трудоустройства в Европе до комплексного юридического сопровождения бизнеса." %}
+            <span class="text-eu-gold font-medium">{% trans "10 лет" %}</span> {% trans "помогаем расти, учиться и путешествовать." %}
+        </p>
+
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#finder"
+                class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-full text-eu-dark bg-white hover:bg-gray-50 transition-all duration-200 shadow-xl hover:shadow-2xl hover:-translate-y-1">
+                {% trans "Подобрать услугу" %}
+                <svg class="ml-2 -mr-1 w-5 h-5 text-eu-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </a>
+            <a href="#directions"
+                class="inline-flex items-center justify-center px-8 py-4 border border-gray-600 text-base font-medium rounded-full text-white hover:bg-white/10 transition-all duration-200 backdrop-blur-sm">
+                {% trans "Наши направления" %}
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- 6. Social Proof / Stats -->
+<section class="py-16 bg-white border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-gray-100">
+            <div class="p-4">
+                <div class="text-4xl lg:text-5xl font-bold text-eu-blue mb-2">98%</div>
+                <div class="text-sm font-medium text-gray-500 uppercase tracking-wide">{% trans "Одобренных виз" %}
+                </div>
+            </div>
+            <div class="p-4">
+                <div class="text-4xl lg:text-5xl font-bold text-eu-blue mb-2">500+</div>
+                <div class="text-sm font-medium text-gray-500 uppercase tracking-wide">{% trans "Трудоустроенных в год" %}
+                </div>
+            </div>
+            <div class="p-4">
+                <div class="text-4xl lg:text-5xl font-bold text-eu-blue mb-2">12</div>
+                <div class="text-sm font-medium text-gray-500 uppercase tracking-wide">{% trans "Стран-партнеров" %}
+                </div>
+            </div>
+            <div class="p-4">
+                <div class="text-4xl lg:text-5xl font-bold text-eu-blue mb-2">10</div>
+                <div class="text-sm font-medium text-gray-500 uppercase tracking-wide">{% trans "Лет опыта" %}</div>
+            </div>
+        </div>
+        <!-- Licenses -->
+        <div class="mt-12 text-center">
+            <p class="text-sm text-gray-400">
+                <span class="block sm:inline">{% trans "Лицензия на трудоустройство №000000" %}</span>
+                <span class="hidden sm:inline mx-2">•</span>
+                <span class="block sm:inline">{% trans "Лицензия юр. консалтинг №000000" %}</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<!-- Partners Section / Marquee -->
+<section class="py-10 bg-white border-b border-gray-100 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
+        <p class="text-sm font-semibold text-gray-500 uppercase tracking-widest">{% trans "Мы сотрудничаем с лучшими" %}
+        </p>
+    </div>
+
+    <div class="relative w-full overflow-hidden">
+        <div class="flex animate-scroll whitespace-nowrap gap-16 items-center min-w-max">
+            <!-- First set of logos -->
+            <img src="https://placehold.co/180x60?text=Partner+1"
+                class="h-12 w-auto opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0"
+                alt="Partner 1">
+            <img src="https://placehold.co/180x60?text=Partner+2"
+                class="h-12 w-auto opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0"
+                alt="Partner 2">
+            <img src="https://placehold.co/180x60?text=University"
+                class="h-12 w-auto opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0"
+                alt="Partner 3">
+            <img src="https://placehold.co/180x60?text=Visa+Center"
+                class="h-12 w-auto opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0"
+                alt="Partner 4">
+            <img src="https://placehold.co/180x60?text=Academy"
+                class="h-12 w-auto opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0"
+                alt="Partner 5">
+            <img src="https://placehold.co/180x60?text=College"
+                class="h-12 w-auto opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0"
+                alt="Partner 6">
+            <img src="https://placehold.co/180x60?text=Recruitment"
+                class="h-12 w-auto opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0"
+                alt="Partner 7">
+            <img src="https://placehold.co/180x60?text=Global+Work"
+                class="h-12 w-auto opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0"
+                alt="Partner 8">
+
+            <!-- Duplicate set for seamless loop -->
+            <img src="https://placehold.co/180x60?text=Partner+1"
+                class="h-12 w-auto opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0"
+                alt="Partner 1">
+            <img src="https://placehold.co/180x60?text=Partner+2"
+                class="h-12 w-auto opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0"
+                alt="Partner 2">
+            <img src="https://placehold.co/180x60?text=University"
+                class="h-12 w-auto opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0"
+                alt="Partner 3">
+            <img src="https://placehold.co/180x60?text=Visa+Center"
+                class="h-12 w-auto opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0"
+                alt="Partner 4">
+            <img src="https://placehold.co/180x60?text=Academy"
+                class="h-12 w-auto opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0"
+                alt="Partner 5">
+            <img src="https://placehold.co/180x60?text=College"
+                class="h-12 w-auto opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0"
+                alt="Partner 6">
+            <img src="https://placehold.co/180x60?text=Recruitment"
+                class="h-12 w-auto opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0"
+                alt="Partner 7">
+            <img src="https://placehold.co/180x60?text=Global+Work"
+                class="h-12 w-auto opacity-60 hover:opacity-100 transition-all duration-300 grayscale hover:grayscale-0"
+                alt="Partner 8">
+        </div>
+    </div>
+
+    <!-- 3. Directions (Services) -->
+    <section id="directions" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-serif font-bold text-eu-dark mb-4">{% trans "Наши направления" %}
+                </h2>
+                <div class="h-1 w-20 bg-eu-gold mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-500">{% trans "Комплексный подход к вашим целям" %}</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Work -->
+                <div
+                    class="group relative bg-white rounded-2xl p-8 shadow-card hover:shadow-premium transition-all duration-300 border border-gray-100 hover:border-eu-blue/20 hover:-translate-y-1 cursor-pointer">
+                    <div
+                        class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-eu-blue transition-colors duration-300">
+                        <svg class="w-8 h-8 text-eu-blue group-hover:text-white transition-colors" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
+                        {% trans "Работа в Европе" %}</h3>
+                    <p class="text-sm text-eu-blue font-semibold mb-3">{% trans "Литва, Польша, Германия..." %}</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">{% trans "Официальное трудоустройство, ВНЖ, полное юридическое сопровождение контрактов." %}</p>
+                </div>
+
+                <!-- Card 2: Education -->
+                <div
+                    class="group relative bg-white rounded-2xl p-8 shadow-card hover:shadow-premium transition-all duration-300 border border-gray-100 hover:border-eu-blue/20 hover:-translate-y-1 cursor-pointer">
+                    <div
+                        class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-eu-blue transition-colors duration-300">
+                        <svg class="w-8 h-8 text-eu-blue group-hover:text-white transition-colors" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
+                        {% trans "Образование" %}</h3>
+                    <p class="text-sm text-eu-blue font-semibold mb-3">{% trans "Корея, США, Италия..." %}</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">{% trans "Поступление в топовые ВУЗы, помощь с грантами и стипендиями." %}</p>
+                </div>
+
+                <!-- Card 3: Visa Center -->
+                <div
+                    class="group relative bg-white rounded-2xl p-8 shadow-card hover:shadow-premium transition-all duration-300 border border-gray-100 hover:border-eu-blue/20 hover:-translate-y-1 cursor-pointer">
+                    <div
+                        class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-eu-blue transition-colors duration-300">
+                        <svg class="w-8 h-8 text-eu-blue group-hover:text-white transition-colors" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
+                        {% trans "Визовый центр" %}</h3>
+                    <p class="text-sm text-eu-blue font-semibold mb-3">{% trans "Весь мир (Schengen, USA)" %}</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">{% trans "Профессиональная подготовка документов, запись на собеседование, рабочие и турвизы." %}</p>
+                </div>
+
+                <!-- Card 4: Legal -->
+                <div
+                    class="group relative bg-white rounded-2xl p-8 shadow-card hover:shadow-premium transition-all duration-300 border border-gray-100 hover:border-eu-blue/20 hover:-translate-y-1 cursor-pointer">
+                    <div
+                        class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-eu-blue transition-colors duration-300">
+                        <svg class="w-8 h-8 text-eu-blue group-hover:text-white transition-colors" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
+                        {% trans "Юридический консалтинг" %}</h3>
+                    <p class="text-sm text-eu-blue font-semibold mb-3">{% trans "Для бизнеса и физлиц" %}</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">{% trans "Регистрация ОсОО, судебные иски, защита прав, сопровождение бизнеса." %}</p>
+                </div>
+
+                <!-- Card 5: Tourism -->
+                <div
+                    class="group relative bg-white rounded-2xl p-8 shadow-card hover:shadow-premium transition-all duration-300 border border-gray-100 hover:border-eu-blue/20 hover:-translate-y-1 cursor-pointer">
+                    <div
+                        class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-eu-blue transition-colors duration-300">
+                        <svg class="w-8 h-8 text-eu-blue group-hover:text-white transition-colors" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
+                        {% trans "Туризм" %}
+                    </h3>
+                    <p class="text-sm text-eu-blue font-semibold mb-3">{% trans "Таиланд, Египет, Вьетнам..." %}</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">{% trans "Горящие туры, авиабилеты, бронирование отелей и трансферы." %}</p>
+                </div>
+
+                <!-- Card 6: Language School -->
+                <div
+                    class="group relative bg-white rounded-2xl p-8 shadow-card hover:shadow-premium transition-all duration-300 border border-gray-100 hover:border-eu-blue/20 hover:-translate-y-1 cursor-pointer">
+                    <div
+                        class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-eu-blue transition-colors duration-300">
+                        <svg class="w-8 h-8 text-eu-blue group-hover:text-white transition-colors" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
+                        {% trans "Языковая школа" %}</h3>
+                    <p class="text-sm text-eu-blue font-semibold mb-3">{% trans "4 основных языка" %}</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">{% trans "Подготовка к международным экзаменам TOEFL, IELTS и разговорная практика." %}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</section>
+
+<!-- 3.2. Info Block (About Us) -->
+<section id="featured-program" class="py-20 bg-white overflow-hidden relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+            <!-- Left: Framed Image -->
+            <div class="lg:w-1/2 relative group">
+                <div
+                    class="absolute inset-0 bg-eu-blue/5 transform rotate-3 rounded-2xl transition-transform group-hover:rotate-6">
+                </div>
+                <div
+                    class="relative bg-white p-4 rounded-2xl shadow-xl transform -rotate-2 transition-transform group-hover:rotate-0 border border-gray-100">
+                    <img src="https://placehold.co/600x450/f1f5f9/1e293b?text=International+Team"
+                        alt="Our Team at University" class="rounded-xl w-full h-auto object-cover shadow-inner">
+                    <div
+                        class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg border border-gray-50 flex items-center gap-3 animate-bounce-slow">
+                        <div class="bg-green-100 p-2 rounded-full">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold text-gray-900">{% trans "100% Результат" %}</div>
+                            <div class="text-xs text-gray-500">{% trans "Гарантия поступления" %}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Content -->
+            <div class="lg:w-1/2">
+                <span
+                    class="inline-block px-4 py-1.5 rounded-full bg-eu-blue text-white text-xs font-bold uppercase tracking-wider mb-6 shadow-md hover:bg-blue-700 transition-colors cursor-default">
+                    {% trans "Featured Program" %}
+                </span>
+                <h2 class="text-3xl lg:text-4xl font-serif font-bold text-gray-900 mb-6 leading-tight">
+                    {% trans "Комплексная подготовка" %}<br>{% trans "к будущему в Европе" %}
+                </h2>
+                <p class="text-gray-600 text-lg leading-relaxed mb-10">
+                    {% trans "Уникальная программа, разработанная для подготовки студентов к жизни и учебе за рубежом. Мы не просто оформляем документы — мы даем навыки, мышление и уверенность для успешной международной карьеры." %}
+                </p>
+
+                <!-- Feature Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
+                    <div class="flex gap-4">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center text-eu-blue flex-shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">{% trans "Экспертное наставничество" %}</h4>
+                            <p class="text-sm text-gray-500 mt-1">{% trans "Поддержка профессионалов на каждом этапе." %}</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center text-eu-blue flex-shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">{% trans "Практические навыки" %}</h4>
+                            <p class="text-sm text-gray-500 mt-1">{% trans "Реальная подготовка к карьере." %}</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center text-eu-blue flex-shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">{% trans "Сертификация" %}</h4>
+                            <p class="text-sm text-gray-500 mt-1">{% trans "Признанные международные сертификаты." %}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center text-eu-blue flex-shrink-0">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">{% trans "Карьерный путь" %}</h4>
+                            <p class="text-sm text-gray-500 mt-1">{% trans "Прямые возможности трудоустройства." %}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#consultModal"
+                    onclick="document.getElementById('consultModal').classList.remove('hidden'); document.getElementById('consultModal').classList.add('flex');"
+                    class="inline-flex items-center justify-center px-8 py-4 bg-gray-900 text-white font-bold rounded-lg hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl group">
+                    {% trans "Узнать больше о программе" %}
+                    <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3.5. University Finder -->
+<section id="universities" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl lg:text-4xl font-serif font-bold text-eu-dark mb-4">{% trans "Наши Университеты" %}</h2>
+            <div class="h-1 w-20 bg-eu-gold mx-auto rounded-full"></div>
+            <p class="mt-4 text-gray-500">{% trans "Выберите страну и университет для поступления" %}</p>
+        </div>
+
+        <!-- Country Tabs -->
+        <div class="flex flex-wrap justify-center gap-2 mb-10" id="countryTabs">
+            <button onclick="selectCountry('korea')"
+                class="country-tab active px-6 py-3 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-600 hover:border-eu-blue hover:text-eu-blue transition-all data-[active=true]:bg-eu-blue data-[active=true]:text-white data-[active=true]:border-eu-blue shadow-sm">
+                🇰🇷 {% trans "Корея" %}
+            </button>
+            <button onclick="selectCountry('slovakia')"
+                class="country-tab px-6 py-3 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-600 hover:border-eu-blue hover:text-eu-blue transition-all data-[active=true]:bg-eu-blue data-[active=true]:text-white data-[active=true]:border-eu-blue shadow-sm">
+                🇸🇰 {% trans "Словакия" %}
+            </button>
+            <button onclick="selectCountry('usa')"
+                class="country-tab px-6 py-3 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-600 hover:border-eu-blue hover:text-eu-blue transition-all data-[active=true]:bg-eu-blue data-[active=true]:text-white data-[active=true]:border-eu-blue shadow-sm">
+                🇺🇸 {% trans "США" %}
+            </button>
+            <button onclick="selectCountry('italy')"
+                class="country-tab px-6 py-3 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-600 hover:border-eu-blue hover:text-eu-blue transition-all data-[active=true]:bg-eu-blue data-[active=true]:text-white data-[active=true]:border-eu-blue shadow-sm">
+                🇮🇹 {% trans "Италия" %}
+            </button>
+            <button onclick="selectCountry('china')"
+                class="country-tab px-6 py-3 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-600 hover:border-eu-blue hover:text-eu-blue transition-all data-[active=true]:bg-eu-blue data-[active=true]:text-white data-[active=true]:border-eu-blue shadow-sm">
+                🇨🇳 {% trans "Китай" %}
+            </button>
+        </div>
+
+        <!-- Content Area (Split View) -->
+        <div
+            class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 flex flex-col md:flex-row h-[600px]">
+            <!-- Sidebar: University List -->
+            <div class="w-full md:w-1/3 border-r border-gray-100 overflow-y-auto bg-gray-50/50">
+                <div id="uniList" class="divide-y divide-gray-100">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Main: Detail View -->
+            <div class="w-full md:w-2/3 relative">
+                <div id="uniDetail" class="h-full flex flex-col">
+                    <!-- Populated by JS -->
+                    <div class="m-auto text-center text-gray-400">
+                        <p>{% trans "Выберите университет из списка" %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data
+        const universities = {
+            korea: [
+                { id: 'sejong', name: 'Sejong University', location: 'Seoul', img: '{% static "assets/univers/korea/img1.jpg" %}', desc: '{% trans "Один из ведущих частных университетов в Сеуле, известный своими программами по гостеприимству, туризму и анимации." %}' },
+                { id: 'gachon', name: 'Gachon University', location: 'Seongnam', img: '{% static "assets/univers/korea/img2.jpg" %}', desc: '{% trans "Крупный университет с сильным медицинским факультетом и программами IT." %}' },
+                { id: 'korea_uni', name: 'Korea University', location: 'Seoul', img: '{% static "assets/univers/korea/img3.jpg" %}', desc: '{% trans "Один из университетов SKY, престижнейшее учебное заведение Южной Кореи." %}' },
+            ],
+            slovakia: [
+                { id: 'tu_kosice', name: 'Technical University of Košice', location: 'Košice', img: '{% static "assets/univers/slovakia/img1.jpg" %}', desc: '{% trans "Ведущий технический университет, предлагающий качественное инженерное образование в Европе." %}' },
+                { id: 'comenius', name: 'Comenius University', location: 'Bratislava', img: '{% static "assets/univers/slovakia/img2.jpg" %}', desc: '{% trans "Старейший и крупнейший университет Словакии." %}' },
+            ],
+            usa: [
+                { id: 'pace', name: 'Pace University', location: 'New York', img: '{% static "assets/univers/usa/img1.jpg" %}', desc: '{% trans "Частный университет в самом центре Манхэттена с фокусом на карьеру." %}' },
+                { id: 'asu', name: 'Arizona State University', location: 'Phoenix', img: '{% static "assets/univers/usa/img2.jpg" %}', desc: '{% trans "Инновационный университет №1 в США." %}' },
+            ],
+            italy: [
+                { id: 'sapienza', name: 'Sapienza University', location: 'Rome', img: '{% static "assets/univers/italy/img1.jpg" %}', desc: '{% trans "Один из старейших университетов мира, основанный в 1303 году." %}' },
+            ],
+            china: [
+                { id: 'blcu', name: 'Beijing Language and Culture University', location: 'Beijing', img: '{% static "assets/univers/china/img1.jpg" %}', desc: '{% trans "Главный университет Китая для изучения китайского языка иностранцами." %}' },
+            ]
+        };
+
+        let currentCountry = 'korea';
+
+        function selectCountry(country) {
+            currentCountry = country;
+
+            // Update Tabs
+            document.querySelectorAll('.country-tab').forEach(btn => {
+                const isActive = btn.getAttribute('onclick').includes(country);
+                btn.setAttribute('data-active', isActive);
+                // Tailwind classes for active state are handled by data attribute selector or manual toggle if needed
+                if (isActive) {
+                    btn.classList.add('bg-eu-blue', 'text-white', 'border-eu-blue');
+                    btn.classList.remove('bg-white', 'text-gray-600', 'border-gray-200');
+                } else {
+                    btn.classList.remove('bg-eu-blue', 'text-white', 'border-eu-blue');
+                    btn.classList.add('bg-white', 'text-gray-600', 'border-gray-200');
+                }
+            });
+
+            renderUniList();
+        }
+
+        function renderUniList() {
+            const list = document.getElementById('uniList');
+            list.innerHTML = '';
+
+            const unis = universities[currentCountry] || [];
+
+            if (unis.length === 0) {
+                list.innerHTML = '<div class="p-6 text-center text-gray-500">{% trans "Нет данных" %}</div>';
+                return;
+            }
+
+            unis.forEach((uni, index) => {
+                const el = document.createElement('button');
+                el.className = `w-full text-left p-5 hover:bg-blue-50 transition-colors border-l-4 border-transparent focus:border-eu-blue focus:bg-blue-50 group`;
+                el.onclick = () => showUniDetail(uni);
+                el.innerHTML = `
+                        <div class="font-bold text-gray-900 group-hover:text-eu-blue">${uni.name}</div>
+                        <div class="text-xs text-gray-500 mt-1 flex items-center">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            ${uni.location}
+                        </div>
+                    `;
+                list.appendChild(el);
+
+                // Auto select first
+                if (index === 0) showUniDetail(uni);
+            });
+        }
+
+        function showUniDetail(uni) {
+            const container = document.getElementById('uniDetail');
+            container.innerHTML = `
+                    <div class="h-64 sm:h-80 w-full relative">
+                        <img src="${uni.img}" class="absolute inset-0 w-full h-full object-cover" alt="${uni.name}">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-8 text-white">
+                            <h3 class="text-3xl font-serif font-bold mb-2">${uni.name}</h3>
+                            <p class="text-white/80 flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                ${uni.location}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <h4 class="text-lg font-bold text-gray-900 mb-4">{% trans "Об университете" %}</h4>
+                        <p class="text-gray-600 leading-relaxed mb-8 flex-grow">
+                            ${uni.desc}
+                        </p>
+                        <div class="flex items-center justify-between mt-auto pt-6 border-t border-gray-100">
+                            <div class="text-sm text-gray-500">
+                                <span>{% trans "Программы:" %}</span> <span class="text-gray-900 font-medium">{% trans "Бакалавриат, Магистратура" %}</span>
+                            </div>
+                            <a href="university_detail.html" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-sm font-medium rounded-lg text-white bg-eu-blue hover:bg-blue-800 transition-colors shadow-lg hover:shadow-xl">
+                                {% trans "Узнать подробнее" %}
+                            </a>
+                        </div>
+                    </div>
+                `;
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            selectCountry('korea');
+        });
+    </script>
+</section>
+
+
+<!-- 4. Employment Section -->
+<section id="employment" class="py-20 bg-white border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl lg:text-4xl font-serif font-bold text-eu-dark mb-4">{% trans "Работа в Европе" %}</h2>
+            <div class="h-1 w-20 bg-eu-gold mx-auto rounded-full"></div>
+            <p class="mt-4 text-gray-500">{% trans "Легальное трудоустройство с полным сопровождением" %}</p>
+        </div>
+
+        <!-- Country Tabs -->
+        <div class="flex flex-wrap justify-center gap-2 mb-10" id="employmentCountryTabs">
+            🇱🇹 {% trans "Литва" %}
+            </button>
+            🇸🇰 {% trans "Словакия" %}
+            </button>
+            🇩🇪 {% trans "Германия" %}
+            </button>
+            🇫🇮 {% trans "Финляндия" %}
+            </button>
+            🇪🇪 {% trans "Эстония" %}
+            </button>
+            <button onclick="selectEmploymentCountry('poland')"
+                class="emp-country-tab px-6 py-3 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-600 hover:border-eu-blue hover:text-eu-blue transition-all data-[active=true]:bg-eu-blue data-[active=true]:text-white data-[active=true]:border-eu-blue shadow-sm">
+                🇵🇱 {% trans "Польша" %}
+            </button>
+        </div>
+
+        <!-- Content Area -->
+        <div id="employmentContent" class="bg-slate-50 rounded-3xl p-8 border border-gray-100 min-h-[400px]">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+
+    <script>
+        // Employment Data
+        const employmentData = {
+            lithuania: {
+                title: "{% trans 'Работа в Литве' %}",
+                desc: "{% trans 'Литва — одна из самых популярных стран для трудоустройства граждан СНГ. Простая процедура получения ВНЖ, схожий менталитет и высокий спрос на специалистов.' %}",
+                benefits: [
+                    "{% trans 'Быстрое оформление ВНЖ (1-2 месяца)' %}",
+                    "{% trans 'Нет языкового барьера (многие говорят по-русски)' %}",
+                    "{% trans 'Возможность перевезти семью через 6 месяцев' %}"
+                ],
+                jobs: [
+                    { role: "{% trans 'Водитель-дальнобойщик (CE)' %}", salary: "€2000 - €2500" },
+                    { role: "{% trans 'Сварщик MIG/MAG' %}", salary: "€1500 - €2200" },
+                    { role: "{% trans 'Строитель-универсал' %}", salary: "€1200 - €1800" }
+                ]
+            },
+            slovakia: {
+                title: "{% trans 'Работа в Словакии' %}",
+                desc: "{% trans 'Стабильная экономика, комфортный климат и возможность получить ВНЖ на 2 года сразу. Идеально для тех, кто ищет спокойную жизнь в центре Европы.' %}",
+                benefits: [
+                    "{% trans 'ВНЖ сразу на 1-2 года' %}",
+                    "{% trans 'Бесплатная медицина и соцпакет' %}",
+                    "{% trans 'Возможность путешествовать по всему Шенгену' %}"
+                ],
+                jobs: [
+                    { role: "{% trans 'Оператор на автозавод (JLR, VW)' %}", salary: "€1000 - €1400" },
+                    { role: "{% trans 'Водитель погрузчика' %}", salary: "€1100 - €1300" },
+                    { role: "{% trans 'Сборщик на склад электроники' %}", salary: "€900 - €1100" }
+                ]
+            },
+            germany: {
+                title: "{% trans 'Работа в Германии' %}",
+                desc: "{% trans 'Локомотив экономики Евросоюза. Высокие зарплаты, строгие стандарты, но и лучшие социальные гарантии.' %}",
+                benefits: [
+                    "{% trans 'Самые высокие зарплаты в ЕС' %}",
+                    "{% trans 'Возможность карьерного роста' %}",
+                    "{% trans 'Высокий уровень жизни' %}"
+                ],
+                jobs: [
+                    { role: "{% trans 'Медсестра / Медбрат' %}", salary: "€2500 - €3500" },
+                    { role: "{% trans 'IT Специалист' %}", salary: "€4000+" },
+                    { role: "{% trans 'Электрик / Инженер' %}", salary: "€2800 - €3500" }
+                ]
+            },
+            finland: {
+                title: "{% trans 'Работа в Финляндии' %}",
+                desc: "{% trans 'Скандинавский уровень жизни, экология и безопасность. Популярны сезонные работы и сфера обслуживания.' %}",
+                benefits: [
+                    "{% trans 'Высокая почасовая оплата' %}",
+                    "{% trans 'Идеальная экология' %}",
+                    "{% trans 'Сезонные работы до 9 месяцев' %}"
+                ],
+                jobs: [
+                    { role: "{% trans 'Сборщик ягод (сезон)' %}", salary: "{% trans '€1000 - €2500 (сдельная)' %}" },
+                    { role: "{% trans 'Уборщик помещений' %}", salary: "€12/час" },
+                    { role: "{% trans 'Разнорабочий на ферму' %}", salary: "€10/час" }
+                ]
+            },
+            estonia: {
+                title: "{% trans 'Работа в Эстонии' %}",
+                desc: "{% trans 'Цифровое государство с растущей экономикой. Простой документооборот и близость к странам СНГ.' %}",
+                benefits: [
+                    "{% trans 'Электронное резидентство' %}",
+                    "{% trans 'Русскоязычная среда' %}",
+                    "{% trans 'Зарплаты выше, чем в Восточной Европе' %}"
+                ],
+                jobs: [
+                    { role: "{% trans 'Строитель' %}", salary: "€1300 - €2000" },
+                    { role: "{% trans 'Водитель категории C' %}", salary: "€1400 - €1800" },
+                    { role: "{% trans 'Работник на производство' %}", salary: "€1000 - €1300" }
+                ]
+            },
+            poland: {
+                title: "{% trans 'Работа в Польше' %}",
+                desc: "{% trans 'Самый доступный старт для работы в Европе. Огромный выбор вакансий для специалистов и разнорабочих.' %}",
+                benefits: [
+                    "{% trans 'Самое простое оформление' %}",
+                    "{% trans 'Много вакансий без знания языка' %}",
+                    "{% trans 'Бесплатное жилье (часто)' %}"
+                ],
+                jobs: [
+                    { role: "{% trans 'Упаковщик на склад (Amazon/DPD)' %}", salary: "€900 - €1200" },
+                    { role: "{% trans 'Повар' %}", salary: "€1100 - €1500" },
+                    { role: "{% trans 'Мясокомбинат' %}", salary: "€1000 - €1400" }
+                ]
+            }
+        };
+
+        let currentEmpCountry = 'lithuania';
+
+        function selectEmploymentCountry(country) {
+            currentEmpCountry = country;
+
+            // Update Tabs Style
+            document.querySelectorAll('.emp-country-tab').forEach(btn => {
+                const isActive = btn.getAttribute('onclick').includes(country);
+                btn.setAttribute('data-active', isActive);
+                if (isActive) {
+                    btn.classList.add('bg-eu-blue', 'text-white', 'border-eu-blue');
+                    btn.classList.remove('bg-white', 'text-gray-600', 'border-gray-200');
+                } else {
+                    btn.classList.remove('bg-eu-blue', 'text-white', 'border-eu-blue');
+                    btn.classList.add('bg-white', 'text-gray-600', 'border-gray-200');
+                }
+            });
+
+            renderEmploymentContent();
+        }
+
+        function renderEmploymentContent() {
+            const data = employmentData[currentEmpCountry];
+            const container = document.getElementById('employmentContent');
+
+            if (!data) return;
+
+            let jobsHtml = data.jobs.map(job => `
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center group hover:border-eu-blue hover:shadow-md transition-all">
+                            <div>
+                                <div class="font-bold text-gray-800 text-lg">${job.role}</div>
+                                <div class="text-sm text-eu-gold font-medium">{% trans "Зарплата:" %} <span class="text-gray-600">${job.salary}</span></div>
+                            </div>
+                            <button class="bg-gray-50 text-eu-blue p-2 rounded-full group-hover:bg-eu-blue group-hover:text-white transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </button>
+                        </div>
+                    `).join('');
+
+            let benefitsHtml = data.benefits.map(item => `
+                        <li class="flex items-start text-gray-600 mb-2">
+                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            ${item}
+                        </li>
+                    `).join('');
+
+            container.innerHTML = `
+                        <div class="flex flex-col lg:flex-row gap-8 anim-fade-in">
+                            <!-- Left: Info -->
+                            <div class="lg:w-1/2">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4">${data.title}</h3>
+                                <p class="text-gray-600 leading-relaxed mb-6">
+                                    ${data.desc}
+                                </p>
+                                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                    <h4 class="font-bold text-eu-dark mb-4 border-b border-gray-100 pb-2">{% trans "Преимущества" %}</h4>
+                                    <ul>
+                                        ${benefitsHtml}
+                                    </ul>
+                                </div>
+                                <div class="mt-8">
+                                    <a href="#consultModal" onclick="document.getElementById('consultModal').classList.remove('hidden'); document.getElementById('consultModal').classList.add('flex');" class="inline-flex items-center justify-center px-8 py-3 bg-eu-blue text-white font-bold rounded-lg hover:bg-blue-800 transition-colors shadow-lg hover:shadow-xl w-full sm:w-auto text-center">
+                                        {% trans "Подать заявку" %}
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Right: Vacancies -->
+                            <div class="lg:w-1/2">
+                                <h4 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                                    <span class="bg-blue-100 text-eu-blue p-2 rounded-lg mr-3">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                    </span>
+                                    {% trans "Популярные вакансии" %}
+                                </h4>
+                                <div class="space-y-3">
+                                    ${jobsHtml}
+                                </div>
+                                <div class="mt-6 text-center">
+                                    <a href="#" class="text-eu-blue font-medium hover:text-eu-gold transition-colors text-sm">{% trans "Смотреть все вакансии →" %}</a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+        }
+
+        // Initialize Employment Tabs
+        document.addEventListener('DOMContentLoaded', () => {
+            selectEmploymentCountry('lithuania');
+        });
+    </script>
+</section>
+
+
+<!-- 4.5. Language Courses Section -->
+<section id="courses" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-serif font-bold text-eu-dark mb-4">{% trans "Языковые курсы" %}</h2>
+            <div class="h-1 w-20 bg-eu-gold mx-auto rounded-full"></div>
+            <p class="mt-4 text-gray-500">{% trans "Изучайте языки для карьеры и жизни без границ" %}</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Card 1: Korean -->
+            <div
+                class="bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full group">
+                <div class="h-40 overflow-hidden relative">
+                    <img src="https://placehold.co/400x250/e2e8f0/1e293b?text=Korean+Language" alt="Korean Language"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div
+                        class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-eu-blue uppercase tracking-wider">
+                        {% trans "Top Choice" %}
+                    </div>
+                </div>
+                <div class="p-5 flex-grow flex flex-col">
+                    <div class="text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wide">{% trans "Иностранные языки" %}</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
+                        {% trans "Корейский язык" %}</h3>
+                    <p class="text-sm text-gray-600 mb-4 line-clamp-2">{% trans "Интенсивный курс для поступления в ВУЗы Кореи (TOPIK I, II)." %}</p>
+
+                    <div class="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">{% trans "3-6 месяцев" %}</span>
+                        <span class="text-xs font-bold text-eu-blue bg-blue-50 px-2 py-1 rounded">{% trans "Сертификат" %}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: German -->
+            <div
+                class="bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full group">
+                <div class="h-40 overflow-hidden relative">
+                    <img src="https://placehold.co/400x250/e2e8f0/1e293b?text=German+Language" alt="German Language"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="p-5 flex-grow flex flex-col">
+                    <div class="text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wide">{% trans "Работа и Учеба" %}</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
+                        {% trans "Немецкий язык" %}</h3>
+                    <p class="text-sm text-gray-600 mb-4 line-clamp-2">{% trans "Подготовка к Goethe-Zertifikat (A1-C1) для работы и учебы в Германии." %}</p>
+
+                    <div class="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">{% trans "4-8 месяцев" %}</span>
+                        <span class="text-xs font-bold text-eu-blue bg-blue-50 px-2 py-1 rounded">{% trans "Сертификат" %}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Japanese -->
+            <div
+                class="bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full group">
+                <div class="h-40 overflow-hidden relative">
+                    <img src="https://placehold.co/400x250/e2e8f0/1e293b?text=Japanese+Language" alt="Japanese Language"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="p-5 flex-grow flex flex-col">
+                    <div class="text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wide">{% trans "Культура и Карьера" %}</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
+                        {% trans "Японский язык" %}</h3>
+                    <p class="text-sm text-gray-600 mb-4 line-clamp-2">{% trans "Изучение языка с нуля до уровня N2 для работы в Японии." %}</p>
+
+                    <div class="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">{% trans "6-12 месяцев" %}</span>
+                        <span class="text-xs font-bold text-eu-blue bg-blue-50 px-2 py-1 rounded">{% trans "Сертификат" %}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: English -->
+            <div
+                class="bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full group">
+                <div class="h-40 overflow-hidden relative">
+                    <img src="https://placehold.co/400x250/e2e8f0/1e293b?text=English+Language" alt="English Language"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div
+                        class="absolute top-3 left-3 bg-eu-gold text-eu-dark px-2 py-1 rounded text-xs font-bold uppercase tracking-wider">
+                        {% trans "Popular" %}
+                    </div>
+                </div>
+                <div class="p-5 flex-grow flex flex-col">
+                    <div class="text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wide">{% trans "Международный" %}</div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
+                        {% trans "Английский язык" %}</h3>
+                    <p class="text-sm text-gray-600 mb-4 line-clamp-2">{% trans "General English и подготовка к IELTS/TOEFL для любой страны." %}</p>
+
+                    <div class="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">{% trans "3+ месяца" %}</span>
+                        <span class="text-xs font-bold text-eu-blue bg-blue-50 px-2 py-1 rounded">{% trans "Сертификат" %}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- 5. For Foreigners in KG -->
+<section class="py-20 bg-eu-dark text-white relative overflow-hidden">
+    <!-- Background Decor -->
+    <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+        <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white" />
+        </svg>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+            <div class="mb-10 lg:mb-0">
+                <span class="text-eu-gold font-bold tracking-wider uppercase text-sm mb-2 block">{% trans "Special Service" %}</span>
+                <h2 class="text-3xl lg:text-4xl font-serif font-bold mb-6">{% trans "Для иностранных граждан в КР" %}</h2>
+                <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                    {% trans "Мы предоставляем полный спектр услуг для нерезидентов: от визовой поддержки до открытия бизнеса «под ключ». Работаем с инвесторами и экспатами, обеспечивая юридическую чистоту и комфорт." %}
+                </p>
+
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-eu-gold mr-3 flex-shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span class="text-gray-200">{% trans "Визовая поддержка и регистрация" %}</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-eu-gold mr-3 flex-shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span class="text-gray-200">{% trans "Открытие компаний (ОсОО) для нерезидентов" %}</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-eu-gold mr-3 flex-shrink-0" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                        <span class="text-gray-200">{% trans "Юридическая защита интересов" %}</span>
+                    </li>
+                </ul>
+
+                <a href="#"
+                    class="inline-flex items-center text-eu-gold font-semibold hover:text-white transition-colors">
+                    {% trans "Подробнее об услугах" %}
+                    <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="relative">
+                <div class="rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 p-8 shadow-2xl">
+                    <!-- Decor -->
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-eu-gold/20 rounded-full blur-xl animate-pulse">
+                    </div>
+
+                    <h3 class="text-xl font-bold text-white mb-6">{% trans "Запись на консультацию" %}</h3>
+                    <form class="space-y-4">
+                        <input type="text" placeholder="{% trans 'Ваше имя' %}"
+                            class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-eu-gold">
+                        <input type="tel" placeholder="{% trans 'Номер WhatsApp' %}"
+                            class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-eu-gold">
+                        <button
+                            class="w-full bg-eu-gold hover:bg-yellow-500 text-eu-dark font-bold py-3 rounded-lg transition-colors shadow-lg">
+                            {% trans "Получить консультацию" %}
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5.5. Testimonials (Reviews) -->
+<section class="py-20 bg-slate-50 relative overflow-hidden">
+    <!-- Decor -->
+    <div class="absolute -left-20 top-20 w-72 h-72 bg-eu-blue/5 rounded-full blur-3xl mix-blend-multiply"></div>
+    <div class="absolute -right-20 bottom-20 w-72 h-72 bg-eu-gold/5 rounded-full blur-3xl mix-blend-multiply">
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-serif font-bold text-eu-dark mb-4">{% trans "Истории успеха" %}</h2>
+            <div class="h-1 w-20 bg-eu-gold mx-auto rounded-full"></div>
+            <p class="mt-4 text-gray-500">{% trans "Что говорят наши клиенты, которые уже достигли своих целей" %}</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Review 1: Alina -->
+            <div
+                class="bg-white rounded-2xl p-8 shadow-card hover:shadow-premium transition-all duration-300 border border-gray-100 flex flex-col h-full">
+                <div class="mb-6">
+                    <svg class="h-10 w-10 text-eu-gold/40" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M14.017 21L14.017 18C14.017 16.896 14.383 15.93 15.117 15.103C15.851 14.275 16.969 13.861 18.47 13.861V11.232C16.845 11.232 15.69 10.686 15.003 9.593C14.316 8.5 13.972 6.946 13.972 4.93V2H21.99V9.593C21.99 12.503 21.033 15.228 19.119 17.768C17.205 20.309 15.504 21.579 14.017 21ZM2 21L2 18C2 16.896 2.366 15.93 3.1 15.103C3.834 14.275 4.952 13.861 6.453 13.861V11.232C4.828 11.232 3.673 10.686 2.986 9.593C2.299 8.5 1.955 6.946 1.955 4.93V2H9.973V9.593C9.973 12.503 9.016 15.228 7.102 17.768C5.188 20.309 3.487 21.579 2 21Z" />
+                    </svg>
+                </div>
+                <blockquote class="flex-grow mb-6">
+                    <p class="text-gray-600 italic leading-relaxed">
+                        {% trans '"Благодаря European Group я получила грант на обучение. Процесс сбора документов
+                        прошел легко, и теперь я живу в Сеуле! Спасибо за поддержку на каждом этапе."' %}
+                    </p>
+                </blockquote>
+                <div class="flex items-center gap-4 pt-6 border-t border-gray-50">
+                    <div
+                        class="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center text-pink-500 font-bold text-lg flex-shrink-0">
+                        A
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-900">{% trans "Алина, 20 лет" %}</div>
+                        <div class="text-xs text-eu-blue font-medium uppercase tracking-wide">{% trans "Студентка
+                            (Корея)" %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2: Kubat -->
+            <div
+                class="bg-white rounded-2xl p-8 shadow-card hover:shadow-premium transition-all duration-300 border border-gray-100 flex flex-col h-full transform md:-translate-y-4">
+                <div class="mb-6">
+                    <svg class="h-10 w-10 text-eu-gold/40" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M14.017 21L14.017 18C14.017 16.896 14.383 15.93 15.117 15.103C15.851 14.275 16.969 13.861 18.47 13.861V11.232C16.845 11.232 15.69 10.686 15.003 9.593C14.316 8.5 13.972 6.946 13.972 4.93V2H21.99V9.593C21.99 12.503 21.033 15.228 19.119 17.768C17.205 20.309 15.504 21.579 14.017 21ZM2 21L2 18C2 16.896 2.366 15.93 3.1 15.103C3.834 14.275 4.952 13.861 6.453 13.861V11.232C4.828 11.232 3.673 10.686 2.986 9.593C2.299 8.5 1.955 6.946 1.955 4.93V2H9.973V9.593C9.973 12.503 9.016 15.228 7.102 17.768C5.188 20.309 3.487 21.579 2 21Z" />
+                    </svg>
+                </div>
+                <blockquote class="flex-grow mb-6">
+                    <p class="text-gray-600 italic leading-relaxed">
+                        {% trans '"Оформили рабочую визу в Великобританию за 2 месяца. Работаю на складе, условия отличные, зарплата достойная. Спасибо за честность и профессионализм!"' %}
+                    </p>
+                </blockquote>
+                <div class="flex items-center gap-4 pt-6 border-t border-gray-50">
+                    <div
+                        class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-eu-blue font-bold text-lg flex-shrink-0">
+                        К
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-900">{% trans "Кубат, 40 лет" %}</div>
+                        <div class="text-xs text-eu-blue font-medium uppercase tracking-wide">{% trans "Работа (Англия)" %}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 3: Family -->
+            <div
+                class="bg-white rounded-2xl p-8 shadow-card hover:shadow-premium transition-all duration-300 border border-gray-100 flex flex-col h-full">
+                <div class="mb-6">
+                    <svg class="h-10 w-10 text-eu-gold/40" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M14.017 21L14.017 18C14.017 16.896 14.383 15.93 15.117 15.103C15.851 14.275 16.969 13.861 18.47 13.861V11.232C16.845 11.232 15.69 10.686 15.003 9.593C14.316 8.5 13.972 6.946 13.972 4.93V2H21.99V9.593C21.99 12.503 21.033 15.228 19.119 17.768C17.205 20.309 15.504 21.579 14.017 21ZM2 21L2 18C2 16.896 2.366 15.93 3.1 15.103C3.834 14.275 4.952 13.861 6.453 13.861V11.232C4.828 11.232 3.673 10.686 2.986 9.593C2.299 8.5 1.955 6.946 1.955 4.93V2H9.973V9.593C9.973 12.503 9.016 15.228 7.102 17.768C5.188 20.309 3.487 21.579 2 21Z" />
+                    </svg>
+                </div>
+                <blockquote class="flex-grow mb-6">
+                    <p class="text-gray-600 italic leading-relaxed">
+                        {% trans '"Думали, что получить визу в Америку нереально, но нас отлично подготовили к собеседованию. Одобрили всей семье! Мечта сбылась."' %}
+                    </p>
+                </blockquote>
+                <div class="flex items-center gap-4 pt-6 border-t border-gray-50">
+                    <div
+                        class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-lg flex-shrink-0">
+                        С
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-900">{% trans "Семья Исаевых" %}</div>
+                        <div class="text-xs text-eu-blue font-medium uppercase tracking-wide">{% trans "Виза (США)" %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- 4. Interactive Finder Section -->
+<section id="finder" class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+            <div class="p-8 md:p-12">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-serif font-bold text-eu-dark">{% trans "Подберите идеальное решение" %}
+                    </h2>
+                    <p class="mt-2 text-gray-500">{% trans "Ответьте на 2 вопроса, и мы предложим лучшие варианты" %}
+                    </p>
+                </div>
+
+                <form
+                    onsubmit='event.preventDefault(); window.location.href="#contact"; alert("{% trans "Переход к результатам (Заглушка)"|escapejs %}");'
+                    class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Question 1 -->
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">{% trans "Я хочу..." %}</label>
+                            <select
+                                class="w-full rounded-xl border-gray-300 py-3 pl-4 pr-10 text-base focus:border-eu-blue focus:outline-none focus:ring-1 focus:ring-eu-blue sm:text-sm bg-gray-50">
+                                <option>{% trans "Работать за рубежом" %}</option>
+                                <option>{% trans "Учиться в Европе/Азии" %}</option>
+                                <option>{% trans "Открыть бизнес / Релокация" %}</option>
+                                <option>{% trans "Отдохнуть (Туризм)" %}</option>
+                            </select>
+                        </div>
+
+                        <!-- Question 2 -->
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-700">{% trans "В стране..." %}</label>
+                            <select
+                                class="w-full rounded-xl border-gray-300 py-3 pl-4 pr-10 text-base focus:border-eu-blue focus:outline-none focus:ring-1 focus:ring-eu-blue sm:text-sm bg-gray-50">
+                                <option>{% trans "Любая страна ЕС" %}</option>
+                                <option>{% trans "Германия" %}</option>
+                                <option>{% trans "Польша" %}</option>
+                                <option>{% trans "Литва" %}</option>
+                                <option>{% trans "США" %}</option>
+                                <option>{% trans "Корея" %}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="submit"
+                            class="w-full flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-xl text-white bg-eu-blue hover:bg-blue-800 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                            {% trans "Найти решение" %}
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="bg-blue-50 px-8 py-4 border-t border-blue-100 flex items-start sm:items-center gap-3">
+                <svg class="w-6 h-6 text-eu-blue flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <p class="text-sm text-eu-blue font-medium">{% trans "Для точного подбора вы будете перенаправлены на страницу с детальной анкетой." %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

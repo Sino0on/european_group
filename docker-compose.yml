@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  web:
+    build: .
+    command: gunicorn core.wsgi:application --bind 0.0.0.0:8113
+    volumes:
+      - .:/app
+    ports:
+      - "8113:8113"
+    env_file:
+      - .env
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_DB: european_group
+      POSTGRES_USER: european_group_user
+      POSTGRES_PASSWORD: european_group_pass
+
+volumes:
+  postgres_data:

@@ -1,0 +1,279 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans 'Sejong University | European Group' %}{% endblock %}
+{% block content %}
+<!-- 2. Hero Section -->
+<section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-eu-dark">
+    <!-- Background -->
+    <div class="absolute inset-0 w-full h-full">
+        <img src="{% static 'assets/univers/korea/img1.jpg' %}"
+            onerror="this.src='https://placehold.co/1920x1080?text=Sejong+University'"
+            class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-eu-dark/95 via-eu-dark/80 to-eu-dark/60"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Breadcrumbs -->
+        <nav class="flex mb-8 text-sm text-gray-400">
+            <a href="{% url 'index' %}" class="hover:text-white transition-colors">{% trans "Главная" %}</a>
+            <span class="mx-2">/</span>
+            <a href="#" class="hover:text-white transition-colors">{% trans "Университеты" %}</a>
+            <span class="mx-2">/</span>
+            <span class="text-eu-gold">{% trans "Sejong University" %}</span>
+        </nav>
+
+        <div class="lg:w-2/3">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold uppercase tracking-wider mb-6 border border-white/20">
+                <span class="w-2 h-2 rounded-full bg-eu-gold"></span>
+                {% trans "Сеул, Южная Корея" %}
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight">
+                {% trans "Sejong University" %}
+            </h1>
+            <p class="text-xl text-gray-300 mb-10 leading-relaxed font-light">
+                {% trans "Один из самых престижных частных университетов Кореи, известный своими передовыми исследованиями и сильными программами в области гостеприимства и искусств." %}
+            </p>
+
+            <div class="flex flex-wrap gap-6 mb-12">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-eu-gold border border-white/10">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-white">{% trans "TOP 50" %}</div>
+                        <div class="text-xs text-gray-400 uppercase">{% trans "В Азии" %}</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-eu-gold border border-white/10">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-white">{% trans "14,000+" %}</div>
+                        <div class="text-xs text-gray-400 uppercase">{% trans "Студентов" %}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <button
+                    onclick="document.getElementById('consultModal').classList.remove('hidden'); document.getElementById('consultModal').classList.add('flex');"
+                    class="px-8 py-4 bg-eu-gold text-eu-dark font-bold rounded-lg hover:bg-yellow-400 transition-colors shadow-lg shadow-yellow-500/20">
+                    {% trans "Подать заявку" %}
+                </button>
+                <a href="#programs"
+                    class="px-8 py-4 bg-white/10 text-white font-bold rounded-lg hover:bg-white/20 transition-colors backdrop-blur-sm">
+                    {% trans "Смотреть программы" %}
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. Main Content -->
+<section class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-20">
+
+            <!-- Left Column -->
+            <div class="lg:col-span-2 space-y-16">
+
+                <!-- About -->
+                <div id="about" class="prose prose-lg text-gray-600 max-w-none">
+                    <h2 class="text-3xl font-serif font-bold text-eu-dark mb-6">{% trans "Об университете" %}</h2>
+                    <p>
+                        {% trans "Университет Седжонг (Sejong University) — частный университет, расположенный в Сеуле, Южная Корея. Основанный в 1940 году, он назван в честь Седжонга Великого, четвертого короля династии Чосон и создателя корейского алфавита Хангыль." %}
+                    </p>
+                    <p>
+                        {% trans "Университет славится своим колледжем гостеприимства и туризма, который считается одним из лучших в Корее. Кампус университета расположен в районе Кванджингу, рядом с Большим детским парком, предлагая студентам прекрасную зеленую территорию в центре мегаполиса." %}
+                    </p>
+                    <img src="assets/univers/korea/img2.jpg" onerror="this.src='{% static 'assets/univers/korea/img2.jpg' %}'"
+                        class="w-full h-80 object-cover rounded-2xl my-8 shadow-card" alt="Campus">
+                </div>
+
+                <!-- Programs -->
+                <div id="programs">
+                    <h2 class="text-3xl font-serif font-bold text-eu-dark mb-8">{% trans "Факультеты и программы" %}
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Program Card -->
+                        <div
+                            class="bg-white p-6 rounded-xl border border-gray-100 hover:border-eu-blue/30 hover:shadow-lg transition-all">
+                            <div
+                                class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-eu-blue mb-4">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">{% trans "Бизнес и Экономика" %}</h3>
+                            <p class="text-sm text-gray-500">{% trans "BBA, MBA, Международная торговля" %}</p>
+                        </div>
+                        <!-- Program Card -->
+                        <div
+                            class="bg-white p-6 rounded-xl border border-gray-100 hover:border-eu-blue/30 hover:shadow-lg transition-all">
+                            <div
+                                class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-eu-blue mb-4">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">{% trans "Гостеприимство" %}</h3>
+                            <p class="text-sm text-gray-500">{% trans "Отельный менеджмент, Туризм" %}</p>
+                        </div>
+                        <!-- Program Card -->
+                        <div
+                            class="bg-white p-6 rounded-xl border border-gray-100 hover:border-eu-blue/30 hover:shadow-lg transition-all">
+                            <div
+                                class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-eu-blue mb-4">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">{% trans "IT и Инженерия" %}</h3>
+                            <p class="text-sm text-gray-500">{% trans "Computer Science, AI, Робототехника" %}</p>
+                        </div>
+                        <!-- Program Card -->
+                        <div
+                            class="bg-white p-6 rounded-xl border border-gray-100 hover:border-eu-blue/30 hover:shadow-lg transition-all">
+                            <div
+                                class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-eu-blue mb-4">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">{% trans "Искусство" %}</h3>
+                            <p class="text-sm text-gray-500">{% trans "Дизайн, Мода, Анимация" %}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Requirements -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                    <h3 class="text-xl font-bold text-eu-dark mb-4">{% trans "Требования к поступлению" %}</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>{% trans "Аттестат о среднем образовании (GPA 3.0+)" %}</span>
+                        </li>
+                        <li class="flex items-start text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>{% trans "Сертификат IELTS 5.5 или TOPIK 3" %}</span>
+                        </li>
+                        <li class="flex items-start text-gray-600">
+                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span>{% trans "Мотивационное письмо и рекомендации" %}</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Right Column (Sidebar) -->
+            <div class="lg:col-span-1">
+                <div class="sticky top-24 space-y-8">
+
+                    <!-- Info Card -->
+                    <div class="bg-white rounded-2xl shadow-card p-6 border border-gray-100">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4 pb-4 border-b border-gray-100">{% trans "Детали" %}</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-500">{% trans "Основан:" %}</span>
+                                <span class="font-semibold text-gray-900">{% trans "1940 год" %}</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-500">{% trans "Тип:" %}</span>
+                                <span class="font-semibold text-gray-900">{% trans "Частный" %}</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-500">{% trans "Студентов:" %}</span>
+                                <span class="font-semibold text-gray-900">{% trans "14,000+" %}</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-500">{% trans "Иностранцев:" %}</span>
+                                <span class="font-semibold text-gray-900">{% trans "2,000+" %}</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-500">{% trans "Стоимость (год):" %}</span>
+                                <span class="font-semibold text-eu-blue">$5,000 - $8,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Deadlines Card -->
+                    <div class="bg-eu-blue/5 rounded-2xl p-6 border border-eu-blue/10">
+                        <h3 class="text-lg font-bold text-eu-blue mb-4">{% trans "Сроки подачи" %}</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-10 h-10 bg-white rounded flex flex-col items-center justify-center text-xs font-bold shadow-sm text-gray-600">
+                                    <span class="text-xs text-red-500">{% trans "СЕН" %}</span>
+                                    <span class="text-lg leading-none text-gray-900">15</span>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-bold text-gray-900">{% trans "Осенний семестр" %}</div>
+                                    <div class="text-xs text-gray-500">{% trans "Прием документов до 15.09" %}</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-10 h-10 bg-white rounded flex flex-col items-center justify-center text-xs font-bold shadow-sm text-gray-600">
+                                    <span class="text-xs text-red-500">{% trans "МАР" %}</span>
+                                    <span class="text-lg leading-none text-gray-900">20</span>
+                                </div>
+                                <div>
+                                    <div class="text-sm font-bold text-gray-900">{% trans "Весенний семестр" %}</div>
+                                    <div class="text-xs text-gray-500">{% trans "Прием документов до 20.03" %}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="bg-eu-dark rounded-2xl p-8 text-center text-white shadow-premium">
+                        <h3 class="text-xl font-serif font-bold mb-2">{% trans "Хотите поступить?" %}</h3>
+                        <p class="text-sm text-gray-300 mb-6">{% trans "Оставьте заявку, и мы бесплатно оценим ваши шансы на грант." %}</p>
+                        <button
+                            onclick="document.getElementById('consultModal').classList.remove('hidden'); document.getElementById('consultModal').classList.add('flex');"
+                            class="w-full bg-eu-gold hover:bg-yellow-500 text-eu-dark font-bold py-3 rounded-lg transition-colors shadow-lg">
+                            {% trans "Консультация" %}
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

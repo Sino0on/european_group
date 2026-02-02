@@ -1,0 +1,301 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans "Регистрация компаний" %} | European Group{% endblock %}
+{% block content %}
+<!-- 2. Hero Section -->
+<section class="relative pt-32 pb-20 bg-eu-dark overflow-hidden">
+    <div class="absolute inset-0 w-full h-full overflow-hidden">
+        <!-- Deep Background -->
+        <div class="absolute inset-0 bg-eu-dark"></div>
+        <div class="absolute inset-0 opacity-10 hero-pattern"></div>
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-50/10"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-white tracking-tight mb-8">
+            {% trans "Откройте бизнес легко и быстро" %}
+        </h1>
+        <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-400 font-light mb-12">
+            {% trans "Регистрация ОсОО, ИП и филиалов под ключ. Полное юридическое и бухгалтерское сопровождение вашего стартапа." %}
+        </p>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-4 rounded-xl">
+                <div class="text-3xl font-bold text-eu-gold mb-1">3</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">{% trans "дня на открытие" %}</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-4 rounded-xl">
+                <div class="text-3xl font-bold text-eu-gold mb-1">0%</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">{% trans "ошибок в документах" %}</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-4 rounded-xl">
+                <div class="text-3xl font-bold text-eu-gold mb-1">500+</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">{% trans "открытых фирм" %}</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-4 rounded-xl">
+                <div class="text-3xl font-bold text-eu-gold mb-1">24/7</div>
+                <div class="text-xs text-gray-400 uppercase tracking-wider">{% trans "поддержка" %}</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. Packages Pricing Section -->
+<section class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-serif font-bold text-eu-dark mb-4">{% trans "Тарифы на регистрацию" %}
+            </h2>
+            <div class="h-1 w-20 bg-eu-gold mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+            <!-- Package: Starter -->
+            <div
+                class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 hover:shadow-xl transition-all duration-300">
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold text-gray-900">{% trans "Базовый" %}</h3>
+                    <p class="text-gray-500 text-sm mt-2">{% trans "Только подготовка документов" %}</p>
+                </div>
+                <div class="mb-6">
+                    <span class="text-4xl font-bold text-eu-blue">5 000 с</span>
+                </div>
+                <ul class="space-y-4 mb-8 text-sm text-gray-600">
+                    <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg> {% trans "Подготовка Устава и Решения" %}</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg> {% trans "Заявление на регистрацию" %}</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 text-gray-300 mr-2 flex-shrink-0" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12"></path>
+                        </svg> <span class="text-gray-400">{% trans "Подача в Минюст" %}</span></li>
+                    <li class="flex items-center"><svg class="w-5 h-5 text-gray-300 mr-2 flex-shrink-0" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12"></path>
+                        </svg> <span class="text-gray-400">{% trans "Изготовление печати" %}</span></li>
+                </ul>
+                <a href="#contact"
+                    class="block w-full py-3 px-4 bg-gray-50 text-eu-blue font-bold text-center rounded-lg hover:bg-eu-blue hover:text-white transition-colors border border-gray-200">
+                    {% trans "Выбрать" %}
+                </a>
+            </div>
+
+            <!-- Package: Standard (Highlight) -->
+            <div
+                class="bg-white rounded-2xl shadow-xl border-2 border-eu-blue p-8 relative transform md:-translate-y-4">
+                <div
+                    class="absolute top-0 right-0 bg-eu-blue text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+                    {% trans "ПОПУЛЯРНЫЙ" %}</div>
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold text-gray-900">{% trans "Стандарт" %}</h3>
+                    <p class="text-gray-500 text-sm mt-2">{% trans "Полная регистрация под ключ" %}</p>
+                </div>
+                <div class="mb-6">
+                    <span class="text-4xl font-bold text-eu-blue">10 000 с</span>
+                </div>
+                <ul class="space-y-4 mb-8 text-sm text-gray-600">
+                    <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg> {% trans "Подготовка всех документов" %}</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg> {% trans "Сопровождение в Минюсте" %}</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg> {% trans "Изготовление печати" %}</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg> {% trans "Постановка на учет в налоговой" %}</li>
+                </ul>
+                <a href="#contact"
+                    class="block w-full py-4 px-4 bg-eu-blue text-white font-bold text-center rounded-lg hover:bg-blue-800 transition-colors shadow-lg">
+                    {% trans "Заказать" %}
+                </a>
+            </div>
+
+            <!-- Package: Premium -->
+            <div
+                class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 hover:shadow-xl transition-all duration-300">
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold text-gray-900">{% trans "Бизнес-старт" %}</h3>
+                    <p class="text-gray-500 text-sm mt-2">{% trans "Регистрация + Счет + Адрес" %}</p>
+                </div>
+                <div class="mb-6">
+                    <span class="text-4xl font-bold text-eu-blue">25 000 с</span>
+                </div>
+                <ul class="space-y-4 mb-8 text-sm text-gray-600">
+                    <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg> {% trans 'Все услуги тарифа "Стандарт"' %}</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg> {% trans "Открытие расчётного счета" %}</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg> {% trans "Юридический адрес на 6 мес." %}</li>
+                    <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg> {% trans "Консультация бухгалтера" %}</li>
+                </ul>
+                <a href="#contact"
+                    class="block w-full py-3 px-4 bg-gray-50 text-eu-blue font-bold text-center rounded-lg hover:bg-eu-blue hover:text-white transition-colors border border-gray-200">
+                    {% trans "Выбрать" %}
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. Additional Services Grid -->
+<section class="py-20 bg-white border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-serif font-bold text-eu-dark mb-12">{% trans "Дополнительные услуги" %}</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="p-6 rounded-xl bg-slate-50 border border-gray-100 hover:border-eu-blue/30 transition-colors">
+                <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm text-lg mb-4">
+                    📍</div>
+                <h4 class="font-bold text-gray-900 mb-2">{% trans "Юридический адрес" %}</h4>
+                <p class="text-sm text-gray-500">{% trans "Предоставление надежного юрадреса для регистрации." %}</p>
+            </div>
+            <div class="p-6 rounded-xl bg-slate-50 border border-gray-100 hover:border-eu-blue/30 transition-colors">
+                <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm text-lg mb-4">
+                    🔏</div>
+                <h4 class="font-bold text-gray-900 mb-2">{% trans "ЭЦП и Токены" %}</h4>
+                <p class="text-sm text-gray-500">{% trans "Помощь в получении электронной подписи." %}</p>
+            </div>
+            <div class="p-6 rounded-xl bg-slate-50 border border-gray-100 hover:border-eu-blue/30 transition-colors">
+                <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm text-lg mb-4">
+                    🔄</div>
+                <h4 class="font-bold text-gray-900 mb-2">{% trans "Ликвидация" %}</h4>
+                <p class="text-sm text-gray-500">{% trans "Официальное закрытие фирм без долгов." %}</p>
+            </div>
+            <div class="p-6 rounded-xl bg-slate-50 border border-gray-100 hover:border-eu-blue/30 transition-colors">
+                <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm text-lg mb-4">
+                    📊</div>
+                <h4 class="font-bold text-gray-900 mb-2">{% trans "Бухгалтерия" %}</h4>
+                <p class="text-sm text-gray-500">{% trans "Аутсорсинг бухгалтерского учета." %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. Process Timeline -->
+<section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-serif font-bold text-eu-dark mb-4">{% trans "Этапы регистрации" %}</h2>
+            <p class="text-gray-500">{% trans "Весь процесс занимает от 3 рабочих дней" %}</p>
+        </div>
+
+        <div class="relative">
+            <div class="hidden md:block absolute top-[50%] left-0 w-full h-1 bg-gray-200 -translate-y-1/2 -z-10">
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
+                    <div
+                        class="w-12 h-12 bg-eu-blue text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4 ring-8 ring-white">
+                        1</div>
+                    <h4 class="font-bold text-gray-900">{% trans "Заявка" %}</h4>
+                    <p class="text-sm text-gray-500 mt-2">{% trans "Вы оставляете заявку и присылаете копии паспортов учредителей." %}</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
+                    <div
+                        class="w-12 h-12 bg-eu-blue text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4 ring-8 ring-white">
+                        2</div>
+                    <h4 class="font-bold text-gray-900">{% trans "Документы" %}</h4>
+                    <p class="text-sm text-gray-500 mt-2">{% trans "Мы готовим устав, решение и заявление для Минюста." %}</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
+                    <div
+                        class="w-12 h-12 bg-eu-blue text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4 ring-8 ring-white">
+                        3</div>
+                    <h4 class="font-bold text-gray-900">{% trans "Регистрация" %}</h4>
+                    <p class="text-sm text-gray-500 mt-2">{% trans "Подача документов в регистрирующий орган и получение свидетельства." %}</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
+                    <div
+                        class="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4 ring-8 ring-white">
+                        4</div>
+                    <h4 class="font-bold text-gray-900">{% trans "Старт" %}</h4>
+                    <p class="text-sm text-gray-500 mt-2">{% trans "Выдача печати, открытие счета и начало работы." %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 6. B2B Request Form -->
+<section id="contact" class="py-24 bg-white border-t border-gray-200">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-serif font-bold text-eu-dark mb-6">{% trans "Начните свой бизнес сейчас" %}</h2>
+        <form class="bg-slate-50 rounded-2xl shadow-inner border border-gray-200 p-8 md:p-10 text-left">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">{% trans "Ваше имя" %}</label>
+                    <input type="text"
+                        class="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:border-eu-blue focus:ring-1 focus:ring-eu-blue"
+                        placeholder="{% trans 'Игорь' %}">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">{% trans "Телефон" %}</label>
+                    <input type="tel"
+                        class="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:border-eu-blue focus:ring-1 focus:ring-eu-blue"
+                        placeholder="+996...">
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <label class="block text-sm font-bold text-gray-700 mb-2">{% trans "Название компании (варианты)" %}</label>
+                <input type="text"
+                    class="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:border-eu-blue focus:ring-1 focus:ring-eu-blue"
+                    placeholder="{% trans 'ОсОО \'Ромашка\', ОсОО \'Вектор\'...' %}">
+                <p class="text-xs text-gray-400 mt-1">{% trans "Мы проверим название на уникальность." %}</p>
+            </div>
+
+            <div class="mb-8">
+                <label class="block text-sm font-bold text-gray-700 mb-2">{% trans "Выбранный тариф" %}</label>
+                <select
+                    class="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 focus:border-eu-blue focus:ring-1 focus:ring-eu-blue">
+                    <option>{% trans "Стандарт (10 000 с)" %}</option>
+                    <option>{% trans "Базовый (5 000 с)" %}</option>
+                    <option>{% trans "Бизнес-старт (25 000 с)" %}</option>
+                    <option>{% trans "Нужна консультация" %}</option>
+                </select>
+            </div>
+
+            <button type="button" onclick='alert("{% trans "Заявка на регистрацию принята!"|escapejs %}")'
+                class="w-full py-4 bg-eu-blue text-white font-bold rounded-lg hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl">
+                {% trans "Отправить заявку" %}
+            </button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}
