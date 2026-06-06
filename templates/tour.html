@@ -47,63 +47,25 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Thailand -->
+            {% for dest in destinations %}
             <div class="group relative rounded-3xl overflow-hidden shadow-lg h-[450px] cursor-pointer">
-                <img src="{% static 'assets/countries/thailand.webp' %}" alt="Thailand"
+                {% if dest.image %}
+                <img src="{{ dest.image.url }}" alt="{{ dest.name }}"
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                {% else %}
+                <div class="w-full h-full bg-slate-300"></div>
+                {% endif %}
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                <div
-                    class="absolute bottom-6 left-6 text-white transform transition-transform duration-300 group-hover:-translate-y-2">
-                    <div class="bg-tropical-orange text-xs font-bold px-2 py-1 rounded inline-block mb-2">{% trans "Хит продаж" %}
-                    </div>
-                    <h3 class="text-3xl font-bold font-serif mb-1">{% trans "Тайланд" %}</h3>
-                    <p class="text-gray-300 text-sm mb-4">{% trans "Пхукет, Паттайя, Самуи" %}</p>
-                    <span class="text-lg font-bold">{% trans "от" %} $850</span>
+                <div class="absolute bottom-6 left-6 text-white transform transition-transform duration-300 group-hover:-translate-y-2">
+                    {% if dest.badge %}
+                    <div class="bg-tropical-orange text-xs font-bold px-2 py-1 rounded inline-block mb-2">{{ dest.badge }}</div>
+                    {% endif %}
+                    <h3 class="text-3xl font-bold font-serif mb-1">{{ dest.name }}</h3>
+                    <p class="text-gray-300 text-sm mb-4">{{ dest.cities }}</p>
+                    <span class="text-lg font-bold">{{ dest.price_from }}</span>
                 </div>
             </div>
-
-            <!-- Egypt -->
-            <div class="group relative rounded-3xl overflow-hidden shadow-lg h-[450px] cursor-pointer">
-                <img src="{% static 'assets/countries/egypt.jpg' %}" alt="Egypt"
-                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                <div
-                    class="absolute bottom-6 left-6 text-white transform transition-transform duration-300 group-hover:-translate-y-2">
-                    <div class="bg-blue-500 text-xs font-bold px-2 py-1 rounded inline-block mb-2">{% trans "Все включено" %}
-                    </div>
-                    <h3 class="text-3xl font-bold font-serif mb-1">{% trans "Египет" %}</h3>
-                    <p class="text-gray-300 text-sm mb-4">{% trans "Шарм-эль-Шейх, Хургада" %}</p>
-                    <span class="text-lg font-bold">{% trans "от" %} $550</span>
-                </div>
-            </div>
-
-            <!-- Turkey -->
-            <div class="group relative rounded-3xl overflow-hidden shadow-lg h-[450px] cursor-pointer">
-                <img src="{% static 'assets/countries/turkey.webp' %}" alt="Turkey"
-                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                <div
-                    class="absolute bottom-6 left-6 text-white transform transition-transform duration-300 group-hover:-translate-y-2">
-                    <div class="bg-purple-500 text-xs font-bold px-2 py-1 rounded inline-block mb-2">{% trans "Семейный" %}</div>
-                    <h3 class="text-3xl font-bold font-serif mb-1">{% trans "Турция" %}</h3>
-                    <p class="text-gray-300 text-sm mb-4">{% trans "Анталья, Кемер, Аланья" %}</p>
-                    <span class="text-lg font-bold">{% trans "от" %} $450</span>
-                </div>
-            </div>
-
-            <!-- Vietnam -->
-            <div class="group relative rounded-3xl overflow-hidden shadow-lg h-[450px] cursor-pointer">
-                <img src="{% static 'assets/countries/vietnam.webp' %}" alt="Vietnam"
-                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                <div
-                    class="absolute bottom-6 left-6 text-white transform transition-transform duration-300 group-hover:-translate-y-2">
-                    <div class="bg-green-500 text-xs font-bold px-2 py-1 rounded inline-block mb-2">{% trans "Экзотика" %}</div>
-                    <h3 class="text-3xl font-bold font-serif mb-1">{% trans "Вьетнам" %}</h3>
-                    <p class="text-gray-300 text-sm mb-4">{% trans "Нячанг, Фукуок" %}</p>
-                    <span class="text-lg font-bold">{% trans "от" %} $900</span>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -120,71 +82,31 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Deal 1 -->
-            <div
-                class="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100 hover:shadow-xl transition-all">
-                <img src="{% static 'assets/countries/img1.jpg' %}" alt="Hotel" class="w-full h-48 object-cover">
+            {% for deal in deals %}
+            <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100 hover:shadow-xl transition-all">
+                {% if deal.destination.image %}
+                <img src="{{ deal.destination.image.url }}" alt="{{ deal.hotel_name }}" class="w-full h-48 object-cover">
+                {% else %}
+                <div class="w-full h-48 bg-slate-200 flex items-center justify-center text-slate-400">{{ deal.destination.name }}</div>
+                {% endif %}
                 <div class="p-6">
                     <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-bold text-lg text-gray-900">Rixos Sharm El Sheik 5*</h3>
-                        <span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-1 rounded">-20%</span>
+                        <h3 class="font-bold text-lg text-gray-900">{{ deal.hotel_name }}</h3>
+                        <span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-1 rounded">-{{ deal.discount_percent }}%</span>
                     </div>
-                    <p class="text-sm text-gray-500 mb-4">{% trans "Египет, Ультра все включено" %}</p>
+                    <p class="text-sm text-gray-500 mb-4">{{ deal.destination.name }}</p>
                     <div class="flex items-end justify-between">
                         <div>
-                            <span class="text-gray-400 text-sm line-through">$1,200</span>
-                            <div class="text-2xl font-bold text-tropical-orange">$960</div>
+                            <span class="text-gray-400 text-sm line-through">${{ deal.original_price }}</span>
+                            <div class="text-2xl font-bold text-tropical-orange">${{ deal.price }}</div>
                         </div>
-                        <button
-                            class="bg-gray-100 hover:bg-tropical-orange hover:text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">7
-                            {% trans "ночей" %}</button>
+                        <button class="bg-gray-100 hover:bg-tropical-orange hover:text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                            {{ deal.nights }} {% trans "ночей" %}
+                        </button>
                     </div>
                 </div>
             </div>
-
-            <!-- Deal 2 -->
-            <div
-                class="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100 hover:shadow-xl transition-all">
-                <img src="{% static 'assets/countries/img2.jpg' %}" alt="Hotel" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-bold text-lg text-gray-900">Amara Dolce Vita 5*</h3>
-                        <span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-1 rounded">-15%</span>
-                    </div>
-                    <p class="text-sm text-gray-500 mb-4">{% trans "Турция, Кемер" %}</p>
-                    <div class="flex items-end justify-between">
-                        <div>
-                            <span class="text-gray-400 text-sm line-through">$1,500</span>
-                            <div class="text-2xl font-bold text-tropical-orange">$1,275</div>
-                        </div>
-                        <button
-                            class="bg-gray-100 hover:bg-tropical-orange hover:text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">7
-                            {% trans "ночей" %}</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Deal 3 -->
-            <div
-                class="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100 hover:shadow-xl transition-all">
-                <img src="{% static 'assets/countries/img3.jpg' %}" alt="Hotel" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <div class="flex justify-between items-start mb-2">
-                        <h3 class="font-bold text-lg text-gray-900">Novotel Phuket 4*</h3>
-                        <span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-1 rounded">-30%</span>
-                    </div>
-                    <p class="text-sm text-gray-500 mb-4">{% trans "Тайланд, Завтраки" %}</p>
-                    <div class="flex items-end justify-between">
-                        <div>
-                            <span class="text-gray-400 text-sm line-through">$1,100</span>
-                            <div class="text-2xl font-bold text-tropical-orange">$770</div>
-                        </div>
-                        <button
-                            class="bg-gray-100 hover:bg-tropical-orange hover:text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">10
-                            {% trans "ночей" %}</button>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

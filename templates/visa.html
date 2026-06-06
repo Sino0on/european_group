@@ -49,122 +49,34 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Card 1: Schengen -->
-            <div
-                class="group bg-white rounded-2xl shadow-card hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden">
-                <div class="h-48 overflow-hidden relative">
-                    <img src="https://placehold.co/400x300/e2e8f0/1e293b?text=Schengen" alt="Schengen Visa"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            {% for visa in visa_types %}
+            <div class="group bg-white rounded-2xl shadow-card hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden">
+                <div class="h-48 overflow-hidden relative bg-slate-200 flex items-center justify-center">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <h3 class="absolute bottom-4 left-4 text-xl font-bold text-white">{% trans "Шенгенская виза" %}</h3>
+                    <h3 class="absolute bottom-4 left-4 text-xl font-bold text-white">{{ visa.name }}</h3>
                 </div>
                 <div class="p-6">
                     <ul class="text-sm text-gray-600 space-y-2 mb-4">
-                        <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg> {% trans "27 стран Европы" %}</li>
-                        <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg> {% trans "Туризм, Бизнес, Гости" %}</li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            {{ visa.countries }}
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            {{ visa.visa_subtypes }}
+                        </li>
                     </ul>
                     <div class="border-t border-gray-100 pt-4 flex justify-between items-center">
-                        <span class="text-eu-blue font-bold">{% trans "от" %} 150€</span>
-                        <span class="text-gray-400 text-sm">~15 {% trans "дней" %}</span>
+                        <span class="text-eu-blue font-bold">{{ visa.price_from }}</span>
+                        <span class="text-gray-400 text-sm">{{ visa.processing_time }}</span>
                     </div>
                 </div>
             </div>
-
-            <!-- Card 2: USA -->
-            <div
-                class="group bg-white rounded-2xl shadow-card hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden">
-                <div class="h-48 overflow-hidden relative">
-                    <img src="https://placehold.co/400x300/e2e8f0/1e293b?text=USA" alt="USA Visa"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <h3 class="absolute bottom-4 left-4 text-xl font-bold text-white">{% trans "Виза в США" %}</h3>
-                </div>
-                <div class="p-6">
-                    <ul class="text-sm text-gray-600 space-y-2 mb-4">
-                        <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg> {% trans "B1/B2 (Туризм/Бизнес)" %}</li>
-                        <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg> {% trans "Запись на собеседование" %}</li>
-                    </ul>
-                    <div class="border-t border-gray-100 pt-4 flex justify-between items-center">
-                        <span class="text-eu-blue font-bold">{% trans "от" %} 200$</span>
-                        <span class="text-gray-400 text-sm">{% trans "Индивидуально" %}</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3: Asia -->
-            <div
-                class="group bg-white rounded-2xl shadow-card hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden">
-                <div class="h-48 overflow-hidden relative">
-                    <img src="https://placehold.co/400x300/e2e8f0/1e293b?text=Asia" alt="Asia Visa"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <h3 class="absolute bottom-4 left-4 text-xl font-bold text-white">{% trans "Страны Азии" %}</h3>
-                </div>
-                <div class="p-6">
-                    <ul class="text-sm text-gray-600 space-y-2 mb-4">
-                        <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg> {% trans "Южная Корея, Япония, Китай" %}</li>
-                        <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg> {% trans "Электронные разрешения (K-ETA)" %}</li>
-                    </ul>
-                    <div class="border-t border-gray-100 pt-4 flex justify-between items-center">
-                        <span class="text-eu-blue font-bold">{% trans "от" %} 50$</span>
-                        <span class="text-gray-400 text-sm">3-7 {% trans "дней" %}</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 4: UK & Canada -->
-            <div
-                class="group bg-white rounded-2xl shadow-card hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden">
-                <div class="h-48 overflow-hidden relative">
-                    <img src="https://placehold.co/400x300/e2e8f0/1e293b?text=UK+Canada" alt="UK Visa"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <h3 class="absolute bottom-4 left-4 text-xl font-bold text-white">{% trans "Великобритания и Канада"
-                        %}</h3>
-                </div>
-                <div class="p-6">
-                    <ul class="text-sm text-gray-600 space-y-2 mb-4">
-                        <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg> {% trans "Сложные кейсы" %}</li>
-                        <li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg> {% trans "Долгосрочные визы" %}</li>
-                    </ul>
-                    <div class="border-t border-gray-100 pt-4 flex justify-between items-center">
-                        <span class="text-eu-blue font-bold">{% trans "от" %} 250$</span>
-                        <span class="text-gray-400 text-sm">~30 {% trans "дней" %}</span>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

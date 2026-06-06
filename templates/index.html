@@ -48,25 +48,12 @@
 <section class="py-16 bg-white border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-gray-100">
+            {% for stat in statistics %}
             <div class="p-4">
-                <div class="text-4xl lg:text-5xl font-bold text-eu-blue mb-2">98%</div>
-                <div class="text-sm font-medium text-gray-500 uppercase tracking-wide">{% trans "Одобренных виз" %}
-                </div>
+                <div class="text-4xl lg:text-5xl font-bold text-eu-blue mb-2">{{ stat.value }}</div>
+                <div class="text-sm font-medium text-gray-500 uppercase tracking-wide">{{ stat.label }}</div>
             </div>
-            <div class="p-4">
-                <div class="text-4xl lg:text-5xl font-bold text-eu-blue mb-2">500+</div>
-                <div class="text-sm font-medium text-gray-500 uppercase tracking-wide">{% trans "Трудоустроенных в год" %}
-                </div>
-            </div>
-            <div class="p-4">
-                <div class="text-4xl lg:text-5xl font-bold text-eu-blue mb-2">12</div>
-                <div class="text-sm font-medium text-gray-500 uppercase tracking-wide">{% trans "Стран-партнеров" %}
-                </div>
-            </div>
-            <div class="p-4">
-                <div class="text-4xl lg:text-5xl font-bold text-eu-blue mb-2">10</div>
-                <div class="text-sm font-medium text-gray-500 uppercase tracking-wide">{% trans "Лет опыта" %}</div>
-            </div>
+            {% endfor %}
         </div>
         <!-- Licenses -->
         <div class="mt-12 text-center">
@@ -154,116 +141,19 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1: Work -->
-                <div
+                {% for service in services %}
+                <a href="{{ service.url|default:'#' }}"
                     class="group relative bg-white rounded-2xl p-8 shadow-card hover:shadow-premium transition-all duration-300 border border-gray-100 hover:border-eu-blue/20 hover:-translate-y-1 cursor-pointer">
                     <div
-                        class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-eu-blue transition-colors duration-300">
-                        <svg class="w-8 h-8 text-eu-blue group-hover:text-white transition-colors" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                            </path>
-                        </svg>
+                        class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-eu-blue transition-colors duration-300 text-eu-blue group-hover:text-white">
+                        {{ service.icon_svg|safe }}
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
-                        {% trans "Работа в Европе" %}</h3>
-                    <p class="text-sm text-eu-blue font-semibold mb-3">{% trans "Литва, Польша, Германия..." %}</p>
-                    <p class="text-gray-500 text-sm leading-relaxed">{% trans "Официальное трудоустройство, ВНЖ, полное юридическое сопровождение контрактов." %}</p>
-                </div>
-
-                <!-- Card 2: Education -->
-                <div
-                    class="group relative bg-white rounded-2xl p-8 shadow-card hover:shadow-premium transition-all duration-300 border border-gray-100 hover:border-eu-blue/20 hover:-translate-y-1 cursor-pointer">
-                    <div
-                        class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-eu-blue transition-colors duration-300">
-                        <svg class="w-8 h-8 text-eu-blue group-hover:text-white transition-colors" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z">
-                            </path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
-                        {% trans "Образование" %}</h3>
-                    <p class="text-sm text-eu-blue font-semibold mb-3">{% trans "Корея, США, Италия..." %}</p>
-                    <p class="text-gray-500 text-sm leading-relaxed">{% trans "Поступление в топовые ВУЗы, помощь с грантами и стипендиями." %}</p>
-                </div>
-
-                <!-- Card 3: Visa Center -->
-                <div
-                    class="group relative bg-white rounded-2xl p-8 shadow-card hover:shadow-premium transition-all duration-300 border border-gray-100 hover:border-eu-blue/20 hover:-translate-y-1 cursor-pointer">
-                    <div
-                        class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-eu-blue transition-colors duration-300">
-                        <svg class="w-8 h-8 text-eu-blue group-hover:text-white transition-colors" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z">
-                            </path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
-                        {% trans "Визовый центр" %}</h3>
-                    <p class="text-sm text-eu-blue font-semibold mb-3">{% trans "Весь мир (Schengen, USA)" %}</p>
-                    <p class="text-gray-500 text-sm leading-relaxed">{% trans "Профессиональная подготовка документов, запись на собеседование, рабочие и турвизы." %}</p>
-                </div>
-
-                <!-- Card 4: Legal -->
-                <div
-                    class="group relative bg-white rounded-2xl p-8 shadow-card hover:shadow-premium transition-all duration-300 border border-gray-100 hover:border-eu-blue/20 hover:-translate-y-1 cursor-pointer">
-                    <div
-                        class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-eu-blue transition-colors duration-300">
-                        <svg class="w-8 h-8 text-eu-blue group-hover:text-white transition-colors" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3">
-                            </path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
-                        {% trans "Юридический консалтинг" %}</h3>
-                    <p class="text-sm text-eu-blue font-semibold mb-3">{% trans "Для бизнеса и физлиц" %}</p>
-                    <p class="text-gray-500 text-sm leading-relaxed">{% trans "Регистрация ОсОО, судебные иски, защита прав, сопровождение бизнеса." %}</p>
-                </div>
-
-                <!-- Card 5: Tourism -->
-                <div
-                    class="group relative bg-white rounded-2xl p-8 shadow-card hover:shadow-premium transition-all duration-300 border border-gray-100 hover:border-eu-blue/20 hover:-translate-y-1 cursor-pointer">
-                    <div
-                        class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-eu-blue transition-colors duration-300">
-                        <svg class="w-8 h-8 text-eu-blue group-hover:text-white transition-colors" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
-                            </path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
-                        {% trans "Туризм" %}
-                    </h3>
-                    <p class="text-sm text-eu-blue font-semibold mb-3">{% trans "Таиланд, Египет, Вьетнам..." %}</p>
-                    <p class="text-gray-500 text-sm leading-relaxed">{% trans "Горящие туры, авиабилеты, бронирование отелей и трансферы." %}</p>
-                </div>
-
-                <!-- Card 6: Language School -->
-                <div
-                    class="group relative bg-white rounded-2xl p-8 shadow-card hover:shadow-premium transition-all duration-300 border border-gray-100 hover:border-eu-blue/20 hover:-translate-y-1 cursor-pointer">
-                    <div
-                        class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-eu-blue transition-colors duration-300">
-                        <svg class="w-8 h-8 text-eu-blue group-hover:text-white transition-colors" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
-                            </path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
-                        {% trans "Языковая школа" %}</h3>
-                    <p class="text-sm text-eu-blue font-semibold mb-3">{% trans "4 основных языка" %}</p>
-                    <p class="text-gray-500 text-sm leading-relaxed">{% trans "Подготовка к международным экзаменам TOEFL, IELTS и разговорная практика." %}</p>
-                </div>
+                        {{ service.title }}</h3>
+                    <p class="text-sm text-eu-blue font-semibold mb-3">{{ service.subtitle }}</p>
+                    <p class="text-gray-500 text-sm leading-relaxed">{{ service.description }}</p>
+                </a>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -398,26 +288,12 @@
 
         <!-- Country Tabs -->
         <div class="flex flex-wrap justify-center gap-2 mb-10" id="countryTabs">
-            <button onclick="selectCountry('korea')"
-                class="country-tab active px-6 py-3 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-600 hover:border-eu-blue hover:text-eu-blue transition-all data-[active=true]:bg-eu-blue data-[active=true]:text-white data-[active=true]:border-eu-blue shadow-sm">
-                🇰🇷 {% trans "Корея" %}
+            {% for uc in uni_countries %}
+            <button onclick="selectCountry('{{ uc.slug }}')"
+                class="country-tab {% if forloop.first %}active{% endif %} px-6 py-3 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-600 hover:border-eu-blue hover:text-eu-blue transition-all shadow-sm">
+                {{ uc.flag_emoji }} {{ uc.name }}
             </button>
-            <button onclick="selectCountry('slovakia')"
-                class="country-tab px-6 py-3 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-600 hover:border-eu-blue hover:text-eu-blue transition-all data-[active=true]:bg-eu-blue data-[active=true]:text-white data-[active=true]:border-eu-blue shadow-sm">
-                🇸🇰 {% trans "Словакия" %}
-            </button>
-            <button onclick="selectCountry('usa')"
-                class="country-tab px-6 py-3 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-600 hover:border-eu-blue hover:text-eu-blue transition-all data-[active=true]:bg-eu-blue data-[active=true]:text-white data-[active=true]:border-eu-blue shadow-sm">
-                🇺🇸 {% trans "США" %}
-            </button>
-            <button onclick="selectCountry('italy')"
-                class="country-tab px-6 py-3 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-600 hover:border-eu-blue hover:text-eu-blue transition-all data-[active=true]:bg-eu-blue data-[active=true]:text-white data-[active=true]:border-eu-blue shadow-sm">
-                🇮🇹 {% trans "Италия" %}
-            </button>
-            <button onclick="selectCountry('china')"
-                class="country-tab px-6 py-3 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-600 hover:border-eu-blue hover:text-eu-blue transition-all data-[active=true]:bg-eu-blue data-[active=true]:text-white data-[active=true]:border-eu-blue shadow-sm">
-                🇨🇳 {% trans "Китай" %}
-            </button>
+            {% endfor %}
         </div>
 
         <!-- Content Area (Split View) -->
@@ -443,28 +319,8 @@
     </div>
 
     <script>
-        // Data
-        const universities = {
-            korea: [
-                { id: 'sejong', name: 'Sejong University', location: 'Seoul', img: '{% static "assets/univers/korea/img1.jpg" %}', desc: '{% trans "Один из ведущих частных университетов в Сеуле, известный своими программами по гостеприимству, туризму и анимации." %}' },
-                { id: 'gachon', name: 'Gachon University', location: 'Seongnam', img: '{% static "assets/univers/korea/img2.jpg" %}', desc: '{% trans "Крупный университет с сильным медицинским факультетом и программами IT." %}' },
-                { id: 'korea_uni', name: 'Korea University', location: 'Seoul', img: '{% static "assets/univers/korea/img3.jpg" %}', desc: '{% trans "Один из университетов SKY, престижнейшее учебное заведение Южной Кореи." %}' },
-            ],
-            slovakia: [
-                { id: 'tu_kosice', name: 'Technical University of Košice', location: 'Košice', img: '{% static "assets/univers/slovakia/img1.jpg" %}', desc: '{% trans "Ведущий технический университет, предлагающий качественное инженерное образование в Европе." %}' },
-                { id: 'comenius', name: 'Comenius University', location: 'Bratislava', img: '{% static "assets/univers/slovakia/img2.jpg" %}', desc: '{% trans "Старейший и крупнейший университет Словакии." %}' },
-            ],
-            usa: [
-                { id: 'pace', name: 'Pace University', location: 'New York', img: '{% static "assets/univers/usa/img1.jpg" %}', desc: '{% trans "Частный университет в самом центре Манхэттена с фокусом на карьеру." %}' },
-                { id: 'asu', name: 'Arizona State University', location: 'Phoenix', img: '{% static "assets/univers/usa/img2.jpg" %}', desc: '{% trans "Инновационный университет №1 в США." %}' },
-            ],
-            italy: [
-                { id: 'sapienza', name: 'Sapienza University', location: 'Rome', img: '{% static "assets/univers/italy/img1.jpg" %}', desc: '{% trans "Один из старейших университетов мира, основанный в 1303 году." %}' },
-            ],
-            china: [
-                { id: 'blcu', name: 'Beijing Language and Culture University', location: 'Beijing', img: '{% static "assets/univers/china/img1.jpg" %}', desc: '{% trans "Главный университет Китая для изучения китайского языка иностранцами." %}' },
-            ]
-        };
+        // Data from database
+        const universities = {{ universities_json|safe }};
 
         let currentCountry = 'korea';
 
@@ -567,20 +423,12 @@
 
         <!-- Country Tabs -->
         <div class="flex flex-wrap justify-center gap-2 mb-10" id="employmentCountryTabs">
-            🇱🇹 {% trans "Литва" %}
+            {% for ec in emp_countries %}
+            <button onclick="selectEmploymentCountry('{{ ec.slug }}')"
+                class="emp-country-tab px-6 py-3 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-600 hover:border-eu-blue hover:text-eu-blue transition-all shadow-sm">
+                {{ ec.flag_emoji }} {{ ec.name }}
             </button>
-            🇸🇰 {% trans "Словакия" %}
-            </button>
-            🇩🇪 {% trans "Германия" %}
-            </button>
-            🇫🇮 {% trans "Финляндия" %}
-            </button>
-            🇪🇪 {% trans "Эстония" %}
-            </button>
-            <button onclick="selectEmploymentCountry('poland')"
-                class="emp-country-tab px-6 py-3 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-600 hover:border-eu-blue hover:text-eu-blue transition-all data-[active=true]:bg-eu-blue data-[active=true]:text-white data-[active=true]:border-eu-blue shadow-sm">
-                🇵🇱 {% trans "Польша" %}
-            </button>
+            {% endfor %}
         </div>
 
         <!-- Content Area -->
@@ -590,93 +438,8 @@
     </div>
 
     <script>
-        // Employment Data
-        const employmentData = {
-            lithuania: {
-                title: "{% trans 'Работа в Литве' %}",
-                desc: "{% trans 'Литва — одна из самых популярных стран для трудоустройства граждан СНГ. Простая процедура получения ВНЖ, схожий менталитет и высокий спрос на специалистов.' %}",
-                benefits: [
-                    "{% trans 'Быстрое оформление ВНЖ (1-2 месяца)' %}",
-                    "{% trans 'Нет языкового барьера (многие говорят по-русски)' %}",
-                    "{% trans 'Возможность перевезти семью через 6 месяцев' %}"
-                ],
-                jobs: [
-                    { role: "{% trans 'Водитель-дальнобойщик (CE)' %}", salary: "€2000 - €2500" },
-                    { role: "{% trans 'Сварщик MIG/MAG' %}", salary: "€1500 - €2200" },
-                    { role: "{% trans 'Строитель-универсал' %}", salary: "€1200 - €1800" }
-                ]
-            },
-            slovakia: {
-                title: "{% trans 'Работа в Словакии' %}",
-                desc: "{% trans 'Стабильная экономика, комфортный климат и возможность получить ВНЖ на 2 года сразу. Идеально для тех, кто ищет спокойную жизнь в центре Европы.' %}",
-                benefits: [
-                    "{% trans 'ВНЖ сразу на 1-2 года' %}",
-                    "{% trans 'Бесплатная медицина и соцпакет' %}",
-                    "{% trans 'Возможность путешествовать по всему Шенгену' %}"
-                ],
-                jobs: [
-                    { role: "{% trans 'Оператор на автозавод (JLR, VW)' %}", salary: "€1000 - €1400" },
-                    { role: "{% trans 'Водитель погрузчика' %}", salary: "€1100 - €1300" },
-                    { role: "{% trans 'Сборщик на склад электроники' %}", salary: "€900 - €1100" }
-                ]
-            },
-            germany: {
-                title: "{% trans 'Работа в Германии' %}",
-                desc: "{% trans 'Локомотив экономики Евросоюза. Высокие зарплаты, строгие стандарты, но и лучшие социальные гарантии.' %}",
-                benefits: [
-                    "{% trans 'Самые высокие зарплаты в ЕС' %}",
-                    "{% trans 'Возможность карьерного роста' %}",
-                    "{% trans 'Высокий уровень жизни' %}"
-                ],
-                jobs: [
-                    { role: "{% trans 'Медсестра / Медбрат' %}", salary: "€2500 - €3500" },
-                    { role: "{% trans 'IT Специалист' %}", salary: "€4000+" },
-                    { role: "{% trans 'Электрик / Инженер' %}", salary: "€2800 - €3500" }
-                ]
-            },
-            finland: {
-                title: "{% trans 'Работа в Финляндии' %}",
-                desc: "{% trans 'Скандинавский уровень жизни, экология и безопасность. Популярны сезонные работы и сфера обслуживания.' %}",
-                benefits: [
-                    "{% trans 'Высокая почасовая оплата' %}",
-                    "{% trans 'Идеальная экология' %}",
-                    "{% trans 'Сезонные работы до 9 месяцев' %}"
-                ],
-                jobs: [
-                    { role: "{% trans 'Сборщик ягод (сезон)' %}", salary: "{% trans '€1000 - €2500 (сдельная)' %}" },
-                    { role: "{% trans 'Уборщик помещений' %}", salary: "€12/час" },
-                    { role: "{% trans 'Разнорабочий на ферму' %}", salary: "€10/час" }
-                ]
-            },
-            estonia: {
-                title: "{% trans 'Работа в Эстонии' %}",
-                desc: "{% trans 'Цифровое государство с растущей экономикой. Простой документооборот и близость к странам СНГ.' %}",
-                benefits: [
-                    "{% trans 'Электронное резидентство' %}",
-                    "{% trans 'Русскоязычная среда' %}",
-                    "{% trans 'Зарплаты выше, чем в Восточной Европе' %}"
-                ],
-                jobs: [
-                    { role: "{% trans 'Строитель' %}", salary: "€1300 - €2000" },
-                    { role: "{% trans 'Водитель категории C' %}", salary: "€1400 - €1800" },
-                    { role: "{% trans 'Работник на производство' %}", salary: "€1000 - €1300" }
-                ]
-            },
-            poland: {
-                title: "{% trans 'Работа в Польше' %}",
-                desc: "{% trans 'Самый доступный старт для работы в Европе. Огромный выбор вакансий для специалистов и разнорабочих.' %}",
-                benefits: [
-                    "{% trans 'Самое простое оформление' %}",
-                    "{% trans 'Много вакансий без знания языка' %}",
-                    "{% trans 'Бесплатное жилье (часто)' %}"
-                ],
-                jobs: [
-                    { role: "{% trans 'Упаковщик на склад (Amazon/DPD)' %}", salary: "€900 - €1200" },
-                    { role: "{% trans 'Повар' %}", salary: "€1100 - €1500" },
-                    { role: "{% trans 'Мясокомбинат' %}", salary: "€1000 - €1400" }
-                ]
-            }
-        };
+        // Employment Data from database
+        const employmentData = {{ employment_json|safe }};
 
         let currentEmpCountry = 'lithuania';
 
@@ -782,93 +545,36 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Card 1: Korean -->
+            {% for course in language_courses %}
             <div
                 class="bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full group">
                 <div class="h-40 overflow-hidden relative">
-                    <img src="https://placehold.co/400x250/e2e8f0/1e293b?text=Korean+Language" alt="Korean Language"
+                    {% if course.image %}
+                    <img src="{{ course.image.url }}" alt="{{ course.name }}"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div
-                        class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-eu-blue uppercase tracking-wider">
-                        {% trans "Top Choice" %}
+                    {% else %}
+                    <div class="w-full h-full bg-slate-200 flex items-center justify-center text-slate-400">{{ course.name }}</div>
+                    {% endif %}
+                    {% if course.badge %}
+                    <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-eu-blue uppercase tracking-wider">
+                        {{ course.badge }}
                     </div>
+                    {% endif %}
                 </div>
                 <div class="p-5 flex-grow flex flex-col">
-                    <div class="text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wide">{% trans "Иностранные языки" %}</div>
+                    <div class="text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wide">{{ course.category }}</div>
                     <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
-                        {% trans "Корейский язык" %}</h3>
-                    <p class="text-sm text-gray-600 mb-4 line-clamp-2">{% trans "Интенсивный курс для поступления в ВУЗы Кореи (TOPIK I, II)." %}</p>
-
+                        {{ course.name }}</h3>
+                    <p class="text-sm text-gray-600 mb-4 line-clamp-2">{{ course.description }}</p>
                     <div class="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
-                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">{% trans "3-6 месяцев" %}</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">{{ course.duration }}</span>
+                        {% if course.certificate %}
                         <span class="text-xs font-bold text-eu-blue bg-blue-50 px-2 py-1 rounded">{% trans "Сертификат" %}</span>
+                        {% endif %}
                     </div>
                 </div>
             </div>
-
-            <!-- Card 2: German -->
-            <div
-                class="bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full group">
-                <div class="h-40 overflow-hidden relative">
-                    <img src="https://placehold.co/400x250/e2e8f0/1e293b?text=German+Language" alt="German Language"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                </div>
-                <div class="p-5 flex-grow flex flex-col">
-                    <div class="text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wide">{% trans "Работа и Учеба" %}</div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
-                        {% trans "Немецкий язык" %}</h3>
-                    <p class="text-sm text-gray-600 mb-4 line-clamp-2">{% trans "Подготовка к Goethe-Zertifikat (A1-C1) для работы и учебы в Германии." %}</p>
-
-                    <div class="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
-                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">{% trans "4-8 месяцев" %}</span>
-                        <span class="text-xs font-bold text-eu-blue bg-blue-50 px-2 py-1 rounded">{% trans "Сертификат" %}</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3: Japanese -->
-            <div
-                class="bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full group">
-                <div class="h-40 overflow-hidden relative">
-                    <img src="https://placehold.co/400x250/e2e8f0/1e293b?text=Japanese+Language" alt="Japanese Language"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                </div>
-                <div class="p-5 flex-grow flex flex-col">
-                    <div class="text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wide">{% trans "Культура и Карьера" %}</div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
-                        {% trans "Японский язык" %}</h3>
-                    <p class="text-sm text-gray-600 mb-4 line-clamp-2">{% trans "Изучение языка с нуля до уровня N2 для работы в Японии." %}</p>
-
-                    <div class="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
-                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">{% trans "6-12 месяцев" %}</span>
-                        <span class="text-xs font-bold text-eu-blue bg-blue-50 px-2 py-1 rounded">{% trans "Сертификат" %}</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 4: English -->
-            <div
-                class="bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full group">
-                <div class="h-40 overflow-hidden relative">
-                    <img src="https://placehold.co/400x250/e2e8f0/1e293b?text=English+Language" alt="English Language"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div
-                        class="absolute top-3 left-3 bg-eu-gold text-eu-dark px-2 py-1 rounded text-xs font-bold uppercase tracking-wider">
-                        {% trans "Popular" %}
-                    </div>
-                </div>
-                <div class="p-5 flex-grow flex flex-col">
-                    <div class="text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wide">{% trans "Международный" %}</div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
-                        {% trans "Английский язык" %}</h3>
-                    <p class="text-sm text-gray-600 mb-4 line-clamp-2">{% trans "General English и подготовка к IELTS/TOEFL для любой страны." %}</p>
-
-                    <div class="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
-                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">{% trans "3+ месяца" %}</span>
-                        <span class="text-xs font-bold text-eu-blue bg-blue-50 px-2 py-1 rounded">{% trans "Сертификат" %}</span>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -967,87 +673,28 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Review 1: Alina -->
+            {% for testimonial in testimonials %}
             <div
-                class="bg-white rounded-2xl p-8 shadow-card hover:shadow-premium transition-all duration-300 border border-gray-100 flex flex-col h-full">
+                class="bg-white rounded-2xl p-8 shadow-card hover:shadow-premium transition-all duration-300 border border-gray-100 flex flex-col h-full {% if forloop.counter == 2 %}transform md:-translate-y-4{% endif %}">
                 <div class="mb-6">
                     <svg class="h-10 w-10 text-eu-gold/40" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M14.017 21L14.017 18C14.017 16.896 14.383 15.93 15.117 15.103C15.851 14.275 16.969 13.861 18.47 13.861V11.232C16.845 11.232 15.69 10.686 15.003 9.593C14.316 8.5 13.972 6.946 13.972 4.93V2H21.99V9.593C21.99 12.503 21.033 15.228 19.119 17.768C17.205 20.309 15.504 21.579 14.017 21ZM2 21L2 18C2 16.896 2.366 15.93 3.1 15.103C3.834 14.275 4.952 13.861 6.453 13.861V11.232C4.828 11.232 3.673 10.686 2.986 9.593C2.299 8.5 1.955 6.946 1.955 4.93V2H9.973V9.593C9.973 12.503 9.016 15.228 7.102 17.768C5.188 20.309 3.487 21.579 2 21Z" />
+                        <path d="M14.017 21L14.017 18C14.017 16.896 14.383 15.93 15.117 15.103C15.851 14.275 16.969 13.861 18.47 13.861V11.232C16.845 11.232 15.69 10.686 15.003 9.593C14.316 8.5 13.972 6.946 13.972 4.93V2H21.99V9.593C21.99 12.503 21.033 15.228 19.119 17.768C17.205 20.309 15.504 21.579 14.017 21ZM2 21L2 18C2 16.896 2.366 15.93 3.1 15.103C3.834 14.275 4.952 13.861 6.453 13.861V11.232C4.828 11.232 3.673 10.686 2.986 9.593C2.299 8.5 1.955 6.946 1.955 4.93V2H9.973V9.593C9.973 12.503 9.016 15.228 7.102 17.768C5.188 20.309 3.487 21.579 2 21Z" />
                     </svg>
                 </div>
                 <blockquote class="flex-grow mb-6">
-                    <p class="text-gray-600 italic leading-relaxed">
-                        {% trans '"Благодаря European Group я получила грант на обучение. Процесс сбора документов
-                        прошел легко, и теперь я живу в Сеуле! Спасибо за поддержку на каждом этапе."' %}
-                    </p>
+                    <p class="text-gray-600 italic leading-relaxed">{{ testimonial.text }}</p>
                 </blockquote>
                 <div class="flex items-center gap-4 pt-6 border-t border-gray-50">
-                    <div
-                        class="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center text-pink-500 font-bold text-lg flex-shrink-0">
-                        A
+                    <div class="w-12 h-12 rounded-full {{ testimonial.avatar_bg_color }} flex items-center justify-center {{ testimonial.avatar_text_color }} font-bold text-lg flex-shrink-0">
+                        {{ testimonial.avatar_letter }}
                     </div>
                     <div>
-                        <div class="font-bold text-gray-900">{% trans "Алина, 20 лет" %}</div>
-                        <div class="text-xs text-eu-blue font-medium uppercase tracking-wide">{% trans "Студентка
-                            (Корея)" %}
-                        </div>
+                        <div class="font-bold text-gray-900">{{ testimonial.name }}</div>
+                        <div class="text-xs text-eu-blue font-medium uppercase tracking-wide">{{ testimonial.category }}</div>
                     </div>
                 </div>
             </div>
-
-            <!-- Review 2: Kubat -->
-            <div
-                class="bg-white rounded-2xl p-8 shadow-card hover:shadow-premium transition-all duration-300 border border-gray-100 flex flex-col h-full transform md:-translate-y-4">
-                <div class="mb-6">
-                    <svg class="h-10 w-10 text-eu-gold/40" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M14.017 21L14.017 18C14.017 16.896 14.383 15.93 15.117 15.103C15.851 14.275 16.969 13.861 18.47 13.861V11.232C16.845 11.232 15.69 10.686 15.003 9.593C14.316 8.5 13.972 6.946 13.972 4.93V2H21.99V9.593C21.99 12.503 21.033 15.228 19.119 17.768C17.205 20.309 15.504 21.579 14.017 21ZM2 21L2 18C2 16.896 2.366 15.93 3.1 15.103C3.834 14.275 4.952 13.861 6.453 13.861V11.232C4.828 11.232 3.673 10.686 2.986 9.593C2.299 8.5 1.955 6.946 1.955 4.93V2H9.973V9.593C9.973 12.503 9.016 15.228 7.102 17.768C5.188 20.309 3.487 21.579 2 21Z" />
-                    </svg>
-                </div>
-                <blockquote class="flex-grow mb-6">
-                    <p class="text-gray-600 italic leading-relaxed">
-                        {% trans '"Оформили рабочую визу в Великобританию за 2 месяца. Работаю на складе, условия отличные, зарплата достойная. Спасибо за честность и профессионализм!"' %}
-                    </p>
-                </blockquote>
-                <div class="flex items-center gap-4 pt-6 border-t border-gray-50">
-                    <div
-                        class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-eu-blue font-bold text-lg flex-shrink-0">
-                        К
-                    </div>
-                    <div>
-                        <div class="font-bold text-gray-900">{% trans "Кубат, 40 лет" %}</div>
-                        <div class="text-xs text-eu-blue font-medium uppercase tracking-wide">{% trans "Работа (Англия)" %}</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Review 3: Family -->
-            <div
-                class="bg-white rounded-2xl p-8 shadow-card hover:shadow-premium transition-all duration-300 border border-gray-100 flex flex-col h-full">
-                <div class="mb-6">
-                    <svg class="h-10 w-10 text-eu-gold/40" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M14.017 21L14.017 18C14.017 16.896 14.383 15.93 15.117 15.103C15.851 14.275 16.969 13.861 18.47 13.861V11.232C16.845 11.232 15.69 10.686 15.003 9.593C14.316 8.5 13.972 6.946 13.972 4.93V2H21.99V9.593C21.99 12.503 21.033 15.228 19.119 17.768C17.205 20.309 15.504 21.579 14.017 21ZM2 21L2 18C2 16.896 2.366 15.93 3.1 15.103C3.834 14.275 4.952 13.861 6.453 13.861V11.232C4.828 11.232 3.673 10.686 2.986 9.593C2.299 8.5 1.955 6.946 1.955 4.93V2H9.973V9.593C9.973 12.503 9.016 15.228 7.102 17.768C5.188 20.309 3.487 21.579 2 21Z" />
-                    </svg>
-                </div>
-                <blockquote class="flex-grow mb-6">
-                    <p class="text-gray-600 italic leading-relaxed">
-                        {% trans '"Думали, что получить визу в Америку нереально, но нас отлично подготовили к собеседованию. Одобрили всей семье! Мечта сбылась."' %}
-                    </p>
-                </blockquote>
-                <div class="flex items-center gap-4 pt-6 border-t border-gray-50">
-                    <div
-                        class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-lg flex-shrink-0">
-                        С
-                    </div>
-                    <div>
-                        <div class="font-bold text-gray-900">{% trans "Семья Исаевых" %}</div>
-                        <div class="text-xs text-eu-blue font-medium uppercase tracking-wide">{% trans "Виза (США)" %}
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

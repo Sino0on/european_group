@@ -95,97 +95,35 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Card 1: Korean -->
-            <div
-                class="bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full group">
+            {% for course in language_courses %}
+            <div class="bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full group">
                 <div class="h-40 overflow-hidden relative">
-                    <!-- Placehold.co used as per previous request to avoid broken local links if assets missing -->
-                    <img src="{% static 'assets/countries/korean.webp' %}" alt="Korean Language"
+                    {% if course.image %}
+                    <img src="{{ course.image.url }}" alt="{{ course.name }}"
                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div
-                        class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-eu-blue uppercase tracking-wider">
-                        Popular
+                    {% else %}
+                    <div class="w-full h-full bg-slate-200 flex items-center justify-center text-slate-400">{{ course.name }}</div>
+                    {% endif %}
+                    {% if course.badge %}
+                    <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-eu-blue uppercase tracking-wider">
+                        {{ course.badge }}
                     </div>
+                    {% endif %}
                 </div>
                 <div class="p-5 flex-grow flex flex-col">
-                    <div class="text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wide">{% trans "Азия" %}
-                    </div>
+                    <div class="text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wide">{{ course.category }}</div>
                     <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
-                        {% trans "Корейский язык" %}</h3>
-                    <p class="text-sm text-gray-600 mb-4 line-clamp-2">{% trans "Интенсивный курс для поступления в ВУЗы Кореи (TOPIK I, II)." %}</p>
-
+                        {{ course.name }}</h3>
+                    <p class="text-sm text-gray-600 mb-4 line-clamp-2">{{ course.description }}</p>
                     <div class="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
-                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">3-6 {% trans "месяцев" %}</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">{{ course.duration }}</span>
+                        {% if course.certificate %}
                         <span class="text-xs font-bold text-eu-blue bg-blue-50 px-2 py-1 rounded">{% trans "Сертификат" %}</span>
+                        {% endif %}
                     </div>
                 </div>
             </div>
-
-            <!-- Card 2: German -->
-            <div
-                class="bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full group">
-                <div class="h-40 overflow-hidden relative">
-                    <img src="{% static 'assets/countries/nemis.jpg' %}" alt="German Language"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                </div>
-                <div class="p-5 flex-grow flex flex-col">
-                    <div class="text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wide">{% trans "Европа" %}
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
-                        {% trans "Немецкий язык" %}</h3>
-                    <p class="text-sm text-gray-600 mb-4 line-clamp-2">{% trans "Подготовка к Goethe-Zertifikat, TestDaF для работы и учебы." %}</p>
-
-                    <div class="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
-                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">4-8 {% trans "месяцев" %}</span>
-                        <span class="text-xs font-bold text-eu-blue bg-blue-50 px-2 py-1 rounded">A1 - C1</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3: Japanese -->
-            <div
-                class="bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full group">
-                <div class="h-40 overflow-hidden relative">
-                    <img src="{% static 'assets/countries/japanese.jpg' %}" alt="Japanese Language"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                </div>
-                <div class="p-5 flex-grow flex flex-col">
-                    <div class="text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wide">{% trans "Азия" %}
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
-                        {% trans "Японский язык" %}</h3>
-                    <p class="text-sm text-gray-600 mb-4 line-clamp-2">{% trans "Подготовка к JLPT N5-N2. Разговорная практика с носителями." %}</p>
-
-                    <div class="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
-                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">6-12 {% trans "месяцев" %}</span>
-                        <span class="text-xs font-bold text-eu-blue bg-blue-50 px-2 py-1 rounded">JLPT</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 4: English -->
-            <div
-                class="bg-white rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col h-full group">
-                <div class="h-40 overflow-hidden relative">
-                    <img src="{% static 'assets/countries/english.png' %}" alt="English Language"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    <div
-                        class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-eu-blue uppercase tracking-wider">
-                        Essential
-                    </div>
-                </div>
-                <div class="p-5 flex-grow flex flex-col">
-                    <div class="text-xs font-semibold text-gray-400 mb-2 uppercase tracking-wide">{% trans "Международный" %}</div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-eu-blue transition-colors">
-                        {% trans "Английский язык" %}</h3>
-                    <p class="text-sm text-gray-600 mb-4 line-clamp-2">{% trans "General English, IELTS, TOEFL. Группы всех уровней." %}</p>
-
-                    <div class="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
-                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">3-9 {% trans "месяцев" %}</span>
-                        <span class="text-xs font-bold text-eu-blue bg-blue-50 px-2 py-1 rounded">IELTS</span>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

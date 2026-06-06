@@ -225,7 +225,7 @@
                         <span class="text-white text-lg font-serif font-bold">EUROPEAN Group</span>
                     </div>
                     <p class="text-sm leading-relaxed text-gray-400 mb-6">
-                        {% trans "Профессиональный консалтинг в сфере миграции, образования и бизнеса. Мы открываем границы и возможности." %}
+                        {% if company %}{{ company.description }}{% else %}{% trans "Профессиональный консалтинг в сфере миграции, образования и бизнеса. Мы открываем границы и возможности." %}{% endif %}
                     </p>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-eu-gold transition-colors">
@@ -249,22 +249,29 @@
                 <div>
                     <h3 class="text-white font-bold mb-6">{% trans "Контакты" %}</h3>
                     <ul class="space-y-4 text-sm text-gray-400">
+                        {% if company %}
                         <li class="flex items-start">
                             <span class="text-eu-gold w-24 flex-shrink-0">{% trans "Адрес:" %}</span>
-                            <span>{% trans 'г. Бишкек, ул. Примерная 123, БЦ "Пример", офис 404' %}</span>
+                            <span>{{ company.address }}</span>
                         </li>
                         <li class="flex items-start">
                             <span class="text-eu-gold w-24 flex-shrink-0">{% trans "Телефон:" %}</span>
-                            <span>+996 555 00 00 00</span>
+                            <span>{{ company.phone }}</span>
                         </li>
                         <li class="flex items-start">
                             <span class="text-eu-gold w-24 flex-shrink-0">{% trans "Email:" %}</span>
-                            <span>info@europeangroup.kg</span>
+                            <span>{{ company.email }}</span>
                         </li>
                         <li class="flex items-start">
                             <span class="text-eu-gold w-24 flex-shrink-0">{% trans "Режим:" %}</span>
-                            <span>{% trans "Пн-Пт: 09:00 - 18:00" %}</span>
+                            <span>{{ company.work_hours }}</span>
                         </li>
+                        {% else %}
+                        <li class="flex items-start">
+                            <span class="text-eu-gold w-24 flex-shrink-0">{% trans "Адрес:" %}</span>
+                            <span>{% trans 'г. Бишкек, ул. Примерная 123' %}</span>
+                        </li>
+                        {% endif %}
                     </ul>
                 </div>
 
@@ -341,6 +348,10 @@
         </div>
     </div>
     {% block extra_scripts %}{% endblock %}
+    <!-- Twemoji: renders flag emojis as images (fixes Windows where flags show as letter codes) -->
+    <script src="https://unpkg.com/twemoji@14.0.2/dist/twemoji.min.js" crossorigin="anonymous"></script>
+    <script>twemoji.parse(document.body, {folder: 'svg', ext: '.svg'});</script>
+    <style>img.emoji { width: 16px; height: 16px; vertical-align: middle; }</style>
 </body>
 
 </html>
