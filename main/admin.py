@@ -7,6 +7,7 @@ from .models import (
     LanguageCourse, VisaType,
     TourDestination, TourDeal,
     LegalService, CompanyPackage, PackageFeature,
+    Partner,
 )
 
 
@@ -141,3 +142,10 @@ class CompanyPackageAdmin(TranslationAdmin):
     list_editable = ('order', 'is_active', 'is_popular')
     list_display_links = ('name',)
     inlines = [PackageFeatureInline]
+
+
+@admin.register(Partner)
+class PartnerAdmin(admin.ModelAdmin):
+    list_display = ('name', 'order', 'is_active')
+    list_editable = ('order', 'is_active')
+    list_display_links = ('name',)

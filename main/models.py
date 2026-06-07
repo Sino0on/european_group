@@ -285,3 +285,19 @@ class PackageFeature(models.Model):
 
     def __str__(self):
         return self.text
+
+
+class Partner(models.Model):
+    name = models.CharField('Название партнёра', max_length=200)
+    logo = models.ImageField('Логотип', upload_to='partners/')
+    website = models.URLField('Сайт партнёра', blank=True)
+    order = models.PositiveIntegerField('Порядок', default=0)
+    is_active = models.BooleanField('Активен', default=True)
+
+    class Meta:
+        verbose_name = 'Партнёр'
+        verbose_name_plural = 'Партнёры'
+        ordering = ['order']
+
+    def __str__(self):
+        return self.name
