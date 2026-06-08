@@ -1,13 +1,81 @@
 <!DOCTYPE html>
 {% load static %}
 {% load i18n %}
-<html lang="ru" class="scroll-smooth">
+{% get_current_language as LANG %}
+<html lang="{{ LANG }}" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
+
+    <!-- ════════════════ SEO ════════════════ -->
+    <title>{% block title %}European Group | Профессиональный консалтинг в Кыргызстане{% endblock %}</title>
+
+    <meta name="description" content="{% block meta_description %}Профессиональный консалтинг в КР: трудоустройство в Европу, образование за рубежом, визовая поддержка, туры и юридические услуги. European Group — 10 лет опыта, 98% одобренных виз.{% endblock %}">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="author" content="European Group">
+    <link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+    <!-- hreflang (i18n) -->
+    {% with rest=request.path|slice:"3:" %}
+    <link rel="alternate" hreflang="ru" href="{{ request.scheme }}://{{ request.get_host }}/ru{{ rest }}">
+    <link rel="alternate" hreflang="ky" href="{{ request.scheme }}://{{ request.get_host }}/ky{{ rest }}">
+    <link rel="alternate" hreflang="en" href="{{ request.scheme }}://{{ request.get_host }}/en{{ rest }}">
+    <link rel="alternate" hreflang="x-default" href="{{ request.scheme }}://{{ request.get_host }}/ru{{ rest }}">
+    {% endwith %}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+    <meta property="og:site_name" content="European Group">
+    <meta property="og:title" content="{% block og_title %}{% block _title_inner %}European Group | Профессиональный консалтинг в Кыргызстане{% endblock %}{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Трудоустройство в Европу, образование за рубежом, визы, туры и юридические услуги. 10 лет опыта. Бесплатная консультация.{% endblock %}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:image" content="{% block og_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'assets/logo/logo2.png' %}{% endblock %}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="{% if LANG == 'ky' %}ky_KG{% elif LANG == 'en' %}en_US{% else %}ru_RU{% endif %}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% block twitter_title %}European Group{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}Трудоустройство в Европу, образование, визы, туры и юридические услуги в Кыргызстане.{% endblock %}">
+    <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'assets/logo/logo2.png' %}">
+
+    <!-- JSON-LD: LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "European Group",
+      "description": "Профессиональный консалтинг в Кыргызстане: трудоустройство, образование, визы, туры, юридические услуги",
+      "url": "{{ request.scheme }}://{{ request.get_host }}",
+      "logo": "{{ request.scheme }}://{{ request.get_host }}{% static 'assets/logo/logo2.png' %}",
+      {% if company %}
+      "telephone": "{{ company.phone }}",
+      "email": "{{ company.email }}",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Бишкек",
+        "addressCountry": "KG",
+        "streetAddress": "{{ company.address }}"
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }],
+      {% endif %}
+      "areaServed": {"@type": "Country", "name": "Kyrgyzstan"},
+      "priceRange": "$$",
+      "currenciesAccepted": "KGS",
+      "sameAs": []
+    }
+    </script>
+    <!-- ════════════════ /SEO ════════════════ -->
+
     <link rel="icon" href="{% static 'assets/logo/logo2.png' %}" type="image/png">
+    <link rel="apple-touch-icon" href="{% static 'assets/logo/logo2.png' %}">
 
     <!-- Fonts: Montserrat (Headers) and Lato (Body) for a professional, international feel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

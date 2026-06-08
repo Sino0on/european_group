@@ -43,8 +43,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sitemaps",
     "main",
 ]
+
+SITE_URL = config('SITE_URL', default='https://europeangroup.kg')
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
