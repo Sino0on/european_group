@@ -189,19 +189,19 @@
             <form class="space-y-6">
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">{% trans "Имя" %}</label>
-                    <input type="text"
+                    <input type="text" name="name"
                         class="w-full rounded-lg border-gray-300 shadow-sm focus:border-eu-blue focus:ring focus:ring-eu-blue/20 p-3 border"
                         placeholder="{% trans 'Ваше имя' %}">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">{% trans "Телефон" %}</label>
-                    <input type="tel"
+                    <input type="tel" name="phone"
                         class="w-full rounded-lg border-gray-300 shadow-sm focus:border-eu-blue focus:ring focus:ring-eu-blue/20 p-3 border"
                         placeholder="{% trans '+996...' %}">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">{% trans "Какой язык хотите изучать?" %}</label>
-                    <select
+                    <select name="course"
                         class="w-full rounded-lg border-gray-300 shadow-sm focus:border-eu-blue focus:ring focus:ring-eu-blue/20 p-3 border bg-white">
                         <option>{% trans "Корейский" %}</option>
                         <option>{% trans "Немецкий" %}</option>
@@ -209,7 +209,7 @@
                         <option>{% trans "Японский" %}</option>
                     </select>
                 </div>
-                <button type="button" onclick='alert("{% trans "Вы записаны на пробный урок!" %}")'
+                <button type="button" onclick="sendLead(this, 'lang')"
                     class="w-full py-4 bg-eu-blue text-white font-bold rounded-lg hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl">
                     {% trans "Записаться бесплатно" %}
                 </button>

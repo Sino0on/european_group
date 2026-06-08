@@ -1,6 +1,9 @@
 import json
 from django.shortcuts import render
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
 from django.core.serializers.json import DjangoJSONEncoder
+from .telegram import send_telegram
 from .models import (
     CompanyInfo, Statistic, Service, Testimonial,
     EmploymentCountry, UniversityCountry,
@@ -9,6 +12,63 @@ from .models import (
     LegalService, CompanyPackage,
     Partner,
 )
+
+
+# Человекочитаемые названия источников заявок
+_SOURCE_LABELS = {
+    'consultation': '📋 Консультация (главная)',
+    'jobs': '💼 Трудоустройство',
+    'study': '🎓 Образование за рубежом',
+    'visa': '🛂 Визовая поддержка',
+    'tour': '✈️ Подбор тура',
+    'lang': '🗣 Языковые курсы',
+    'law': '⚖️ Юридическая консультация',
+    'company': '🏢 Регистрация компании',
+    'modal': '💬 Быстрая консультация (модал)',
+}
+
+# Человекочитаемые названия полей
+_FIELD_LABELS = {
+    'name': 'Имя',
+    'phone': 'Телефон',
+    'whatsapp': 'WhatsApp',
+    'country': 'Страна',
+    'destination': 'Направление',
+    'budget': 'Бюджет',
+    'course': 'Курс',
+    'service': 'Услуга',
+    'program': 'Программа',
+    'company_type': 'Тип компании',
+    'experience': 'Опыт',
+    'message': 'Комментарий',
+}
+
+
+@require_POST
+def submit_lead(request):
+    try:
+        data = json.loads(request.body)
+    except (ValueError, TypeError):
+        data = request.POST.dict()
+
+    source = data.get('source', 'unknown')
+    source_label = _SOURCE_LABELS.get(source, f'📩 Заявка ({source})')
+
+    lines = [f'<b>{source_label}</b>', '']
+    for key, label in _FIELD_LABELS.items():
+        value = (data.get(key) or '').strip()
+        if value:
+            lines.append(f'<b>{label}:</b> {value}')
+
+    # Любые дополнительные поля, не вошедшие в _FIELD_LABELS
+    known = set(_FIELD_LABELS) | {'source'}
+    for key, value in data.items():
+        if key not in known and value and str(value).strip():
+            lines.append(f'<b>{key}:</b> {value}')
+
+    text = '\n'.join(lines)
+    ok = send_telegram(text)
+    return JsonResponse({'ok': ok})
 
 
 def _get_base_context():

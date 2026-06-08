@@ -12,4 +12,5 @@ urlpatterns = [
     path('visa/', visa, name='visa'),
     path('university/', university_detail, name='university_detail'),
     path('tour/', tour, name='tour'),
+    path('api/lead/', submit_lead, name='submit_lead'),
 ]

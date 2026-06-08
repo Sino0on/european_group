@@ -320,35 +320,88 @@
                 <p class="text-sm text-gray-500 mt-2">{% trans "Оставьте заявку, и мы свяжемся с вами в течение 10 минут." %}</p>
             </div>
 
-            <form class="space-y-4"
-                onsubmit="event.preventDefault(); alert('{% trans 'Спасибо! Заявка отправлена.' %}'); document.getElementById('consultModal').classList.add('hidden'); document.getElementById('consultModal').classList.remove('flex');">
+            <form class="space-y-4" onsubmit="event.preventDefault();">
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">{% trans "Ваше имя" %}</label>
-                    <input type="text" required
+                    <input type="text" name="name" required
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-eu-blue focus:border-eu-blue outline-none transition-all"
                         placeholder="{% trans 'Азамат' %}">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">{% trans "Номер телефона" %}</label>
-                    <input type="tel" required
+                    <input type="tel" name="phone" required
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-eu-blue focus:border-eu-blue outline-none transition-all"
                         placeholder="+996 555 123 456">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">{% trans "Вопрос (необязательно)" %}</label>
-                    <textarea
+                    <textarea name="message"
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-eu-blue focus:border-eu-blue outline-none transition-all"
                         rows="3" placeholder="{% trans 'Меня интересует виза в...' %}"></textarea>
                 </div>
-                <button type="submit"
+                <button type="button" onclick="sendLead(this, 'modal')"
                     class="w-full bg-eu-blue hover:bg-blue-800 text-white font-bold py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5">
                     {% trans "Получить консультацию" %}
                 </button>
             </form>
         </div>
     </div>
+    <!-- Universal lead submission -->
+    <script>
+    const LEAD_URL = "{% url 'submit_lead' %}";
+    const CSRF_TOKEN = "{{ csrf_token }}";
+
+    async function sendLead(btn, source, extraData = {}) {
+        const form = btn.closest('form');
+        const data = { source, ...extraData };
+
+        // Collect all named/id inputs from the form
+        if (form) {
+            form.querySelectorAll('input[name],input[id],textarea[name],textarea[id],select[name],select[id]').forEach(el => {
+                const key = el.name || el.id;
+                if (key && el.value && el.value.trim()) data[key] = el.value.trim();
+            });
+        }
+
+        // Basic validation — require at least a phone or name
+        if (!data.phone && !data.name && !data.tel) {
+            alert('Пожалуйста, заполните обязательные поля.');
+            return;
+        }
+
+        const originalText = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = 'Отправляем...';
+
+        try {
+            const resp = await fetch(LEAD_URL, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json', 'X-CSRFToken': CSRF_TOKEN},
+                body: JSON.stringify(data),
+            });
+            const result = await resp.json();
+            if (result.ok) {
+                btn.innerHTML = '✓ Заявка отправлена!';
+                btn.style.background = '#16a34a';
+                if (form) form.reset();
+                // Close modal if inside one
+                const modal = btn.closest('[id$="Modal"],[id$="modal"]');
+                if (modal) setTimeout(() => { modal.classList.add('hidden'); modal.classList.remove('flex'); }, 1200);
+            } else {
+                btn.innerHTML = 'Ошибка, попробуйте ещё раз';
+                btn.style.background = '#dc2626';
+                setTimeout(() => { btn.innerHTML = originalText; btn.style.background = ''; btn.disabled = false; }, 2500);
+            }
+        } catch {
+            btn.innerHTML = 'Ошибка соединения';
+            btn.style.background = '#dc2626';
+            setTimeout(() => { btn.innerHTML = originalText; btn.style.background = ''; btn.disabled = false; }, 2500);
+        }
+    }
+    </script>
+
     <!-- WhatsApp floating button -->
-    <a href="https://wa.me/996555000000"
+    <a href="https://wa.me/996702233288"
        target="_blank" rel="noopener"
        title="Написать в WhatsApp"
        style="position:fixed;bottom:28px;right:28px;z-index:9999;

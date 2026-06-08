@@ -416,14 +416,14 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div>
                                 <label for="form-name" class="block text-sm font-medium text-gray-700 mb-1">{% trans "Ваше имя" %}</label>
-                                <input type="text" id="form-name"
+                                <input type="text" id="form-name" name="name"
                                     class="w-full rounded-lg border-gray-300 shadow-sm focus:border-eu-blue focus:ring focus:ring-eu-blue/20 transition-all p-3 border"
                                     placeholder="{% trans 'Иван Иванов' %}">
                             </div>
                             <div>
                                 <label for="form-phone" class="block text-sm font-medium text-gray-700 mb-1">{% trans
                                     "Телефон (WhatsApp)" %}</label>
-                                <input type="tel" id="form-phone"
+                                <input type="tel" id="form-phone" name="phone"
                                     class="w-full rounded-lg border-gray-300 shadow-sm focus:border-eu-blue focus:ring focus:ring-eu-blue/20 transition-all p-3 border"
                                     placeholder="+996 ...">
                             </div>
@@ -431,7 +431,7 @@
 
                         <div>
                             <label for="form-country" class="block text-sm font-medium text-gray-700 mb-1">{% trans "Желаемая страна" %}</label>
-                            <select id="form-country"
+                            <select id="form-country" name="country"
                                 class="w-full rounded-lg border-gray-300 shadow-sm focus:border-eu-blue focus:ring focus:ring-eu-blue/20 transition-all p-3 border bg-white">
                                 <option>{% trans "Литва" %}</option>
                                 <option>{% trans "Словакия" %}</option>
@@ -445,13 +445,12 @@
 
                         <div>
                             <label for="form-message" class="block text-sm font-medium text-gray-700 mb-1">{% trans "Комментарий (необязательно)" %}</label>
-                            <textarea id="form-message" rows="3"
+                            <textarea id="form-message" name="message" rows="3"
                                 class="w-full rounded-lg border-gray-300 shadow-sm focus:border-eu-blue focus:ring focus:ring-eu-blue/20 transition-all p-3 border"
                                 placeholder="{% trans 'Например: интересует работа водителем...' %}"></textarea>
                         </div>
 
-                        <button type="button"
-                            onclick='alert("{% trans "Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время."|escapejs %}")'
+                        <button type="button" onclick="sendLead(this, 'jobs')"
                             class="w-full py-4 px-6 bg-eu-blue hover:bg-blue-800 text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5">
                             {% trans "Отправить анкету" %}
                         </button>
@@ -510,7 +509,7 @@
                                 <div class="pt-4">
                                     <button type="button"
                                         class="w-full inline-flex justify-center rounded-lg border border-transparent shadow-sm px-4 py-3 bg-eu-blue text-base font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-eu-blue sm:text-sm"
-                                        onclick='document.getElementById("consultModal").classList.add("hidden"); alert("{% trans "Спасибо! Заявка отправлена."|escapejs %}");'>
+                                        onclick="sendLead(this, 'jobs')">
                                         {% trans "Отправить заявку" %}
                                     </button>
                                 </div>
