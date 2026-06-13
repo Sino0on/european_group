@@ -365,27 +365,28 @@
     function showUniDetail(uni) {
         const container = document.getElementById('uniDetail');
         container.innerHTML = `
-            <div class="h-64 sm:h-80 w-full relative">
-                <img src="${uni.img}" class="absolute inset-0 w-full h-full object-cover" alt="${uni.name}">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                <div class="absolute bottom-0 left-0 p-8 text-white">
-                    <h3 class="text-3xl font-serif font-bold mb-2">${uni.name}</h3>
-                    <p class="text-white/80 flex items-center">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            <div style="height:220px;flex-shrink:0;position:relative;overflow:hidden;width:100%;">
+                <img src="${uni.img}" style="width:100%;height:100%;object-fit:cover;display:block;" alt="${uni.name}"
+                     onerror="this.parentElement.style.background='#e2e8f0';this.style.display='none';">
+                <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.75),transparent);"></div>
+                <div style="position:absolute;bottom:0;left:0;padding:1.5rem;color:#fff;">
+                    <h3 style="font-size:1.5rem;font-weight:700;margin-bottom:0.25rem;">${uni.name}</h3>
+                    <p style="font-size:0.875rem;opacity:0.85;display:flex;align-items:center;gap:4px;">
+                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                         ${uni.location}
                     </p>
                 </div>
             </div>
-            <div class="p-8 flex-grow flex flex-col">
+            <div class="p-8 flex-grow flex flex-col overflow-y-auto">
                 <h4 class="text-lg font-bold text-gray-900 mb-4">{% trans "Об университете" %}</h4>
                 <p class="text-gray-600 leading-relaxed mb-8 flex-grow">
                     ${uni.desc}
                 </p>
                 <div class="flex items-center justify-between mt-auto pt-6 border-t border-gray-100">
-                        <div class="text-sm text-gray-500">
+                    <div class="text-sm text-gray-500">
                         <span>{% trans "Программы:" %}</span> <span class="text-gray-900 font-medium">{% trans "Бакалавриат, Магистратура" %}</span>
                     </div>
-                    <a href="{% url 'university_detail' %}" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-sm font-medium rounded-lg text-white bg-eu-blue hover:bg-blue-800 transition-colors shadow-lg hover:shadow-xl">
+                    <a href="#" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-sm font-medium rounded-lg text-white bg-eu-blue hover:bg-blue-800 transition-colors shadow-lg hover:shadow-xl">
                         {% trans "Узнать подробнее" %}
                     </a>
                 </div>
