@@ -12,71 +12,78 @@
 <!-- Swiper CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <style>
-  .hero-swiper {
-    width: 100%;
-  }
-  .hero-swiper .swiper-slide {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  /* Entrance animations for text in active slide */
-  .hero-swiper .swiper-slide-active .slide-anim-title {
-    animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-  .hero-swiper .swiper-slide-active .slide-anim-subtitle {
-    animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s;
-  }
-  .hero-swiper .swiper-slide-active .slide-anim-desc {
-    animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.4s;
-  }
-  .hero-swiper .swiper-slide-active .slide-anim-btn {
-    animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.6s;
-  }
-
-  .slide-anim-title,
-  .slide-anim-subtitle,
-  .slide-anim-desc,
-  .slide-anim-btn {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  @keyframes slideUpFade {
-    to {
-      opacity: 1;
-      transform: translateY(0);
+    .hero-swiper {
+        width: 100%;
     }
-  }
 
-  /* Custom indicators */
-  .hero-swiper .swiper-pagination-bullet {
-    background: rgba(255, 255, 255, 0.4);
-    opacity: 1;
-    width: 8px;
-    height: 8px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .hero-swiper .swiper-pagination-bullet-active {
-    background: #FFCC00 !important;
-    width: 24px;
-    border-radius: 4px;
-  }
-  
-  /* Next/Prev buttons stylings */
-  .hero-swiper .swiper-button-prev,
-  .hero-swiper .swiper-button-next {
-    color: rgba(255, 255, 255, 0.6);
-    transition: all 0.2s ease;
-  }
-  .hero-swiper .swiper-button-prev:after,
-  .hero-swiper .swiper-button-next:after {
-    font-size: 24px;
-  }
-  .hero-swiper .swiper-button-prev:hover,
-  .hero-swiper .swiper-button-next:hover {
-    color: #FFCC00;
-  }
+    .hero-swiper .swiper-slide {
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Entrance animations for text in active slide */
+    .hero-swiper .swiper-slide-active .slide-anim-title {
+        animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .hero-swiper .swiper-slide-active .slide-anim-subtitle {
+        animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s;
+    }
+
+    .hero-swiper .swiper-slide-active .slide-anim-desc {
+        animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.4s;
+    }
+
+    .hero-swiper .swiper-slide-active .slide-anim-btn {
+        animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.6s;
+    }
+
+    .slide-anim-title,
+    .slide-anim-subtitle,
+    .slide-anim-desc,
+    .slide-anim-btn {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    @keyframes slideUpFade {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Custom indicators */
+    .hero-swiper .swiper-pagination-bullet {
+        background: rgba(255, 255, 255, 0.4);
+        opacity: 1;
+        width: 8px;
+        height: 8px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hero-swiper .swiper-pagination-bullet-active {
+        background: #FFCC00 !important;
+        width: 24px;
+        border-radius: 4px;
+    }
+
+    /* Next/Prev buttons stylings */
+    .hero-swiper .swiper-button-prev,
+    .hero-swiper .swiper-button-next {
+        color: rgba(255, 255, 255, 0.6);
+        transition: all 0.2s ease;
+    }
+
+    .hero-swiper .swiper-button-prev:after,
+    .hero-swiper .swiper-button-next:after {
+        font-size: 24px;
+    }
+
+    .hero-swiper .swiper-button-prev:hover,
+    .hero-swiper .swiper-button-next:hover {
+        color: #FFCC00;
+    }
 </style>
 {% endblock %}
 
@@ -90,28 +97,35 @@
             <div class="swiper-slide min-h-[70vh] lg:min-h-[85vh] flex items-center pt-32 pb-20 lg:pt-48 lg:pb-32">
                 <!-- Background Image or Gradient -->
                 {% if slide.background_image %}
-                <div class="absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('{{ slide.background_image.url }}');">
+                <div class="absolute inset-0 w-full h-full bg-cover bg-center"
+                    style="background-image: url('{{ slide.background_image.url }}');">
                     <div class="absolute inset-0 bg-eu-dark/85 backdrop-blur-[1px]"></div>
                 </div>
                 {% else %}
                 <div class="absolute inset-0 w-full h-full overflow-hidden">
-                    <div class="absolute top-0 right-0 w-2/3 h-full bg-eu-blue/10 transform -skew-x-12 translate-x-20"></div>
+                    <div class="absolute top-0 right-0 w-2/3 h-full bg-eu-blue/10 transform -skew-x-12 translate-x-20">
+                    </div>
                     <div class="absolute bottom-0 left-0 w-1/2 h-1/2 bg-eu-gold/5 rounded-full blur-3xl"></div>
                 </div>
                 {% endif %}
                 <!-- Grid Pattern Overlay (always present to blend design) -->
-                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-20"></div>
+                <div
+                    class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-20">
+                </div>
 
                 <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 w-full">
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight mb-6">
                         <span class="block slide-anim-title">{{ slide.title }}</span>
                         {% if slide.subtitle %}
-                        <span class="block text-2xl md:text-3xl lg:text-4xl mt-4 font-sans font-light text-gray-300 slide-anim-subtitle">{{ slide.subtitle }}</span>
+                        <span
+                            class="block text-2xl md:text-3xl lg:text-4xl mt-4 font-sans font-light text-gray-300 slide-anim-subtitle">{{
+                            slide.subtitle }}</span>
                         {% endif %}
                     </h1>
 
                     {% if slide.description %}
-                    <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-300 leading-relaxed font-light slide-anim-desc">
+                    <p
+                        class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-300 leading-relaxed font-light slide-anim-desc">
                         {{ slide.description }}
                     </p>
                     {% endif %}
@@ -122,7 +136,8 @@
                         <a href="{{ slide.button_primary_url|default:'#finder' }}"
                             class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-full text-eu-dark bg-white hover:bg-gray-50 transition-all duration-200 shadow-xl hover:shadow-2xl hover:-translate-y-1">
                             {{ slide.button_primary_text }}
-                            <svg class="ml-2 -mr-1 w-5 h-5 text-eu-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="ml-2 -mr-1 w-5 h-5 text-eu-blue" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                             </svg>
@@ -163,12 +178,14 @@
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight mb-6">
             <span class="block">European Group</span>
-            <span class="block text-2xl md:text-3xl lg:text-4xl mt-4 font-sans font-light text-gray-300">{% trans "Профессиональные решения в КР и за рубежом" %}</span>
+            <span class="block text-2xl md:text-3xl lg:text-4xl mt-4 font-sans font-light text-gray-300">{% trans
+                "Профессиональные решения в КР и за рубежом" %}</span>
         </h1>
 
         <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-300 leading-relaxed font-light">
             {% trans "От трудоустройства в Европе до комплексного юридического сопровождения бизнеса." %}
-            <span class="text-eu-gold font-medium">{% trans "10 лет" %}</span> {% trans "помогаем расти, учиться и путешествовать." %}
+            <span class="text-eu-gold font-medium">{% trans "10 лет" %}</span> {% trans "помогаем расти, учиться и
+            путешествовать." %}
         </p>
 
         <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
@@ -313,7 +330,8 @@
                     {% trans "Комплексная подготовка" %}<br>{% trans "к будущему в Европе, Корее и в Китае" %}
                 </h2>
                 <p class="text-gray-600 text-lg leading-relaxed mb-10">
-                    {% trans "Мы готовим к поступлению и жизни не только в Европе, но и в Корее, Китае и других странах. От языковых курсов до полной адаптации и уверенной карьеры — мы поддерживаем на каждом шагу." %}
+                    {% trans "Мы готовим к поступлению и жизни не только в Европе, но и в Корее, Китае и других странах.
+                    От языковых курсов до полной адаптации и уверенной карьеры — мы поддерживаем на каждом шагу." %}
                 </p>
 
                 <!-- Feature Grid -->
@@ -329,7 +347,8 @@
                         </div>
                         <div>
                             <h4 class="font-bold text-gray-900">{% trans "Экспертное наставничество" %}</h4>
-                            <p class="text-sm text-gray-500 mt-1">{% trans "Поддержка профессионалов на каждом этапе." %}</p>
+                            <p class="text-sm text-gray-500 mt-1">{% trans "Поддержка профессионалов на каждом этапе."
+                                %}</p>
                         </div>
                     </div>
                     <div class="flex gap-4">
@@ -869,10 +888,14 @@
                     </div>
 
                     <div class="pt-4">
-                        <button type="submit"
-                            class="w-full flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-xl text-white bg-eu-blue hover:bg-blue-800 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        <a href="#consultModal"
+                            onclick="document.getElementById('consultModal').classList.remove('hidden'); document.getElementById('consultModal').classList.add('flex');"
+            
+                            class="w-full flex items-center justify-center px-8 py-4 border border-transparent text-lg
+                            font-medium rounded-xl text-white bg-eu-blue hover:bg-blue-800 transition-all duration-200
+                            shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
                             {% trans "Найти решение" %}
-                        </button>
+                        </a>
                     </div>
                 </form>
             </div>
