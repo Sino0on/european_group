@@ -7,7 +7,7 @@ from .models import (
     LanguageCourse, VisaType,
     TourDestination, TourDeal,
     LegalService, CompanyPackage, PackageFeature,
-    Partner,
+    Partner, HeroSlide,
 )
 
 
@@ -149,3 +149,10 @@ class PartnerAdmin(admin.ModelAdmin):
     list_display = ('name', 'order', 'is_active')
     list_editable = ('order', 'is_active')
     list_display_links = ('name',)
+
+
+@admin.register(HeroSlide)
+class HeroSlideAdmin(TranslationAdmin):
+    list_display = ('title', 'subtitle', 'order', 'is_active')
+    list_editable = ('order', 'is_active')
+    list_display_links = ('title',)

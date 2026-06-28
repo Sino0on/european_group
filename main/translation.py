@@ -6,6 +6,7 @@ from .models import (
     LanguageCourse, VisaType,
     TourDestination, TourDeal,
     LegalService, CompanyPackage, PackageFeature,
+    HeroSlide,
 )
 
 
@@ -87,3 +88,8 @@ class CompanyPackageTranslationOptions(TranslationOptions):
 @register(PackageFeature)
 class PackageFeatureTranslationOptions(TranslationOptions):
     fields = ('text',)
+
+
+@register(HeroSlide)
+class HeroSlideTranslationOptions(TranslationOptions):
+    fields = ('title', 'subtitle', 'description', 'button_primary_text', 'button_secondary_text')

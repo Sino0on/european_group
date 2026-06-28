@@ -301,3 +301,34 @@ class Partner(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class HeroSlide(models.Model):
+    title = models.CharField('Заголовок', max_length=250)
+    subtitle = models.CharField('Подзаголовок', max_length=250, blank=True)
+    description = models.TextField('Описание', blank=True)
+
+    button_primary_text = models.CharField('Текст основной кнопки', max_length=100, blank=True)
+    button_primary_url = models.CharField('Ссылка основной кнопки', max_length=250, default='#finder', blank=True)
+
+    button_secondary_text = models.CharField('Текст дополнительной кнопки', max_length=100, blank=True)
+    button_secondary_url = models.CharField('Ссылка дополнительной кнопки', max_length=250, default='#directions', blank=True)
+
+    background_image = models.ImageField(
+        'Фоновое изображение',
+        upload_to='hero/',
+        blank=True,
+        null=True,
+        help_text='Если не задано, будет использован стандартный темно-синий фон с абстрактным градиентом'
+    )
+
+    order = models.PositiveIntegerField('Порядок', default=0)
+    is_active = models.BooleanField('Активен', default=True)
+
+    class Meta:
+        verbose_name = 'Слайд главного экрана'
+        verbose_name_plural = 'Слайды главного экрана'
+        ordering = ['order']
+
+    def __str__(self):
+        return self.title

@@ -10,7 +10,7 @@ from .models import (
     LanguageCourse, VisaType,
     TourDestination, TourDeal,
     LegalService, CompanyPackage,
-    Partner,
+    Partner, HeroSlide,
 )
 
 
@@ -115,6 +115,7 @@ def index(request):
         'employment_json': json.dumps(employment_json, cls=DjangoJSONEncoder),
         'language_courses': LanguageCourse.objects.filter(is_active=True),
         'partners': Partner.objects.filter(is_active=True),
+        'hero_slides': HeroSlide.objects.filter(is_active=True),
     })
     return render(request, 'index.html', context)
 
