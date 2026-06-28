@@ -116,7 +116,15 @@ class JobListing(models.Model):
                                 related_name='jobs', verbose_name='Страна')
     role = models.CharField('Должность', max_length=200)
     salary = models.CharField('Зарплата', max_length=100)
+
+    description = models.TextField('Описание вакансии', blank=True)
+    requirements = models.TextField('Требования', blank=True, help_text='Каждое требование с новой строки')
+    duties = models.TextField('Обязанности', blank=True, help_text='Каждая обязанность с новой строки')
+    conditions = models.TextField('Условия работы', blank=True, help_text='Каждое условие с новой строки')
+    image = models.ImageField('Фото / Иллюстрация', upload_to='jobs/', blank=True, null=True)
+
     order = models.PositiveIntegerField('Порядок', default=0)
+    is_active = models.BooleanField('Активен', default=True)
 
     class Meta:
         verbose_name = 'Вакансия'

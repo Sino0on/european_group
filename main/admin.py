@@ -156,3 +156,11 @@ class HeroSlideAdmin(TranslationAdmin):
     list_display = ('title', 'subtitle', 'order', 'is_active')
     list_editable = ('order', 'is_active')
     list_display_links = ('title',)
+
+
+@admin.register(JobListing)
+class JobListingAdmin(TranslationAdmin):
+    list_display = ('role', 'country', 'salary', 'order', 'is_active')
+    list_editable = ('order', 'is_active')
+    list_display_links = ('role',)
+    list_filter = ('country',)

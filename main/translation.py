@@ -42,7 +42,7 @@ class CountryBenefitTranslationOptions(TranslationOptions):
 
 @register(JobListing)
 class JobListingTranslationOptions(TranslationOptions):
-    fields = ('role', 'salary')
+    fields = ('role', 'salary', 'description', 'requirements', 'duties', 'conditions')
 
 
 @register(UniversityCountry)

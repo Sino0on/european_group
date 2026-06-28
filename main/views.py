@@ -101,7 +101,18 @@ def index(request):
             'title': ec.name,
             'desc': ec.description,
             'benefits': [b.text for b in ec.benefits.all()],
-            'jobs': [{'role': j.role, 'salary': j.salary} for j in ec.jobs.all()],
+            'jobs': [
+                {
+                    'role': j.role,
+                    'salary': j.salary,
+                    'description': j.description or '',
+                    'requirements': j.requirements or '',
+                    'duties': j.duties or '',
+                    'conditions': j.conditions or '',
+                    'image': j.image.url if j.image else '',
+                }
+                for j in ec.jobs.filter(is_active=True)
+            ],
         }
 
     context = _get_base_context()
@@ -136,7 +147,18 @@ def jobs(request):
             'title': ec.name,
             'desc': ec.description,
             'benefits': [b.text for b in ec.benefits.all()],
-            'jobs': [{'role': j.role, 'salary': j.salary} for j in ec.jobs.all()],
+            'jobs': [
+                {
+                    'role': j.role,
+                    'salary': j.salary,
+                    'description': j.description or '',
+                    'requirements': j.requirements or '',
+                    'duties': j.duties or '',
+                    'conditions': j.conditions or '',
+                    'image': j.image.url if j.image else '',
+                }
+                for j in ec.jobs.filter(is_active=True)
+            ],
         }
 
     context = _get_base_context()

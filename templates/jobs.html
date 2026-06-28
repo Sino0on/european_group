@@ -177,8 +177,8 @@
 
             if (!data) return;
 
-            let jobsHtml = data.jobs.map(job => `
-                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center group hover:border-eu-blue hover:shadow-md transition-all">
+            let jobsHtml = data.jobs.map((job, index) => `
+                    <div onclick="showJobDetail('${currentEmpCountry}', ${index})" class="cursor-pointer bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center group hover:border-eu-blue hover:shadow-md transition-all">
                         <div>
                             <div class="font-bold text-gray-800 text-lg">${job.role}</div>
                             <div class="text-sm text-eu-gold font-medium">{% trans "Зарплата:" %} <span class="text-gray-600">${job.salary}</span></div>

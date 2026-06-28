@@ -414,6 +414,76 @@
             </form>
         </div>
     </div>
+
+    <!-- Modal for Job Details -->
+    <div id="jobModal"
+        class="hidden fixed inset-0 z-[60] overflow-y-auto w-full h-full bg-slate-900/85 backdrop-blur-sm items-center justify-center p-4">
+        <div class="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all scale-100 flex flex-col max-h-[90vh]">
+            <!-- Header -->
+            <div class="p-6 border-b border-gray-100 flex justify-between items-center bg-eu-dark text-white sticky top-0 z-10">
+                <h3 class="text-xl font-bold font-serif" id="modalJobTitle">{% trans "Детали вакансии" %}</h3>
+                <button onclick="closeJobModal()" class="text-gray-400 hover:text-white transition-colors p-1 rounded-full hover:bg-white/10">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Content -->
+            <div class="p-8 overflow-y-auto space-y-6">
+                <!-- Job Image -->
+                <div id="modalJobImageContainer" class="hidden">
+                    <img id="modalJobImage" src="" alt="Vacancy visual" class="w-full h-64 object-cover rounded-xl shadow-inner border border-gray-100">
+                </div>
+
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+                    <div>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider block">{% trans "Должность" %}</span>
+                        <h4 class="text-2xl font-bold text-gray-900" id="modalJobRole"></h4>
+                    </div>
+                    <div class="bg-blue-50/50 px-4 py-2.5 rounded-xl border border-blue-100/50 self-start sm:self-auto">
+                        <span class="text-xs font-semibold text-eu-blue uppercase tracking-wider block">{% trans "Зарплата" %}</span>
+                        <span class="text-lg font-bold text-eu-gold" id="modalJobSalary"></span>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div id="modalJobDescContainer" class="hidden space-y-2">
+                    <h5 class="font-bold text-gray-800 border-b border-gray-100 pb-2 text-sm uppercase tracking-wider">{% trans "Описание вакансии" %}</h5>
+                    <p class="text-gray-600 text-sm leading-relaxed whitespace-pre-line" id="modalJobDesc"></p>
+                </div>
+
+                <!-- Duties -->
+                <div id="modalJobDutiesContainer" class="hidden space-y-2">
+                    <h5 class="font-bold text-gray-800 border-b border-gray-100 pb-2 text-sm uppercase tracking-wider">{% trans "Обязанности" %}</h5>
+                    <ul class="list-disc pl-5 text-gray-600 text-sm space-y-1.5" id="modalJobDuties"></ul>
+                </div>
+
+                <!-- Requirements -->
+                <div id="modalJobRequirementsContainer" class="hidden space-y-2">
+                    <h5 class="font-bold text-gray-800 border-b border-gray-100 pb-2 text-sm uppercase tracking-wider">{% trans "Требования" %}</h5>
+                    <ul class="list-disc pl-5 text-gray-600 text-sm space-y-1.5" id="modalJobRequirements"></ul>
+                </div>
+
+                <!-- Conditions -->
+                <div id="modalJobConditionsContainer" class="hidden space-y-2">
+                    <h5 class="font-bold text-gray-800 border-b border-gray-100 pb-2 text-sm uppercase tracking-wider">{% trans "Условия работы" %}</h5>
+                    <ul class="list-disc pl-5 text-gray-600 text-sm space-y-1.5" id="modalJobConditions"></ul>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="p-6 border-t border-gray-100 bg-gray-50 flex justify-end gap-3 sticky bottom-0 z-10">
+                <button onclick="closeJobModal()" class="px-5 py-2.5 bg-gray-200 text-gray-700 hover:bg-gray-300 font-semibold rounded-xl text-sm transition-colors">
+                    {% trans "Закрыть" %}
+                </button>
+                <a href="#contact" onclick="closeJobModal()" class="px-6 py-2.5 bg-eu-blue hover:bg-blue-800 text-white font-semibold rounded-xl text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                    {% trans "Откликнуться" %}
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Universal lead submission -->
     <script>
     const LEAD_URL = "{% url 'submit_lead' %}";
@@ -465,6 +535,67 @@
             btn.style.background = '#dc2626';
             setTimeout(() => { btn.innerHTML = originalText; btn.style.background = ''; btn.disabled = false; }, 2500);
         }
+    }
+
+    function showJobDetail(countrySlug, jobIndex) {
+        if (typeof employmentData === 'undefined') return;
+        const data = employmentData[countrySlug];
+        if (!data) return;
+        const job = data.jobs[jobIndex];
+        if (!job) return;
+
+        document.getElementById('modalJobRole').innerText = job.role;
+        document.getElementById('modalJobSalary').innerText = job.salary;
+
+        // Image handling
+        const imgCont = document.getElementById('modalJobImageContainer');
+        const img = document.getElementById('modalJobImage');
+        if (job.image) {
+            img.src = job.image;
+            imgCont.classList.remove('hidden');
+        } else {
+            img.src = '';
+            imgCont.classList.add('hidden');
+        }
+
+        // Description handling
+        const descCont = document.getElementById('modalJobDescContainer');
+        const descEl = document.getElementById('modalJobDesc');
+        if (job.description && job.description.trim()) {
+            descEl.innerText = job.description;
+            descCont.classList.remove('hidden');
+        } else {
+            descEl.innerText = '';
+            descCont.classList.add('hidden');
+        }
+
+        // Helper function for lists
+        const renderList = (text, containerId, wrapperId) => {
+            const container = document.getElementById(containerId);
+            const wrapper = document.getElementById(wrapperId);
+            if (text && text.trim()) {
+                const items = text.split('\n').map(x => x.trim()).filter(x => x);
+                container.innerHTML = items.map(item => `<li>${item}</li>`).join('');
+                wrapper.classList.remove('hidden');
+            } else {
+                container.innerHTML = '';
+                wrapper.classList.add('hidden');
+            }
+        };
+
+        renderList(job.duties, 'modalJobDuties', 'modalJobDutiesContainer');
+        renderList(job.requirements, 'modalJobRequirements', 'modalJobRequirementsContainer');
+        renderList(job.conditions, 'modalJobConditions', 'modalJobConditionsContainer');
+
+        const modal = document.getElementById('jobModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+
+    function closeJobModal() {
+        const modal = document.getElementById('jobModal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
     }
     </script>
 
