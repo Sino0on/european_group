@@ -89,6 +89,7 @@ def index(request):
                 'location': u.location,
                 'img': u.image.url if u.image else '',
                 'desc': u.description,
+                'link': u.link or '',
             }
             for u in uc.universities.filter(is_active=True)
         ]
@@ -196,6 +197,7 @@ def study(request):
                 'location': u.location,
                 'img': u.image.url if u.image else '',
                 'desc': u.description,
+                'link': u.link or '',
             }
             for u in uc.universities.filter(is_active=True)
         ]

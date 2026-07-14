@@ -159,6 +159,7 @@ class University(models.Model):
     location = models.CharField('Город', max_length=200)
     description = models.TextField('Описание')
     image = models.ImageField('Фото', upload_to='universities/', blank=True)
+    link = models.URLField('Ссылка', max_length=500, blank=True, null=True)
     order = models.PositiveIntegerField('Порядок', default=0)
     is_active = models.BooleanField('Активен', default=True)
 
