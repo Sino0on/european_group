@@ -160,6 +160,7 @@ class University(models.Model):
     description = models.TextField('Описание')
     image = models.ImageField('Фото', upload_to='universities/', blank=True)
     link = models.URLField('Ссылка', max_length=500, blank=True, null=True)
+    google_maps_link = models.URLField('Ссылка на Google Maps', max_length=500, blank=True, null=True)
     order = models.PositiveIntegerField('Порядок', default=0)
     is_active = models.BooleanField('Активен', default=True)
 

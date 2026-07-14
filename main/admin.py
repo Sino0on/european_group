@@ -66,7 +66,7 @@ class EmploymentCountryAdmin(TranslationAdmin):
 class UniversityInline(TranslationTabularInline):
     model = University
     extra = 1
-    fields = ('name', 'slug', 'location', 'description', 'image', 'link', 'order', 'is_active')
+    fields = ('name', 'slug', 'location', 'description', 'image', 'link', 'google_maps_link', 'order', 'is_active')
 
 
 @admin.register(UniversityCountry)

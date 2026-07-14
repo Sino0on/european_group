@@ -90,6 +90,7 @@ def index(request):
                 'img': u.image.url if u.image else '',
                 'desc': u.description,
                 'link': u.link or '',
+                'google_maps_link': u.google_maps_link or '',
             }
             for u in uc.universities.filter(is_active=True)
         ]
@@ -198,6 +199,7 @@ def study(request):
                 'img': u.image.url if u.image else '',
                 'desc': u.description,
                 'link': u.link or '',
+                'google_maps_link': u.google_maps_link or '',
             }
             for u in uc.universities.filter(is_active=True)
         ]
