@@ -15,6 +15,9 @@
 </section>
 
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    {% if not emp_countries %}
+    <p class="brand-muted">{% trans "Вакансии скоро появятся здесь." %}</p>
+    {% endif %}
     {% for ec in emp_countries %}
     <div class="mb-14">
         <h2 class="text-2xl font-semibold mb-2">{{ ec.flag_emoji }} {{ ec.name }}</h2>
@@ -29,15 +32,130 @@
         {% endif %}
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {% for job in ec.jobs.all %}
-            <div class="brand-surface border brand-border rounded-2xl p-6">
+            {% for job in ec.active_jobs %}
+            <button type="button" onclick="openJobModal('{{ ec.slug }}', {{ forloop.counter0 }})"
+                class="text-left brand-surface border brand-border rounded-2xl p-6 hover:shadow-lg hover:-translate-y-0.5 transition-all">
                 <div class="font-semibold mb-1">{{ job.role }}</div>
                 <div class="brand-yellow-text text-sm font-semibold mb-3">{{ job.salary }}</div>
-                {% if job.description %}<p class="text-sm brand-muted">{{ job.description }}</p>{% endif %}
-            </div>
+                {% if job.description %}<p class="text-sm brand-muted line-clamp-3">{{ job.description }}</p>{% endif %}
+                <span class="inline-flex items-center gap-1 text-sm font-semibold brand-yellow-text mt-4">
+                    {% trans "Подробнее и отклик" %}
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </span>
+            </button>
             {% endfor %}
         </div>
     </div>
     {% endfor %}
 </section>
+
+<!-- ═══════════ JOB DETAIL / APPLY MODAL ═══════════ -->
+<div id="jobModal" class="hidden fixed inset-0 z-[100] items-center justify-center p-4" style="background:rgba(28,26,20,.6)">
+    <div class="brand-surface rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
+        <div class="flex items-start justify-between p-6 border-b brand-border">
+            <div>
+                <div id="jobModalRole" class="font-display text-xl font-bold"></div>
+                <div id="jobModalSalary" class="brand-yellow-text font-semibold text-sm mt-1"></div>
+            </div>
+            <button type="button" onclick="closeJobModal()" class="brand-muted hover:brand-ink-text text-xl leading-none">&times;</button>
+        </div>
+
+        <div class="p-6 space-y-5">
+            <img id="jobModalImage" src="" alt="" class="hidden w-full h-48 object-cover rounded-xl">
+
+            <div id="jobModalDescWrap" class="hidden">
+                <p id="jobModalDesc" class="text-sm brand-muted whitespace-pre-line"></p>
+            </div>
+            <div id="jobModalDutiesWrap" class="hidden">
+                <div class="text-xs font-bold uppercase tracking-wider brand-muted mb-2">{% trans "Обязанности" %}</div>
+                <ul id="jobModalDuties" class="text-sm list-disc pl-5 space-y-1"></ul>
+            </div>
+            <div id="jobModalReqWrap" class="hidden">
+                <div class="text-xs font-bold uppercase tracking-wider brand-muted mb-2">{% trans "Требования" %}</div>
+                <ul id="jobModalReq" class="text-sm list-disc pl-5 space-y-1"></ul>
+            </div>
+            <div id="jobModalCondWrap" class="hidden">
+                <div class="text-xs font-bold uppercase tracking-wider brand-muted mb-2">{% trans "Условия" %}</div>
+                <ul id="jobModalCond" class="text-sm list-disc pl-5 space-y-1"></ul>
+            </div>
+
+            <form class="border-t brand-border pt-5 grid gap-3">
+                <div class="text-sm font-bold">{% trans "Откликнуться на вакансию" %}</div>
+                <input type="text" name="name" placeholder="{% trans 'Ваше имя' %}" class="w-full border brand-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand-yellow)]">
+                <input type="tel" name="phone" placeholder="{% trans 'Номер телефона' %}" class="w-full border brand-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand-yellow)]">
+                <button type="button" onclick="submitJobApplication(this)" class="btn-yellow font-bold px-6 py-3 rounded-xl text-sm transition-colors">
+                    {% trans "Отправить отклик" %}
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{ employment_json|json_script:"employment-data" }}
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    const employmentData = JSON.parse(document.getElementById('employment-data').textContent);
+    let currentJob = null;
+
+    function renderList(el, items) {
+        el.innerHTML = '';
+        if (!items) return;
+        items.split('\n').map(s => s.trim()).filter(Boolean).forEach(line => {
+            const li = document.createElement('li');
+            li.textContent = line;
+            el.appendChild(li);
+        });
+    }
+
+    function toggle(id, show) {
+        document.getElementById(id).classList.toggle('hidden', !show);
+    }
+
+    function openJobModal(countrySlug, jobIndex) {
+        const country = employmentData[countrySlug];
+        if (!country) return;
+        const job = country.jobs[jobIndex];
+        if (!job) return;
+        currentJob = { ...job, country: country.title };
+
+        document.getElementById('jobModalRole').textContent = job.role;
+        document.getElementById('jobModalSalary').textContent = job.salary;
+
+        const img = document.getElementById('jobModalImage');
+        if (job.image) { img.src = job.image; toggle('jobModalImage', true); } else { toggle('jobModalImage', false); }
+
+        toggle('jobModalDescWrap', !!job.description);
+        document.getElementById('jobModalDesc').textContent = job.description || '';
+
+        toggle('jobModalDutiesWrap', !!job.duties);
+        renderList(document.getElementById('jobModalDuties'), job.duties);
+
+        toggle('jobModalReqWrap', !!job.requirements);
+        renderList(document.getElementById('jobModalReq'), job.requirements);
+
+        toggle('jobModalCondWrap', !!job.conditions);
+        renderList(document.getElementById('jobModalCond'), job.conditions);
+
+        const modal = document.getElementById('jobModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+
+    function closeJobModal() {
+        const modal = document.getElementById('jobModal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    }
+
+    function submitJobApplication(btn) {
+        if (!currentJob) return;
+        sendLead(btn, 'jobs', { role: currentJob.role, country: currentJob.country });
+    }
+
+    document.getElementById('jobModal').addEventListener('click', (e) => {
+        if (e.target.id === 'jobModal') closeJobModal();
+    });
+</script>
 {% endblock %}

@@ -134,6 +134,9 @@ def jobs(request):
     emp_countries = EmploymentCountry.objects.filter(is_active=True).prefetch_related('benefits', 'jobs')
     employment_json = {}
     for ec in emp_countries:
+        # один и тот же отфильтрованный список используем и в шаблоне, и в JSON,
+        # чтобы индекс вакансии в модалке совпадал с индексом в карточке
+        ec.active_jobs = list(ec.jobs.filter(is_active=True))
         employment_json[ec.slug] = {
             'title': ec.name,
             'desc': ec.description,
@@ -148,14 +151,15 @@ def jobs(request):
                     'conditions': j.conditions or '',
                     'image': j.image.url if j.image else '',
                 }
-                for j in ec.jobs.filter(is_active=True)
+                for j in ec.active_jobs
             ],
         }
 
     context = _get_base_context()
     context.update({
         'emp_countries': emp_countries,
-        'employment_json': json.dumps(employment_json, cls=DjangoJSONEncoder),
+        # передаём как есть — {{ |json_script }} в шаблоне сам сериализует в JSON
+        'employment_json': employment_json,
     })
     return render(request, 'mamralieva/jobs.html', context)
 

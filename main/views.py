@@ -33,6 +33,7 @@ _FIELD_LABELS = {
     'phone': 'Телефон',
     'whatsapp': 'WhatsApp',
     'country': 'Страна',
+    'role': 'Вакансия',
     'destination': 'Направление',
     'budget': 'Бюджет',
     'course': 'Курс',
