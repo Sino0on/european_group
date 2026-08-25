@@ -9,7 +9,7 @@ attrs==25.4.0
 certifi==2025.11.12
 charset-normalizer==3.4.4
 django-ckeditor
-Django==6.0.1
+Django==5.2.17
 djangorestframework==3.16.1
 drf-spectacular==0.29.0
 frozenlist==1.8.0
