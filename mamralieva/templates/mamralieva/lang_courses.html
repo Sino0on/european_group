@@ -1,0 +1,33 @@
+{% extends 'mamralieva/base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Языковые курсы" %} | Mamralieva Consulting{% endblock %}
+
+{% block content %}
+<section class="brand-surface-soft border-b brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <span class="text-xs font-bold uppercase tracking-wider brand-yellow-text">{% trans "Курсы" %}</span>
+        <h1 class="font-display text-4xl font-bold mt-2">{% trans "Языковые курсы" %}</h1>
+        <p class="brand-muted mt-3 max-w-xl">{% trans "Подготовка к языковым экзаменам и обучение с нуля до продвинутого уровня." %}</p>
+    </div>
+</section>
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    {% if not language_courses %}
+    <p class="brand-muted">{% trans "Курсы скоро появятся здесь." %}</p>
+    {% endif %}
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for c in language_courses %}
+        <div class="brand-surface border brand-border rounded-2xl overflow-hidden">
+            {% if c.image %}<img src="{{ c.image.url }}" alt="{{ c.name }}" class="w-full h-40 object-cover">{% endif %}
+            <div class="p-5">
+                {% if c.badge %}<span class="text-xs font-semibold brand-yellow-text uppercase">{{ c.badge }}</span>{% endif %}
+                <div class="font-semibold">{{ c.name }}</div>
+                <div class="text-sm brand-muted mb-2">{{ c.category }}</div>
+                <p class="text-sm brand-muted mb-3">{{ c.description }}</p>
+                <div class="text-sm font-semibold">{{ c.duration }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

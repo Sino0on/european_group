@@ -1,0 +1,49 @@
+{% extends 'mamralieva/base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Туры" %} | Mamralieva Consulting{% endblock %}
+
+{% block content %}
+<section class="brand-surface-soft border-b brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <span class="text-xs font-bold uppercase tracking-wider brand-yellow-text">{% trans "Туризм" %}</span>
+        <h1 class="font-display text-4xl font-bold mt-2">{% trans "Подбор тура" %}</h1>
+        <p class="brand-muted mt-3 max-w-xl">{% trans "Подбор туров и горящих предложений под ваш бюджет и даты." %}</p>
+    </div>
+</section>
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    {% if not destinations %}
+    <p class="brand-muted mb-10">{% trans "Направления скоро появятся здесь." %}</p>
+    {% endif %}
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        {% for d in destinations %}
+        <div class="brand-surface border brand-border rounded-2xl overflow-hidden">
+            {% if d.image %}<img src="{{ d.image.url }}" alt="{{ d.name }}" class="w-full h-40 object-cover">{% endif %}
+            <div class="p-5">
+                {% if d.badge %}<span class="text-xs font-semibold brand-yellow-text uppercase">{{ d.badge }}</span>{% endif %}
+                <div class="font-semibold">{{ d.name }}</div>
+                <div class="text-sm brand-muted mb-2">{{ d.cities }}</div>
+                <div class="text-sm font-semibold">{{ d.price_from }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% if deals %}
+    <h2 class="text-2xl font-semibold mb-6">{% trans "Горящие туры" %}</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for deal in deals %}
+        <div class="brand-surface border brand-border rounded-2xl p-6">
+            <div class="font-semibold mb-1">{{ deal.hotel_name }}</div>
+            <div class="text-sm brand-muted mb-3">{{ deal.destination.name }} &middot; {{ deal.nights }} {% trans "ночей" %}</div>
+            <div class="flex items-baseline gap-2">
+                <span class="text-lg font-semibold brand-yellow-text">${{ deal.price }}</span>
+                <span class="text-sm brand-muted line-through">${{ deal.original_price }}</span>
+                <span class="text-xs font-semibold">-{{ deal.discount_percent }}%</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</section>
+{% endblock %}

@@ -21,5 +21,8 @@ urlpatterns = [
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += i18n_patterns(
-    path('', include('main.urls')),
+    # старый сайт (European Group) — теперь живёт под /old/
+    path('old/', include('main.urls')),
+    # новый сайт (Mamralieva Consulting) — теперь на корне
+    path('', include('mamralieva.urls')),
 )

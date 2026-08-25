@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sitemaps",
     "main",
+    "mamralieva",
 ]
 
 SITE_URL = config('SITE_URL', default='https://europeangroup.kg')

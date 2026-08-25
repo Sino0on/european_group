@@ -1,0 +1,33 @@
+{% extends 'mamralieva/base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Регистрация компании" %} | Mamralieva Consulting{% endblock %}
+
+{% block content %}
+<section class="brand-surface-soft border-b brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <span class="text-xs font-bold uppercase tracking-wider brand-yellow-text">{% trans "Бизнес" %}</span>
+        <h1 class="font-display text-4xl font-bold mt-2">{% trans "Регистрация компании" %}</h1>
+        <p class="brand-muted mt-3 max-w-xl">{% trans "Полное сопровождение регистрации и запуска бизнеса под ключ." %}</p>
+    </div>
+</section>
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    {% if not packages %}
+    <p class="brand-muted">{% trans "Пакеты услуг скоро появятся здесь." %}</p>
+    {% endif %}
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for pkg in packages %}
+        <div class="brand-surface border {% if pkg.is_popular %}border-[var(--brand-yellow)]{% else %}brand-border{% endif %} rounded-2xl p-6">
+            {% if pkg.badge %}<span class="text-xs font-semibold brand-yellow-text uppercase">{{ pkg.badge }}</span>{% endif %}
+            <div class="font-semibold text-lg mb-2">{{ pkg.name }}</div>
+            <div class="text-2xl font-display font-semibold mb-4">{{ pkg.price }} {{ pkg.currency }}</div>
+            <ul class="space-y-2 text-sm">
+                {% for f in pkg.features.all %}
+                <li class="{% if not f.is_included %}line-through brand-muted{% endif %}">{{ f.text }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

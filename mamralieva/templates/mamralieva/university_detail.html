@@ -1,0 +1,15 @@
+{% extends 'mamralieva/base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Университет" %} | Mamralieva Consulting{% endblock %}
+
+{% block content %}
+<section class="brand-surface-soft border-b brand-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <span class="text-xs font-bold uppercase tracking-wider brand-yellow-text">{% trans "Образование" %}</span>
+        <h1 class="font-display text-4xl font-bold mt-2">{% trans "Университет" %}</h1>
+    </div>
+</section>
+<section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <p class="brand-muted">{% trans "Детальная страница университета — в разработке." %}</p>
+</section>
+{% endblock %}

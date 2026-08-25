@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANG %}
+<html lang="{{ LANG }}" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ════════════════ SEO ════════════════ -->
+    <title>{% block title %}Mamralieva Consulting | Консалтинг в Кыргызстане{% endblock %}</title>
+
+    <meta name="description" content="{% block meta_description %}Mamralieva Consulting: трудоустройство в Европу, образование за рубежом, визовая поддержка, туры и юридические услуги в Кыргызстане.{% endblock %}">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="author" content="Mamralieva Consulting">
+    <link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+    <!-- hreflang (i18n) -->
+    {% with rest=request.path|slice:"3:" %}
+    <link rel="alternate" hreflang="ru" href="{{ request.scheme }}://{{ request.get_host }}/ru{{ rest }}">
+    <link rel="alternate" hreflang="ky" href="{{ request.scheme }}://{{ request.get_host }}/ky{{ rest }}">
+    <link rel="alternate" hreflang="en" href="{{ request.scheme }}://{{ request.get_host }}/en{{ rest }}">
+    <link rel="alternate" hreflang="x-default" href="{{ request.scheme }}://{{ request.get_host }}/ru{{ rest }}">
+    {% endwith %}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+    <meta property="og:site_name" content="Mamralieva Consulting">
+    <meta property="og:title" content="{% block og_title %}Mamralieva Consulting{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Трудоустройство в Европу, образование за рубежом, визы, туры и юридические услуги.{% endblock %}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:image" content="{% block og_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'mamralieva/img/logo.png' %}{% endblock %}">
+    <meta property="og:locale" content="{% if LANG == 'ky' %}ky_KG{% elif LANG == 'en' %}en_US{% else %}ru_RU{% endif %}">
+
+    <!-- JSON-LD: LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Mamralieva Consulting",
+      "description": "Консалтинг в Кыргызстане: трудоустройство, образование, визы, туры, юридические услуги",
+      "url": "{{ request.scheme }}://{{ request.get_host }}",
+      {% if company %}
+      "telephone": "{{ company.phone }}",
+      "email": "{{ company.email }}",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Бишкек",
+        "addressCountry": "KG",
+        "streetAddress": "{{ company.address }}"
+      },
+      {% endif %}
+      "areaServed": {"@type": "Country", "name": "Kyrgyzstan"},
+      "priceRange": "$$",
+      "currenciesAccepted": "KGS"
+    }
+    </script>
+    <!-- ════════════════ /SEO ════════════════ -->
+
+    <link rel="icon" href="{% static 'mamralieva/img/logo.png' %}" type="image/png">
+
+    <!--
+        ШРИФТЫ — заглушка. Как только придёт брендбук со шрифтом —
+        меняем подключение Google Font здесь и в tailwind.config.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        display: ['Unbounded', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            /* жёлто-белая палитра. Оттенки — заглушка до брендбука,
+               но тональность (жёлтый + белый + тёмно-графитовый) — по ТЗ. */
+            --brand-bg: #FFFFFF;
+            --brand-surface: #FFFFFF;
+            --brand-surface-soft: #FFFBEA;
+            --brand-ink: #1C1A14;
+            --brand-muted: #6E6A5E;
+            --brand-yellow: #FFC800;
+            --brand-yellow-dark: #E3AF00;
+            --brand-yellow-soft: #FFF3C4;
+            --brand-line: #ECE6D6;
+        }
+
+        body { background: var(--brand-bg); color: var(--brand-ink); }
+
+        .brand-surface { background: var(--brand-surface); }
+        .brand-surface-soft { background: var(--brand-surface-soft); }
+        .brand-yellow { background: var(--brand-yellow); }
+        .brand-yellow-dark { background: var(--brand-yellow-dark); }
+        .brand-ink-bg { background: var(--brand-ink); }
+        .brand-ink-text { color: var(--brand-ink); }
+        .brand-yellow-text { color: var(--brand-yellow-dark); }
+        .brand-border { border-color: var(--brand-line); }
+        .brand-muted { color: var(--brand-muted); }
+
+        .btn-primary {
+            background: var(--brand-ink);
+            color: #fff;
+        }
+        .btn-primary:hover { opacity: .88; }
+
+        .btn-yellow {
+            background: var(--brand-yellow);
+            color: var(--brand-ink);
+        }
+        .btn-yellow:hover { background: var(--brand-yellow-dark); }
+
+        #mobileMenu { transform: translateY(-8px); opacity: 0; pointer-events: none; transition: all .18s ease; }
+        #mobileMenu.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    </style>
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body class="font-sans antialiased">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 brand-surface border-b brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="{% url 'mamralieva:index' %}" class="flex items-center gap-2 font-display text-lg font-bold tracking-tight">
+                    <span class="w-9 h-9 rounded-full brand-yellow flex items-center justify-center text-sm font-black">MC</span>
+                    <span class="hidden sm:inline">Mamralieva <span class="brand-yellow-text">Consulting</span></span>
+                </a>
+
+                <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold">
+                    <a href="{% url 'mamralieva:jobs' %}" class="hover:brand-yellow-text hover:text-[var(--brand-yellow-dark)] transition-colors">{% trans "Трудоустройство" %}</a>
+                    <a href="{% url 'mamralieva:study' %}" class="hover:text-[var(--brand-yellow-dark)] transition-colors">{% trans "Образование" %}</a>
+                    <a href="{% url 'mamralieva:visa' %}" class="hover:text-[var(--brand-yellow-dark)] transition-colors">{% trans "Визы" %}</a>
+                    <a href="{% url 'mamralieva:tour' %}" class="hover:text-[var(--brand-yellow-dark)] transition-colors">{% trans "Туры" %}</a>
+                    <a href="{% url 'mamralieva:law' %}" class="hover:text-[var(--brand-yellow-dark)] transition-colors">{% trans "Юр. консалтинг" %}</a>
+                    <a href="{% url 'mamralieva:lang_courses' %}" class="hover:text-[var(--brand-yellow-dark)] transition-colors">{% trans "Курсы" %}</a>
+                </nav>
+
+                <div class="flex items-center gap-3">
+                    {% get_current_language as CURRENT_LANGUAGE %}
+                    <div class="hidden sm:flex items-center gap-2 text-xs font-bold brand-muted">
+                        <a href="/ru{{ request.path|slice:"3:" }}"><button class="{% if CURRENT_LANGUAGE == 'ru' %}brand-yellow-text{% endif %}">RU</button></a>
+                        <span class="text-[var(--brand-line)]">|</span>
+                        <a href="/ky{{ request.path|slice:"3:" }}"><button class="{% if CURRENT_LANGUAGE == 'ky' %}brand-yellow-text{% endif %}">KG</button></a>
+                        <span class="text-[var(--brand-line)]">|</span>
+                        <a href="/en{{ request.path|slice:"3:" }}"><button class="{% if CURRENT_LANGUAGE == 'en' %}brand-yellow-text{% endif %}">EN</button></a>
+                    </div>
+                    <a href="#consultation" class="hidden sm:inline-flex btn-yellow text-sm font-bold px-5 py-2.5 rounded-full transition-colors">
+                        {% trans "Консультация" %}
+                    </a>
+                    <button id="mobileMenuBtn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-full border brand-border" aria-label="Menu">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="lg:hidden absolute left-0 right-0 brand-surface border-b brand-border shadow-lg">
+            <nav class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1 text-sm font-semibold">
+                <a href="{% url 'mamralieva:jobs' %}" class="py-2.5 border-b brand-border">{% trans "Трудоустройство" %}</a>
+                <a href="{% url 'mamralieva:study' %}" class="py-2.5 border-b brand-border">{% trans "Образование" %}</a>
+                <a href="{% url 'mamralieva:visa' %}" class="py-2.5 border-b brand-border">{% trans "Визы" %}</a>
+                <a href="{% url 'mamralieva:tour' %}" class="py-2.5 border-b brand-border">{% trans "Туры" %}</a>
+                <a href="{% url 'mamralieva:law' %}" class="py-2.5 border-b brand-border">{% trans "Юридический консалтинг" %}</a>
+                <a href="{% url 'mamralieva:company' %}" class="py-2.5 border-b brand-border">{% trans "Регистрация компании" %}</a>
+                <a href="{% url 'mamralieva:lang_courses' %}" class="py-2.5">{% trans "Языковые курсы" %}</a>
+                <a href="#consultation" class="mt-3 btn-yellow text-center font-bold px-5 py-3 rounded-full">{% trans "Консультация" %}</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="brand-ink-bg text-white/90 mt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            <div>
+                <div class="flex items-center gap-2 font-display text-base font-bold text-white mb-3">
+                    <span class="w-8 h-8 rounded-full brand-yellow flex items-center justify-center text-xs font-black text-[var(--brand-ink)]">MC</span>
+                    Mamralieva Consulting
+                </div>
+                <p class="text-sm text-white/60">{% trans "Помогаем реализовать себя за рубежом: работа, учёба, визы, туры." %}</p>
+            </div>
+            <div>
+                <div class="font-semibold text-white mb-3 text-sm uppercase tracking-wide">{% trans "Услуги" %}</div>
+                <ul class="space-y-2 text-sm text-white/60">
+                    <li><a href="{% url 'mamralieva:jobs' %}" class="hover:text-white">{% trans "Трудоустройство" %}</a></li>
+                    <li><a href="{% url 'mamralieva:study' %}" class="hover:text-white">{% trans "Образование за рубежом" %}</a></li>
+                    <li><a href="{% url 'mamralieva:visa' %}" class="hover:text-white">{% trans "Визовая поддержка" %}</a></li>
+                    <li><a href="{% url 'mamralieva:tour' %}" class="hover:text-white">{% trans "Туры" %}</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="font-semibold text-white mb-3 text-sm uppercase tracking-wide">{% trans "Компания" %}</div>
+                <ul class="space-y-2 text-sm text-white/60">
+                    <li><a href="{% url 'mamralieva:law' %}" class="hover:text-white">{% trans "Юридический консалтинг" %}</a></li>
+                    <li><a href="{% url 'mamralieva:company' %}" class="hover:text-white">{% trans "Регистрация компании" %}</a></li>
+                    <li><a href="{% url 'mamralieva:lang_courses' %}" class="hover:text-white">{% trans "Языковые курсы" %}</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="font-semibold text-white mb-3 text-sm uppercase tracking-wide">{% trans "Контакты" %}</div>
+                {% if company and company.phone %}
+                <ul class="space-y-2 text-sm text-white/60">
+                    <li>{{ company.address }}</li>
+                    <li>{{ company.phone }}</li>
+                    <li>{{ company.email }}</li>
+                    <li>{{ company.work_hours }}</li>
+                </ul>
+                {% else %}
+                <p class="text-sm text-white/40">{% trans "Заполните контакты компании в админке" %}</p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="border-t border-white/10 py-5 text-center text-xs text-white/40">
+            &copy; {% now "Y" %} Mamralieva Consulting
+        </div>
+    </footer>
+
+    <script>
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+            mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+        }
+
+        const LEAD_URL = "{% url 'mamralieva:submit_lead' %}";
+        const CSRF_TOKEN = "{{ csrf_token }}";
+
+        async function sendLead(btn, source, extraData = {}) {
+            const form = btn.closest('form');
+            const data = { source, ...extraData };
+            if (form) {
+                form.querySelectorAll('input[name],textarea[name],select[name]').forEach(el => {
+                    if (el.name && el.value && el.value.trim()) data[el.name] = el.value.trim();
+                });
+            }
+            if (!data.phone && !data.name) {
+                alert('{% trans "Пожалуйста, укажите имя и телефон." %}');
+                return;
+            }
+            const originalText = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = '{% trans "Отправляем..." %}';
+            try {
+                const resp = await fetch(LEAD_URL, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json', 'X-CSRFToken': CSRF_TOKEN},
+                    body: JSON.stringify(data),
+                });
+                const result = await resp.json();
+                if (result.ok) {
+                    btn.innerHTML = '{% trans "✓ Заявка отправлена!" %}';
+                    if (form) form.reset();
+                } else {
+                    btn.innerHTML = '{% trans "Ошибка, попробуйте ещё раз" %}';
+                    setTimeout(() => { btn.innerHTML = originalText; btn.disabled = false; }, 2500);
+                }
+            } catch {
+                btn.innerHTML = '{% trans "Ошибка соединения" %}';
+                setTimeout(() => { btn.innerHTML = originalText; btn.disabled = false; }, 2500);
+            }
+        }
+    </script>
+    {% block extra_scripts %}{% endblock %}
+</body>
+
+</html>

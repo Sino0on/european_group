@@ -1,0 +1,207 @@
+{% extends 'mamralieva/base.html' %}
+{% load i18n static %}
+
+{% block content %}
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="relative overflow-hidden brand-yellow">
+    <!-- декоративные фигуры -->
+    <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-white/20 pointer-events-none"></div>
+    <div class="absolute bottom-0 left-1/3 w-40 h-40 rounded-full border-4 border-white/20 pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-20 lg:pt-20 lg:pb-28 grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+            <span class="inline-flex items-center gap-2 bg-white/70 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6 brand-ink-text">
+                {% trans "Персональный консалтинг" %}
+            </span>
+            <h1 class="font-display text-4xl sm:text-5xl lg:text-[3.4rem] font-bold leading-[1.1] mb-6 brand-ink-text">
+                {% trans "Работа, учёба и жизнь за рубежом — без лишних хлопот" %}
+            </h1>
+            <p class="text-lg brand-ink-text/80 mb-8 max-w-xl opacity-80">
+                {% trans "Mamralieva Consulting сопровождает на каждом шаге: от подбора направления и документов до визы и трудоустройства." %}
+            </p>
+
+            <div class="flex flex-wrap gap-3 mb-10">
+                <a href="{% url 'mamralieva:jobs' %}" class="btn-primary font-semibold px-6 py-3.5 rounded-full text-sm hover:opacity-90 transition-opacity">
+                    {% trans "Трудоустройство" %}
+                </a>
+                <a href="{% url 'mamralieva:study' %}" class="bg-white font-semibold px-6 py-3.5 rounded-full text-sm brand-ink-text hover:bg-white/90 transition-colors">
+                    {% trans "Образование за рубежом" %}
+                </a>
+                <a href="#consultation" class="border-2 border-[var(--brand-ink)] font-semibold px-6 py-3.5 rounded-full text-sm brand-ink-text hover:bg-white/30 transition-colors">
+                    {% trans "Бесплатная консультация" %}
+                </a>
+            </div>
+
+            <div class="flex items-center gap-6 text-sm font-semibold brand-ink-text/70">
+                <span class="flex items-center gap-2">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    {% trans "Официальное сопровождение" %}
+                </span>
+                <span class="flex items-center gap-2">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    {% trans "Индивидуальный подход" %}
+                </span>
+            </div>
+        </div>
+
+        <div class="relative">
+            <div class="aspect-[4/5] rounded-[2.5rem] bg-white/90 border border-white flex flex-col items-center justify-center gap-3 shadow-xl">
+                <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="var(--brand-yellow-dark)" stroke-width="1.5" class="opacity-70">
+                    <circle cx="12" cy="8" r="4"/>
+                    <path stroke-linecap="round" d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+                </svg>
+                <span class="brand-muted text-sm font-medium px-8 text-center">{% trans "Здесь будет фото — подставим после брендбука" %}</span>
+            </div>
+            <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-lg px-5 py-4 hidden sm:flex items-center gap-3">
+                <span class="w-10 h-10 rounded-full brand-yellow flex items-center justify-center font-bold text-sm brand-ink-text">MC</span>
+                <div class="text-sm">
+                    <div class="font-bold brand-ink-text">Mamralieva</div>
+                    <div class="brand-muted text-xs">Consulting</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ SERVICES ═══════════ -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="text-center mb-12">
+        <span class="text-xs font-bold uppercase tracking-wider brand-yellow-text">{% trans "Направления" %}</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold mt-2">{% trans "Чем мы можем помочь" %}</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for card in service_cards %}
+        <a href="{{ card.url }}" class="group brand-surface border brand-border rounded-2xl p-7 hover:shadow-xl hover:-translate-y-1 transition-all">
+            <div class="w-12 h-12 rounded-xl brand-yellow-soft flex items-center justify-center mb-5 group-hover:brand-yellow transition-colors">
+                {{ card.icon|safe }}
+            </div>
+            <div class="font-bold text-lg mb-2">{{ card.title }}</div>
+            <p class="text-sm brand-muted mb-4">{{ card.description }}</p>
+            <span class="inline-flex items-center gap-1 text-sm font-semibold brand-yellow-text">
+                {% trans "Подробнее" %}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </span>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- ═══════════ HOW IT WORKS ═══════════ -->
+<section class="brand-surface-soft py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14">
+            <span class="text-xs font-bold uppercase tracking-wider brand-yellow-text">{% trans "Как мы работаем" %}</span>
+            <h2 class="font-display text-3xl sm:text-4xl font-bold mt-2">{% trans "Четыре простых шага" %}</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {% for step in process_steps %}
+            <div class="relative">
+                <div class="w-14 h-14 rounded-2xl brand-ink-bg text-white flex items-center justify-center font-display font-bold text-xl mb-5">
+                    {{ forloop.counter }}
+                </div>
+                <div class="font-bold mb-2">{{ step.title }}</div>
+                <p class="text-sm brand-muted">{{ step.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ STATISTICS (только если заполнено в админке) ═══════════ -->
+{% if statistics %}
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    {% for stat in statistics %}
+    <div>
+        <div class="font-display text-3xl sm:text-4xl font-bold brand-yellow-text">{{ stat.value }}</div>
+        <div class="brand-muted text-sm mt-2">{{ stat.label }}</div>
+    </div>
+    {% endfor %}
+</section>
+{% endif %}
+
+<!-- ═══════════ FEATURED OPPORTUNITIES (реальные данные из EmploymentCountry) ═══════════ -->
+{% if emp_countries %}
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="flex items-end justify-between mb-10 flex-wrap gap-4">
+        <div>
+            <span class="text-xs font-bold uppercase tracking-wider brand-yellow-text">{% trans "Актуальные вакансии" %}</span>
+            <h2 class="font-display text-3xl sm:text-4xl font-bold mt-2">{% trans "Трудоустройство за рубежом" %}</h2>
+        </div>
+        <a href="{% url 'mamralieva:jobs' %}" class="text-sm font-semibold brand-yellow-text hover:underline">{% trans "Все вакансии →" %}</a>
+    </div>
+
+    {% for ec in emp_countries %}
+    <div class="mb-10 last:mb-0">
+        <h3 class="text-xl font-bold mb-4">{{ ec.flag_emoji }} {{ ec.name }}</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for job in ec.jobs.all|slice:":3" %}
+            <div class="brand-surface border brand-border rounded-2xl p-6">
+                <div class="font-bold mb-1">{{ job.role }}</div>
+                <div class="brand-yellow-text text-sm font-bold mb-3">{{ job.salary }}</div>
+                {% if job.description %}<p class="text-sm brand-muted line-clamp-3">{{ job.description }}</p>{% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</section>
+{% endif %}
+
+<!-- ═══════════ TESTIMONIALS (только если заполнено) ═══════════ -->
+{% if testimonials %}
+<section class="brand-surface-soft py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display text-3xl sm:text-4xl font-bold mb-10 text-center">{% trans "Отзывы" %}</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for t in testimonials %}
+            <div class="brand-surface border brand-border rounded-2xl p-6">
+                <p class="text-sm mb-4">&laquo;{{ t.text }}&raquo;</p>
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-semibold {{ t.avatar_bg_color }} {{ t.avatar_text_color }}">
+                        {{ t.avatar_letter }}
+                    </div>
+                    <div>
+                        <div class="text-sm font-semibold">{{ t.name }}</div>
+                        <div class="text-xs brand-muted">{{ t.category }}</div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- ═══════════ PARTNERS (только если заполнено) ═══════════ -->
+{% if partners %}
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="flex flex-wrap items-center justify-center gap-10 opacity-70">
+        {% for p in partners %}
+        <img src="{{ p.logo.url }}" alt="{{ p.name }}" class="h-8 w-auto grayscale">
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<!-- ═══════════ CONSULTATION CTA ═══════════ -->
+<section id="consultation" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="brand-ink-bg rounded-[2.5rem] p-8 sm:p-14 grid lg:grid-cols-2 gap-10 items-center relative overflow-hidden">
+        <div class="absolute -top-16 -right-16 w-64 h-64 rounded-full brand-yellow opacity-20 pointer-events-none"></div>
+        <div class="relative text-white">
+            <h2 class="font-display text-3xl sm:text-4xl font-bold mb-4">{% trans "Получите бесплатную консультацию" %}</h2>
+            <p class="text-white/70 mb-2">{% trans "Оставьте заявку — расскажем, какой вариант подходит именно вам, и что нужно для старта." %}</p>
+        </div>
+        <form class="relative brand-surface rounded-2xl p-6 sm:p-8 grid gap-4">
+            <input type="text" name="name" placeholder="{% trans 'Ваше имя' %}" class="w-full border brand-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand-yellow)]">
+            <input type="tel" name="phone" placeholder="{% trans 'Номер телефона' %}" class="w-full border brand-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand-yellow)]">
+            <textarea name="message" rows="3" placeholder="{% trans 'Что вас интересует?' %}" class="w-full border brand-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand-yellow)]"></textarea>
+            <button type="button" onclick="sendLead(this, 'consultation')" class="btn-yellow font-bold px-6 py-3.5 rounded-xl text-sm transition-colors">
+                {% trans "Отправить заявку" %}
+            </button>
+        </form>
+    </div>
+</section>
+
+{% endblock %}
