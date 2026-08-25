@@ -23,7 +23,9 @@ class StaticViewSitemap(Sitemap):
         return self.pages
 
     def location(self, item):
-        return reverse(item[0])
+        # reverse() возвращает внутренний путь вида /ru/old/jobs/, но снаружи
+        # (после nginx на european-group.kg) публичный путь — /ru/jobs/, без /old/
+        return reverse(item[0]).replace('/old/', '/', 1)
 
     def priority(self, item):
         return item[1]

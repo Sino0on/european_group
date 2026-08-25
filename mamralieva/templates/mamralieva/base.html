@@ -12,7 +12,7 @@
     <title>{% block title %}Mamralieva Consulting | Консалтинг в Кыргызстане{% endblock %}</title>
 
     <meta name="description" content="{% block meta_description %}Mamralieva Consulting: трудоустройство в Европу, образование за рубежом, визовая поддержка, туры и юридические услуги в Кыргызстане.{% endblock %}">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="robots" content="{% block robots %}index, follow, max-snippet:-1, max-image-preview:large{% endblock %}">
     <meta name="author" content="Mamralieva Consulting">
     <link rel="canonical" href="{{ request.build_absolute_uri }}">
 
@@ -27,11 +27,19 @@
     <!-- Open Graph -->
     <meta property="og:type" content="{% block og_type %}website{% endblock %}">
     <meta property="og:site_name" content="Mamralieva Consulting">
-    <meta property="og:title" content="{% block og_title %}Mamralieva Consulting{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}Mamralieva Consulting | Консалтинг в Кыргызстане{% endblock %}">
     <meta property="og:description" content="{% block og_description %}Трудоустройство в Европу, образование за рубежом, визы, туры и юридические услуги.{% endblock %}">
     <meta property="og:url" content="{{ request.build_absolute_uri }}">
-    <meta property="og:image" content="{% block og_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'mamralieva/img/logo.png' %}{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'assets/mamralieva.jpg' %}{% endblock %}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="1800">
     <meta property="og:locale" content="{% if LANG == 'ky' %}ky_KG{% elif LANG == 'en' %}en_US{% else %}ru_RU{% endif %}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% block twitter_title %}Mamralieva Consulting{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}{% trans "Трудоустройство за рубежом, образование, визы, туры и юридические услуги." %}{% endblock %}">
+    <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'assets/mamralieva.jpg' %}">
 
     <!-- JSON-LD: LocalBusiness -->
     <script type="application/ld+json">
@@ -41,16 +49,15 @@
       "name": "Mamralieva Consulting",
       "description": "Консалтинг в Кыргызстане: трудоустройство, образование, визы, туры, юридические услуги",
       "url": "{{ request.scheme }}://{{ request.get_host }}",
-      {% if company %}
-      "telephone": "{{ company.phone }}",
-      "email": "{{ company.email }}",
+      "image": "{{ request.scheme }}://{{ request.get_host }}{% static 'assets/mamralieva.jpg' %}"{% if company.phone %},
+      "telephone": "{{ company.phone }}"{% endif %}{% if company.email %},
+      "email": "{{ company.email }}"{% endif %}{% if company.address %},
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Бишкек",
         "addressCountry": "KG",
         "streetAddress": "{{ company.address }}"
-      },
-      {% endif %}
+      }{% endif %},
       "areaServed": {"@type": "Country", "name": "Kyrgyzstan"},
       "priceRange": "$$",
       "currenciesAccepted": "KGS"
@@ -58,7 +65,7 @@
     </script>
     <!-- ════════════════ /SEO ════════════════ -->
 
-    <link rel="icon" href="{% static 'mamralieva/img/logo.png' %}" type="image/png">
+    <link rel="icon" href="{% static 'mamralieva/img/favicon.svg' %}" type="image/svg+xml">
 
     <!--
         ШРИФТЫ — заглушка. Как только придёт брендбук со шрифтом —
