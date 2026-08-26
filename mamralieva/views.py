@@ -1,5 +1,5 @@
 import json
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.core.serializers.json import DjangoJSONEncoder
 from django.utils.translation import gettext_lazy as _
@@ -11,6 +11,7 @@ from main.models import (
     LegalService, CompanyPackage,
     Partner, HeroSlide,
 )
+from .models import BlogPost
 
 _ICON_STROKE = 'stroke="var(--brand-ink)" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"'
 
@@ -118,6 +119,7 @@ def index(request):
         'hero_slides': HeroSlide.objects.filter(is_active=True),
         'service_cards': _service_cards(),
         'process_steps': _process_steps(),
+        'blog_posts': BlogPost.objects.filter(is_active=True)[:3],
     })
     return render(request, 'mamralieva/index.html', context)
 
@@ -225,3 +227,23 @@ def tour(request):
         'deals': TourDeal.objects.filter(is_active=True).select_related('destination'),
     })
     return render(request, 'mamralieva/tour.html', context)
+
+
+def blog(request):
+    context = _get_base_context()
+    context.update({
+        'posts': BlogPost.objects.filter(is_active=True),
+    })
+    return render(request, 'mamralieva/blog.html', context)
+
+
+def blog_detail(request, slug):
+    post = get_object_or_404(BlogPost, slug=slug, is_active=True)
+    if post.is_external:
+        return redirect(post.external_url)
+    context = _get_base_context()
+    context.update({
+        'post': post,
+        'other_posts': BlogPost.objects.filter(is_active=True).exclude(pk=post.pk)[:3],
+    })
+    return render(request, 'mamralieva/blog_detail.html', context)

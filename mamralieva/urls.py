@@ -14,5 +14,7 @@ urlpatterns = [
     path('visa/', visa, name='visa'),
     path('university/', university_detail, name='university_detail'),
     path('tour/', tour, name='tour'),
+    path('blog/', blog, name='blog'),
+    path('blog/<slug:slug>/', blog_detail, name='blog_detail'),
     path('api/lead/', submit_lead, name='submit_lead'),
 ]

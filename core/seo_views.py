@@ -2,7 +2,7 @@ from django.contrib.sitemaps.views import sitemap
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 from main.sitemaps import StaticViewSitemap
-from mamralieva.sitemaps import MamralievaSitemap
+from mamralieva.sitemaps import MamralievaSitemap, MamralievaBlogSitemap
 
 
 def _is_new_site(request):
@@ -10,7 +10,10 @@ def _is_new_site(request):
 
 
 def dynamic_sitemap(request, *args, **kwargs):
-    sitemaps = {'static': MamralievaSitemap if _is_new_site(request) else StaticViewSitemap}
+    if _is_new_site(request):
+        sitemaps = {'static': MamralievaSitemap, 'blog': MamralievaBlogSitemap}
+    else:
+        sitemaps = {'static': StaticViewSitemap}
     return sitemap(request, sitemaps=sitemaps)
 
 

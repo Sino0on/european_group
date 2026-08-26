@@ -170,6 +170,43 @@
 </section>
 {% endif %}
 
+<!-- ═══════════ BLOG ═══════════ -->
+{% if blog_posts %}
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="flex items-end justify-between mb-10 flex-wrap gap-4">
+        <div>
+            <span class="text-xs font-bold uppercase tracking-wider brand-yellow-text">{% trans "Блог" %}</span>
+            <h2 class="font-display text-3xl sm:text-4xl font-bold mt-2">{% trans "Статьи и советы" %}</h2>
+        </div>
+        <a href="{% url 'mamralieva:blog' %}" class="text-sm font-semibold brand-yellow-text hover:underline">{% trans "Все статьи →" %}</a>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for post in blog_posts %}
+        <a href="{{ post.get_link_url }}" {% if post.is_external %}target="_blank" rel="noopener noreferrer"{% endif %}
+            class="brand-surface border brand-border rounded-2xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all">
+            <div class="relative">
+                {% if post.cover_image %}
+                <img src="{{ post.cover_image.url }}" alt="{{ post.title }}" class="w-full h-44 object-cover">
+                {% else %}
+                <div class="w-full h-44 brand-yellow-soft flex items-center justify-center brand-muted text-sm">Mamralieva Consulting</div>
+                {% endif %}
+                {% if post.is_external %}
+                <span class="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/90 flex items-center justify-center" title="{% trans 'Внешняя ссылка' %}">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--brand-ink)" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
+                </span>
+                {% endif %}
+            </div>
+            <div class="p-6">
+                <div class="text-xs brand-muted mb-2">{{ post.published_at|date:"d.m.Y" }}</div>
+                <div class="font-semibold text-lg mb-2">{{ post.title }}</div>
+                <p class="text-sm brand-muted line-clamp-3">{{ post.excerpt }}</p>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
 <!-- ═══════════ PARTNERS (только если заполнено) ═══════════ -->
 {% if partners %}
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">

@@ -1,5 +1,6 @@
 from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
+from .models import BlogPost
 
 
 class MamralievaSitemap(Sitemap):
@@ -17,6 +18,7 @@ class MamralievaSitemap(Sitemap):
         ('mamralieva:lang_courses', 0.8, 'weekly'),
         ('mamralieva:law', 0.8, 'weekly'),
         ('mamralieva:company', 0.8, 'weekly'),
+        ('mamralieva:blog', 0.7, 'weekly'),
     ]
 
     def items(self):
@@ -30,3 +32,22 @@ class MamralievaSitemap(Sitemap):
 
     def changefreq(self, item):
         return item[2]
+
+
+class MamralievaBlogSitemap(Sitemap):
+    protocol = 'https'
+    i18n = True
+    languages = ('ru', 'ky', 'en')
+    alternates = True
+    changefreq = 'monthly'
+    priority = 0.6
+
+    def items(self):
+        # внешние ссылки не индексируем на своём домене — там всё равно чужой контент
+        return BlogPost.objects.filter(is_active=True, post_type=BlogPost.TYPE_INTERNAL)
+
+    def lastmod(self, obj):
+        return obj.published_at
+
+    def location(self, obj):
+        return obj.get_absolute_url()

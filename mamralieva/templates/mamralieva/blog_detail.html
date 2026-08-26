@@ -1,0 +1,49 @@
+{% extends 'mamralieva/base.html' %}
+{% load i18n %}
+{% block title %}{{ post.title }} | Mamralieva Consulting{% endblock %}
+{% block meta_description %}{{ post.excerpt }}{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block og_title %}{{ post.title }}{% endblock %}
+{% block og_description %}{{ post.excerpt }}{% endblock %}
+{% block og_image %}{% if post.cover_image %}{{ request.scheme }}://{{ request.get_host }}{{ post.cover_image.url }}{% else %}{{ block.super }}{% endif %}{% endblock %}
+
+{% block content %}
+<article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="mb-8">
+        <a href="{% url 'mamralieva:blog' %}" class="text-sm font-semibold brand-yellow-text hover:underline">&larr; {% trans "Все статьи" %}</a>
+    </div>
+
+    <span class="text-xs font-bold uppercase tracking-wider brand-yellow-text">{{ post.published_at|date:"d.m.Y" }}</span>
+    <h1 class="font-display text-3xl sm:text-4xl font-bold mt-2 mb-8">{{ post.title }}</h1>
+
+    {% if post.cover_image %}
+    <img src="{{ post.cover_image.url }}" alt="{{ post.title }}" class="w-full rounded-2xl mb-8 object-cover max-h-96">
+    {% endif %}
+
+    <div class="prose-content text-base leading-relaxed">
+        {{ post.content|linebreaks }}
+    </div>
+</article>
+
+{% if other_posts %}
+<section class="brand-surface-soft py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="font-display text-2xl font-bold mb-8">{% trans "Читайте также" %}</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for p in other_posts %}
+            <a href="{{ p.get_link_url }}" {% if p.is_external %}target="_blank" rel="noopener noreferrer"{% endif %}
+                class="brand-surface border brand-border rounded-2xl overflow-hidden hover:shadow-lg transition-shadow">
+                {% if p.cover_image %}
+                <img src="{{ p.cover_image.url }}" alt="{{ p.title }}" class="w-full h-36 object-cover">
+                {% endif %}
+                <div class="p-5">
+                    <div class="font-semibold mb-1">{{ p.title }}</div>
+                    <p class="text-sm brand-muted line-clamp-2">{{ p.excerpt }}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}
