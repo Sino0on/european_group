@@ -55,7 +55,12 @@ def submit_lead(request):
     source = data.get('source', 'unknown')
     source_label = _SOURCE_LABELS.get(source, f'📩 Заявка ({source})')
 
-    lines = [f'<b>{source_label}</b>', '']
+    is_new_site = getattr(request.resolver_match, 'namespace', '') == 'mamralieva'
+
+    lines = [f'<b>{source_label}</b>']
+    if is_new_site:
+        lines.append('🟡 <b>Сайт: Mamralieva Consulting</b>')
+    lines.append('')
     for key, label in _FIELD_LABELS.items():
         value = (data.get(key) or '').strip()
         if value:
