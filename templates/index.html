@@ -118,8 +118,7 @@
                         <span class="block slide-anim-title">{{ slide.title }}</span>
                         {% if slide.subtitle %}
                         <span
-                            class="block text-2xl md:text-3xl lg:text-4xl mt-4 font-sans font-light text-gray-300 slide-anim-subtitle">{{
-                            slide.subtitle }}</span>
+                            class="block text-2xl md:text-3xl lg:text-4xl mt-4 font-sans font-light text-gray-300 slide-anim-subtitle">{{ slide.subtitle }}</span>
                         {% endif %}
                     </h1>
 
@@ -330,8 +329,7 @@
                     {% trans "Комплексная подготовка" %}<br>{% trans "к будущему в Европе, Корее и в Китае" %}
                 </h2>
                 <p class="text-gray-600 text-lg leading-relaxed mb-10">
-                    {% trans "Мы готовим к поступлению и жизни не только в Европе, но и в Корее, Китае и других странах.
-                    От языковых курсов до полной адаптации и уверенной карьеры — мы поддерживаем на каждом шагу." %}
+                    {% trans "Мы готовим к поступлению и жизни не только в Европе, но и в Корее, Китае и других странах. От языковых курсов до полной адаптации и уверенной карьеры — мы поддерживаем на каждом шагу." %}
                 </p>
 
                 <!-- Feature Grid -->
@@ -347,8 +345,7 @@
                         </div>
                         <div>
                             <h4 class="font-bold text-gray-900">{% trans "Экспертное наставничество" %}</h4>
-                            <p class="text-sm text-gray-500 mt-1">{% trans "Поддержка профессионалов на каждом этапе."
-                                %}</p>
+                            <p class="text-sm text-gray-500 mt-1">{% trans "Поддержка профессионалов на каждом этапе." %}</p>
                         </div>
                     </div>
                     <div class="flex gap-4">
@@ -554,116 +551,55 @@
             <p class="mt-4 text-gray-500">{% trans "Легальное трудоустройство с полным сопровождением" %}</p>
         </div>
 
-        <!-- Country Tabs -->
-        <div class="flex flex-wrap justify-center gap-2 mb-10" id="employmentCountryTabs">
-            {% for ec in emp_countries %}
-            <button onclick="selectEmploymentCountry('{{ ec.slug }}')"
-                class="emp-country-tab px-6 py-3 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-600 hover:border-eu-blue hover:text-eu-blue transition-all shadow-sm">
-                {{ ec.flag_emoji }} {{ ec.name }}
-            </button>
-            {% endfor %}
+        {% if not emp_countries %}
+        <p class="text-center text-gray-400">{% trans "Вакансии скоро появятся здесь." %}</p>
+        {% else %}
+        <div class="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm">
+            <table class="w-full text-left border-collapse min-w-[640px]">
+                <thead class="bg-eu-dark text-white">
+                    <tr>
+                        <th class="px-6 py-4 text-sm font-bold uppercase tracking-wider">{% trans "Страна" %}</th>
+                        <th class="px-6 py-4 text-sm font-bold uppercase tracking-wider text-center w-32">{% trans "Вакансий" %}</th>
+                        <th class="px-6 py-4 text-sm font-bold uppercase tracking-wider">{% trans "Вакансии" %}</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100 bg-white">
+                    {% for ec in emp_countries %}
+                    <tr class="hover:bg-slate-50/70 transition-colors align-top">
+                        <td class="px-6 py-5 font-bold text-gray-900 whitespace-nowrap">{{ ec.flag_emoji }} {{ ec.name }}</td>
+                        <td class="px-6 py-5 text-center">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-50 text-eu-blue font-bold text-sm">{{ ec.active_jobs|length }}</span>
+                        </td>
+                        <td class="px-6 py-5">
+                            {% if ec.active_jobs %}
+                            <div class="flex flex-wrap gap-2">
+                                {% for job in ec.active_jobs %}
+                                <button onclick="showJobDetail('{{ ec.slug }}', {{ forloop.counter0 }})"
+                                    class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-slate-50 border border-gray-200 text-sm font-medium text-gray-700 hover:border-eu-blue hover:text-eu-blue hover:bg-blue-50 transition-colors">
+                                    {% if job.recruitment_status == 'open' %}<span class="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span>{% endif %}
+                                    {{ job.role }}
+                                    <span class="text-eu-gold font-semibold">{{ job.salary }}</span>
+                                </button>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            <span class="text-gray-400 text-sm">{% trans "Скоро появятся вакансии" %}</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
-
-        <!-- Content Area -->
-        <div id="employmentContent" class="bg-slate-50 rounded-3xl p-8 border border-gray-100 min-h-[400px]">
-            <!-- Populated by JS -->
+        <div class="mt-6 text-center">
+            <a href="{% url 'jobs' %}" class="text-eu-blue font-medium hover:text-eu-gold transition-colors text-sm">{% trans "Смотреть все вакансии →" %}</a>
         </div>
+        {% endif %}
     </div>
 
     <script>
-        // Employment Data from database
+        // Реальные данные из БД — для модалки вакансии
         const employmentData = {{ employment_json| safe }};
-
-        let currentEmpCountry = 'lithuania';
-
-        function selectEmploymentCountry(country) {
-            currentEmpCountry = country;
-
-            // Update Tabs Style
-            document.querySelectorAll('.emp-country-tab').forEach(btn => {
-                const isActive = btn.getAttribute('onclick').includes(country);
-                btn.setAttribute('data-active', isActive);
-                if (isActive) {
-                    btn.classList.add('bg-eu-blue', 'text-white', 'border-eu-blue');
-                    btn.classList.remove('bg-white', 'text-gray-600', 'border-gray-200');
-                } else {
-                    btn.classList.remove('bg-eu-blue', 'text-white', 'border-eu-blue');
-                    btn.classList.add('bg-white', 'text-gray-600', 'border-gray-200');
-                }
-            });
-
-            renderEmploymentContent();
-        }
-
-        function renderEmploymentContent() {
-            const data = employmentData[currentEmpCountry];
-            const container = document.getElementById('employmentContent');
-
-            if (!data) return;
-
-            let jobsHtml = data.jobs.map((job, index) => `
-                        <div onclick="showJobDetail('${currentEmpCountry}', ${index})" class="cursor-pointer bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center group hover:border-eu-blue hover:shadow-md transition-all">
-                            <div>
-                                <div class="font-bold text-gray-800 text-lg">${job.role}</div>
-                                <div class="text-sm text-eu-gold font-medium">{% trans "Зарплата:" %} <span class="text-gray-600">${job.salary}</span></div>
-                            </div>
-                            <button class="bg-gray-50 text-eu-blue p-2 rounded-full group-hover:bg-eu-blue group-hover:text-white transition-colors">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                            </button>
-                        </div>
-                    `).join('');
-
-            let benefitsHtml = data.benefits.map(item => `
-                        <li class="flex items-start text-gray-600 mb-2">
-                            <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            ${item}
-                        </li>
-                    `).join('');
-
-            container.innerHTML = `
-                        <div class="flex flex-col lg:flex-row gap-8 anim-fade-in">
-                            <!-- Left: Info -->
-                            <div class="lg:w-1/2">
-                                <h3 class="text-2xl font-bold text-gray-900 mb-4">${data.title}</h3>
-                                <p class="text-gray-600 leading-relaxed mb-6">
-                                    ${data.desc}
-                                </p>
-                                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                                    <h4 class="font-bold text-eu-dark mb-4 border-b border-gray-100 pb-2">{% trans "Преимущества" %}</h4>
-                                    <ul>
-                                        ${benefitsHtml}
-                                    </ul>
-                                </div>
-                                <div class="mt-8">
-                                    <a href="#consultModal" onclick="document.getElementById('consultModal').classList.remove('hidden'); document.getElementById('consultModal').classList.add('flex');" class="inline-flex items-center justify-center px-8 py-3 bg-eu-blue text-white font-bold rounded-lg hover:bg-blue-800 transition-colors shadow-lg hover:shadow-xl w-full sm:w-auto text-center">
-                                        {% trans "Подать заявку" %}
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Right: Vacancies -->
-                            <div class="lg:w-1/2">
-                                <h4 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                                    <span class="bg-blue-100 text-eu-blue p-2 rounded-lg mr-3">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                    </span>
-                                    {% trans "Популярные вакансии" %}
-                                </h4>
-                                <div class="space-y-3">
-                                    ${jobsHtml}
-                                </div>
-                                <div class="mt-6 text-center">
-                                    <a href="#" class="text-eu-blue font-medium hover:text-eu-gold transition-colors text-sm">{% trans "Смотреть все вакансии →" %}</a>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-        }
-
-        // Initialize Employment Tabs
-        document.addEventListener('DOMContentLoaded', () => {
-            selectEmploymentCountry('lithuania');
-        });
     </script>
 </section>
 
@@ -734,9 +670,7 @@
                 <h2 class="text-3xl lg:text-4xl font-serif font-bold mb-6">{% trans "Для иностранных граждан в КР" %}
                 </h2>
                 <p class="text-gray-300 text-lg leading-relaxed mb-8">
-                    {% trans "Мы предоставляем полный спектр услуг для нерезидентов: от визовой поддержки до открытия
-                    бизнеса «под ключ». Работаем с инвесторами и экспатами, обеспечивая юридическую чистоту и комфорт."
-                    %}
+                    {% trans "Мы предоставляем полный спектр услуг для нерезидентов: от визовой поддержки до открытия бизнеса «под ключ». Работаем с инвесторами и экспатами, обеспечивая юридическую чистоту и комфорт." %}
                 </p>
 
                 <ul class="space-y-4 mb-8">
@@ -904,8 +838,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                <p class="text-sm text-eu-blue font-medium">{% trans "Для точного подбора вы будете перенаправлены на
-                    страницу с детальной анкетой." %}</p>
+                <p class="text-sm text-eu-blue font-medium">{% trans "Для точного подбора вы будете перенаправлены на страницу с детальной анкетой." %}</p>
             </div>
         </div>
     </div>

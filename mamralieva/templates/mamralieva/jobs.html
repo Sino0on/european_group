@@ -10,43 +10,30 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <span class="text-xs font-bold uppercase tracking-wider brand-yellow-text">{% trans "Трудоустройство" %}</span>
         <h1 class="font-display text-4xl font-bold mt-2">{% trans "Работа за рубежом" %}</h1>
-        <p class="brand-muted mt-3 max-w-xl">{% trans "Официальные вакансии, контракты и полное сопровождение — от подбора до вылета." %}</p>
+        <p class="brand-muted mt-3 max-w-xl">{% trans "Выберите страну — справа появятся актуальные вакансии. Нажмите на вакансию, чтобы увидеть детали и оставить отклик." %}</p>
     </div>
 </section>
 
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     {% if not emp_countries %}
     <p class="brand-muted">{% trans "Вакансии скоро появятся здесь." %}</p>
-    {% endif %}
-    {% for ec in emp_countries %}
-    <div class="mb-14">
-        <h2 class="text-2xl font-semibold mb-2">{{ ec.flag_emoji }} {{ ec.name }}</h2>
-        <p class="brand-muted mb-6 max-w-2xl">{{ ec.description }}</p>
-
-        {% if ec.benefits.all %}
-        <ul class="flex flex-wrap gap-3 mb-6 text-sm">
-            {% for b in ec.benefits.all %}
-            <li class="brand-surface border brand-border rounded-full px-4 py-1.5">{{ b.text }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {% for job in ec.active_jobs %}
-            <button type="button" onclick="openJobModal('{{ ec.slug }}', {{ forloop.counter0 }})"
-                class="text-left brand-surface border brand-border rounded-2xl p-6 hover:shadow-lg hover:-translate-y-0.5 transition-all">
-                <div class="font-semibold mb-1">{{ job.role }}</div>
-                <div class="brand-yellow-text text-sm font-semibold mb-3">{{ job.salary }}</div>
-                {% if job.description %}<p class="text-sm brand-muted line-clamp-3">{{ job.description }}</p>{% endif %}
-                <span class="inline-flex items-center gap-1 text-sm font-semibold brand-yellow-text mt-4">
-                    {% trans "Подробнее и отклик" %}
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-                </span>
+    {% else %}
+    <div class="grid lg:grid-cols-[280px_1fr] gap-8 items-start">
+        <!-- Country list -->
+        <div id="countryList" class="brand-surface border brand-border rounded-2xl overflow-hidden lg:sticky lg:top-24">
+            {% for ec in emp_countries %}
+            <button type="button" onclick="selectCountry('{{ ec.slug }}')" data-country="{{ ec.slug }}"
+                class="country-row w-full flex items-center justify-between gap-3 px-5 py-4 text-left border-b brand-border last:border-b-0 hover:bg-[var(--brand-yellow-soft)] transition-colors">
+                <span class="font-semibold">{{ ec.flag_emoji }} {{ ec.name }}</span>
+                <span class="text-xs brand-muted">{{ ec.active_jobs|length }}</span>
             </button>
             {% endfor %}
         </div>
+
+        <!-- Selected country panel -->
+        <div id="countryPanel"></div>
     </div>
-    {% endfor %}
+    {% endif %}
 </section>
 
 <!-- ═══════════ JOB DETAIL / APPLY MODAL ═══════════ -->
@@ -54,6 +41,7 @@
     <div class="brand-surface rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
         <div class="flex items-start justify-between p-6 border-b brand-border">
             <div>
+                <span id="jobModalStatus" class="hidden text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full mb-2 inline-block"></span>
                 <div id="jobModalRole" class="font-display text-xl font-bold"></div>
                 <div id="jobModalSalary" class="brand-yellow-text font-semibold text-sm mt-1"></div>
             </div>
@@ -62,6 +50,13 @@
 
         <div class="p-6 space-y-5">
             <img id="jobModalImage" src="" alt="" class="hidden w-full h-48 object-cover rounded-xl">
+
+            <div id="jobModalFacts" class="hidden grid grid-cols-2 sm:grid-cols-3 gap-3 brand-yellow-soft rounded-xl p-4 text-sm"></div>
+
+            <div id="jobModalDocsWrap" class="hidden">
+                <div class="text-xs font-bold uppercase tracking-wider brand-muted mb-2">{% trans "Документы для старта" %}</div>
+                <p id="jobModalDocs" class="text-sm brand-muted whitespace-pre-line"></p>
+            </div>
 
             <div id="jobModalDescWrap" class="hidden">
                 <p id="jobModalDesc" class="text-sm brand-muted whitespace-pre-line"></p>
@@ -79,14 +74,14 @@
                 <ul id="jobModalCond" class="text-sm list-disc pl-5 space-y-1"></ul>
             </div>
 
-            <form class="border-t brand-border pt-5 grid gap-3">
+            <div class="border-t brand-border pt-5 grid gap-3">
                 <div class="text-sm font-bold">{% trans "Откликнуться на вакансию" %}</div>
-                <input type="text" name="name" placeholder="{% trans 'Ваше имя' %}" class="w-full border brand-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand-yellow)]">
-                <input type="tel" name="phone" placeholder="{% trans 'Номер телефона' %}" class="w-full border brand-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand-yellow)]">
+                <input type="text" id="jobModalName" placeholder="{% trans 'Ваше имя' %}" class="w-full border brand-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand-yellow)]">
+                <input type="tel" id="jobModalPhone" placeholder="{% trans 'Номер телефона' %}" class="w-full border brand-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--brand-yellow)]">
                 <button type="button" onclick="submitJobApplication(this)" class="btn-yellow font-bold px-6 py-3 rounded-xl text-sm transition-colors">
                     {% trans "Отправить отклик" %}
                 </button>
-            </form>
+            </div>
         </div>
     </div>
 </div>
@@ -98,6 +93,24 @@
 <script>
     const employmentData = JSON.parse(document.getElementById('employment-data').textContent);
     let currentJob = null;
+    let currentCountry = null;
+
+    const JOB_STATUS_COLORS = {
+        open: 'bg-green-100 text-green-700',
+        closed: 'bg-gray-200 text-gray-600',
+        soon: 'bg-amber-100 text-amber-700',
+    };
+    const JOB_FACT_LABELS = {
+        recruitment_cost: "{% trans 'Стоимость набора' %}",
+        processing_time: "{% trans 'Сроки оформления' %}",
+        required_gender_label: "{% trans 'Требуются' %}",
+        age_range: "{% trans 'Возраст' %}",
+        visa_type: "{% trans 'Виза / документы' %}",
+        work_schedule: "{% trans 'График работы' %}",
+        housing: "{% trans 'Жильё' %}",
+        meals: "{% trans 'Питание' %}",
+        flight: "{% trans 'Перелёт' %}",
+    };
 
     function renderList(el, items) {
         el.innerHTML = '';
@@ -113,6 +126,48 @@
         document.getElementById(id).classList.toggle('hidden', !show);
     }
 
+    function selectCountry(slug) {
+        currentCountry = slug;
+        document.querySelectorAll('.country-row').forEach(btn => {
+            btn.classList.toggle('bg-[var(--brand-yellow)]', btn.dataset.country === slug);
+        });
+
+        const data = employmentData[slug];
+        const panel = document.getElementById('countryPanel');
+        if (!data) { panel.innerHTML = ''; return; }
+
+        const benefitsHtml = (data.benefits || []).map(b => `
+            <li class="flex items-start gap-2 text-sm">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--brand-yellow-dark)" stroke-width="2.5" class="mt-0.5 flex-shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                ${b}
+            </li>`).join('');
+
+        const jobsHtml = data.jobs.length ? data.jobs.map((job, index) => `
+            <button type="button" onclick="openJobModal('${slug}', ${index})"
+                class="text-left brand-surface border brand-border rounded-2xl p-6 hover:shadow-lg hover:-translate-y-0.5 transition-all">
+                <div class="flex items-center gap-2 mb-1 flex-wrap">
+                    <span class="font-semibold">${job.role}</span>
+                    ${job.recruitment_status_label ? `<span class="text-xs font-bold uppercase px-2 py-0.5 rounded-full ${JOB_STATUS_COLORS[job.recruitment_status] || 'bg-gray-100 text-gray-600'}">${job.recruitment_status_label}</span>` : ''}
+                </div>
+                <div class="brand-yellow-text text-sm font-semibold mb-3">${job.salary}</div>
+                ${job.description ? `<p class="text-sm brand-muted line-clamp-3">${job.description}</p>` : ''}
+                <span class="inline-flex items-center gap-1 text-sm font-semibold brand-yellow-text mt-4">
+                    {% trans "Подробнее и отклик" %}
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </span>
+            </button>
+        `).join('') : `<p class="brand-muted text-sm">{% trans "Пока нет открытых вакансий по этой стране." %}</p>`;
+
+        panel.innerHTML = `
+            <div class="mb-6">
+                <h2 class="font-display text-2xl font-bold mb-2">${data.title}</h2>
+                ${data.desc ? `<p class="brand-muted max-w-2xl">${data.desc}</p>` : ''}
+                ${benefitsHtml ? `<ul class="flex flex-wrap gap-x-6 gap-y-2 mt-4">${benefitsHtml}</ul>` : ''}
+            </div>
+            <div class="grid sm:grid-cols-2 gap-6">${jobsHtml}</div>
+        `;
+    }
+
     function openJobModal(countrySlug, jobIndex) {
         const country = employmentData[countrySlug];
         if (!country) return;
@@ -122,6 +177,26 @@
 
         document.getElementById('jobModalRole').textContent = job.role;
         document.getElementById('jobModalSalary').textContent = job.salary;
+
+        const statusEl = document.getElementById('jobModalStatus');
+        if (job.recruitment_status_label) {
+            statusEl.textContent = job.recruitment_status_label;
+            statusEl.className = 'text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full mb-2 inline-block ' + (JOB_STATUS_COLORS[job.recruitment_status] || 'bg-gray-100 text-gray-600');
+            statusEl.classList.remove('hidden');
+        } else {
+            statusEl.classList.add('hidden');
+        }
+
+        const factsEl = document.getElementById('jobModalFacts');
+        const facts = Object.entries(JOB_FACT_LABELS)
+            .filter(([key]) => job[key] && String(job[key]).trim())
+            .map(([key, label]) => `<div><div class="text-xs brand-muted uppercase tracking-wide">${label}</div><div class="font-semibold">${job[key]}</div></div>`)
+            .join('');
+        factsEl.innerHTML = facts;
+        toggle('jobModalFacts', !!facts);
+
+        toggle('jobModalDocsWrap', !!job.documents_needed);
+        document.getElementById('jobModalDocs').textContent = job.documents_needed || '';
 
         const img = document.getElementById('jobModalImage');
         if (job.image) { img.src = job.image; toggle('jobModalImage', true); } else { toggle('jobModalImage', false); }
@@ -138,6 +213,9 @@
         toggle('jobModalCondWrap', !!job.conditions);
         renderList(document.getElementById('jobModalCond'), job.conditions);
 
+        document.getElementById('jobModalName').value = '';
+        document.getElementById('jobModalPhone').value = '';
+
         const modal = document.getElementById('jobModal');
         modal.classList.remove('hidden');
         modal.classList.add('flex');
@@ -151,11 +229,16 @@
 
     function submitJobApplication(btn) {
         if (!currentJob) return;
-        sendLead(btn, 'jobs', { role: currentJob.role, country: currentJob.country });
+        const name = document.getElementById('jobModalName').value.trim();
+        const phone = document.getElementById('jobModalPhone').value.trim();
+        sendLead(btn, 'jobs', { name, phone, role: currentJob.role, country: currentJob.country });
     }
 
     document.getElementById('jobModal').addEventListener('click', (e) => {
         if (e.target.id === 'jobModal') closeJobModal();
     });
+
+    const firstCountry = Object.keys(employmentData)[0];
+    if (firstCountry) selectCountry(firstCountry);
 </script>
 {% endblock %}

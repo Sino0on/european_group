@@ -24,222 +24,55 @@
     </div>
 </section>
 
-<!-- 3. Employment Section (Reused from Index) -->
+<!-- 3. Employment Section: таблица стран и вакансий -->
 <section id="employment" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Country Tabs -->
-        <div class="flex flex-wrap justify-center gap-2 mb-10" id="employmentCountryTabs">
-            <button onclick="selectEmploymentCountry('lithuania')"
-                class="emp-country-tab active px-6 py-3 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-600 hover:border-eu-blue hover:text-eu-blue transition-all data-[active=true]:bg-eu-blue data-[active=true]:text-white data-[active=true]:border-eu-blue shadow-sm">
-                🇱🇹 {% trans "Литва" %}
-            </button>
-            <button onclick="selectEmploymentCountry('slovakia')"
-                class="emp-country-tab px-6 py-3 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-600 hover:border-eu-blue hover:text-eu-blue transition-all data-[active=true]:bg-eu-blue data-[active=true]:text-white data-[active=true]:border-eu-blue shadow-sm">
-                🇸🇰 {% trans "Словакия" %}
-            </button>
-            <button onclick="selectEmploymentCountry('germany')"
-                class="emp-country-tab px-6 py-3 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-600 hover:border-eu-blue hover:text-eu-blue transition-all data-[active=true]:bg-eu-blue data-[active=true]:text-white data-[active=true]:border-eu-blue shadow-sm">
-                🇩🇪 {% trans "Германия" %}
-            </button>
-            <button onclick="selectEmploymentCountry('finland')"
-                class="emp-country-tab px-6 py-3 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-600 hover:border-eu-blue hover:text-eu-blue transition-all data-[active=true]:bg-eu-blue data-[active=true]:text-white data-[active=true]:border-eu-blue shadow-sm">
-                🇫🇮 {% trans "Финляндия" %}
-            </button>
-            <button onclick="selectEmploymentCountry('estonia')"
-                class="emp-country-tab px-6 py-3 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-600 hover:border-eu-blue hover:text-eu-blue transition-all data-[active=true]:bg-eu-blue data-[active=true]:text-white data-[active=true]:border-eu-blue shadow-sm">
-                🇪🇪 {% trans "Эстония" %}
-            </button>
-            <button onclick="selectEmploymentCountry('poland')"
-                class="emp-country-tab px-6 py-3 rounded-full text-sm font-bold border border-gray-200 bg-white text-gray-600 hover:border-eu-blue hover:text-eu-blue transition-all data-[active=true]:bg-eu-blue data-[active=true]:text-white data-[active=true]:border-eu-blue shadow-sm">
-                🇵🇱 {% trans "Польша" %}
-            </button>
+        {% if not emp_countries %}
+        <p class="text-center text-gray-400">{% trans "Вакансии скоро появятся здесь." %}</p>
+        {% else %}
+        <div class="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm">
+            <table class="w-full text-left border-collapse min-w-[640px]">
+                <thead class="bg-eu-dark text-white">
+                    <tr>
+                        <th class="px-6 py-4 text-sm font-bold uppercase tracking-wider">{% trans "Страна" %}</th>
+                        <th class="px-6 py-4 text-sm font-bold uppercase tracking-wider text-center w-32">{% trans "Вакансий" %}</th>
+                        <th class="px-6 py-4 text-sm font-bold uppercase tracking-wider">{% trans "Вакансии" %}</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100 bg-white">
+                    {% for ec in emp_countries %}
+                    <tr class="hover:bg-slate-50/70 transition-colors align-top">
+                        <td class="px-6 py-5 font-bold text-gray-900 whitespace-nowrap">{{ ec.flag_emoji }} {{ ec.name }}</td>
+                        <td class="px-6 py-5 text-center">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-50 text-eu-blue font-bold text-sm">{{ ec.active_jobs|length }}</span>
+                        </td>
+                        <td class="px-6 py-5">
+                            {% if ec.active_jobs %}
+                            <div class="flex flex-wrap gap-2">
+                                {% for job in ec.active_jobs %}
+                                <button onclick="showJobDetail('{{ ec.slug }}', {{ forloop.counter0 }})"
+                                    class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-slate-50 border border-gray-200 text-sm font-medium text-gray-700 hover:border-eu-blue hover:text-eu-blue hover:bg-blue-50 transition-colors">
+                                    {% if job.recruitment_status == 'open' %}<span class="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span>{% endif %}
+                                    {{ job.role }}
+                                    <span class="text-eu-gold font-semibold">{{ job.salary }}</span>
+                                </button>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            <span class="text-gray-400 text-sm">{% trans "Скоро появятся вакансии" %}</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
-
-        <!-- Content Area -->
-        <div id="employmentContent" class="bg-slate-50 rounded-3xl p-8 border border-gray-100 min-h-[400px]">
-            <!-- Populated by JS -->
-        </div>
+        {% endif %}
     </div>
 
     <script>
-        // Employment Data
-        const employmentData = {
-            lithuania: {
-                title: "{% trans 'Работа в Литве' %}",
-                desc: "{% trans 'Литва — одна из самых популярных стран для трудоустройства граждан СНГ. Простая процедура получения ВНЖ, схожий менталитет и высокий спрос на специалистов.' %}",
-                benefits: [
-                    "{% trans 'Быстрое оформление ВНЖ (1-2 месяца)' %}",
-                    "{% trans 'Нет языкового барьера (многие говорят по-русски)' %}",
-                    "{% trans 'Возможность перевезти семью через 6 месяцев' %}"
-                ],
-                jobs: [
-                    { role: "{% trans 'Водитель-дальнобойщик (CE)' %}", salary: "€2000 - €2500" },
-                    { role: "{% trans 'Сварщик MIG/MAG' %}", salary: "€1500 - €2200" },
-                    { role: "{% trans 'Строитель-универсал' %}", salary: "€1200 - €1800" }
-                ]
-            },
-            slovakia: {
-                title: "{% trans 'Работа в Словакии' %}",
-                desc: "{% trans 'Стабильная экономика, комфортный климат и возможность получить ВНЖ на 2 года сразу. Идеально для тех, кто ищет спокойную жизнь в центре Европы.' %}",
-                benefits: [
-                    "{% trans 'ВНЖ сразу на 1-2 года' %}",
-                    "{% trans 'Бесплатная медицина и соцпакет' %}",
-                    "{% trans 'Возможность путешествовать по всему Шенгену' %}"
-                ],
-                jobs: [
-                    { role: "{% trans 'Оператор на автозавод (JLR, VW)' %}", salary: "€1000 - €1400" },
-                    { role: "{% trans 'Водитель погрузчика' %}", salary: "€1100 - €1300" },
-                    { role: "{% trans 'Сборщик на склад электроники' %}", salary: "€900 - €1100" }
-                ]
-            },
-            germany: {
-                title: "{% trans 'Работа в Германии' %}",
-                desc: "{% trans 'Локомотив экономики Евросоюза. Высокие зарплаты, строгие стандарты, но и лучшие социальные гарантии.' %}",
-                benefits: [
-                    "{% trans 'Самые высокие зарплаты в ЕС' %}",
-                    "{% trans 'Возможность карьерного роста' %}",
-                    "{% trans 'Высокий уровень жизни' %}"
-                ],
-                jobs: [
-                    { role: "{% trans 'Медсестра / Медбрат' %}", salary: "€2500 - €3500" },
-                    { role: "{% trans 'IT Специалист' %}", salary: "€4000+" },
-                    { role: "{% trans 'Электрик / Инженер' %}", salary: "€2800 - €3500" }
-                ]
-            },
-            finland: {
-                title: "{% trans 'Работа в Финляндии' %}",
-                desc: "{% trans 'Скандинавский уровень жизни, экология и безопасность. Популярны сезонные работы и сфера обслуживания.' %}",
-                benefits: [
-                    "{% trans 'Высокая почасовая оплата' %}",
-                    "{% trans 'Идеальная экология' %}",
-                    "{% trans 'Сезонные работы до 9 месяцев' %}"
-                ],
-                jobs: [
-                    { role: "{% trans 'Сборщик ягод (сезон)' %}", salary: "{% trans '€1000 - €2500 (сдельная)' %}" },
-                    { role: "{% trans 'Уборщик помещений' %}", salary: "€12/час" },
-                    { role: "{% trans 'Разнорабочий на ферму' %}", salary: "€10/час" }
-                ]
-            },
-            estonia: {
-                title: "{% trans 'Работа в Эстонии' %}",
-                desc: "{% trans 'Цифровое государство с растущей экономикой. Простой документооборот и близость к странам СНГ.' %}",
-                benefits: [
-                    "{% trans 'Электронное резидентство' %}",
-                    "{% trans 'Русскоязычная среда' %}",
-                    "{% trans 'Зарплаты выше, чем в Восточной Европе' %}"
-                ],
-                jobs: [
-                    { role: "{% trans 'Строитель' %}", salary: "€1300 - €2000" },
-                    { role: "{% trans 'Водитель категории C' %}", salary: "€1400 - €1800" },
-                    { role: "{% trans 'Работник на производство' %}", salary: "€1000 - €1300" }
-                ]
-            },
-            poland: {
-                title: "{% trans 'Работа в Польше' %}",
-                desc: "{% trans 'Самый доступный старт для работы в Европе. Огромный выбор вакансий для специалистов и разнорабочих.' %}",
-                benefits: [
-                    "{% trans 'Самое простое оформление' %}",
-                    "{% trans 'Много вакансий без знания языка' %}",
-                    "{% trans 'Бесплатное жилье (часто)' %}"
-                ],
-                jobs: [
-                    { role: "{% trans 'Упаковщик на склад (Amazon/DPD)' %}", salary: "€900 - €1200" },
-                    { role: "{% trans 'Повар' %}", salary: "€1100 - €1500" },
-                    { role: "{% trans 'Мясокомбинат' %}", salary: "€1000 - €1400" }
-                ]
-            }
-        };
-
-        let currentEmpCountry = 'lithuania';
-
-        function selectEmploymentCountry(country) {
-            currentEmpCountry = country;
-
-            // Update Tabs Style
-            document.querySelectorAll('.emp-country-tab').forEach(btn => {
-                const isActive = btn.getAttribute('onclick').includes(country);
-                btn.setAttribute('data-active', isActive);
-                if (isActive) {
-                    btn.classList.add('bg-eu-blue', 'text-white', 'border-eu-blue');
-                    btn.classList.remove('bg-white', 'text-gray-600', 'border-gray-200');
-                } else {
-                    btn.classList.remove('bg-eu-blue', 'text-white', 'border-eu-blue');
-                    btn.classList.add('bg-white', 'text-gray-600', 'border-gray-200');
-                }
-            });
-
-            renderEmploymentContent();
-        }
-
-        function renderEmploymentContent() {
-            const data = employmentData[currentEmpCountry];
-            const container = document.getElementById('employmentContent');
-
-            if (!data) return;
-
-            let jobsHtml = data.jobs.map((job, index) => `
-                    <div onclick="showJobDetail('${currentEmpCountry}', ${index})" class="cursor-pointer bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center group hover:border-eu-blue hover:shadow-md transition-all">
-                        <div>
-                            <div class="font-bold text-gray-800 text-lg">${job.role}</div>
-                            <div class="text-sm text-eu-gold font-medium">{% trans "Зарплата:" %} <span class="text-gray-600">${job.salary}</span></div>
-                        </div>
-                        <button class="bg-gray-50 text-eu-blue p-2 rounded-full group-hover:bg-eu-blue group-hover:text-white transition-colors">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </button>
-                    </div>
-                `).join('');
-
-            let benefitsHtml = data.benefits.map(item => `
-                    <li class="flex items-start text-gray-600 mb-2">
-                        <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        ${item}
-                    </li>
-                `).join('');
-
-            container.innerHTML = `
-                    <div class="flex flex-col lg:flex-row gap-8 anim-fade-in">
-                        <!-- Left: Info -->
-                        <div class="lg:w-1/2">
-                            <h3 class="text-2xl font-bold text-gray-900 mb-4">${data.title}</h3>
-                            <p class="text-gray-600 leading-relaxed mb-6">
-                                ${data.desc}
-                            </p>
-                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                                <h4 class="font-bold text-eu-dark mb-4 border-b border-gray-100 pb-2">{% trans "Преимущества" %}</h4>
-                                <ul>
-                                    ${benefitsHtml}
-                                </ul>
-                            </div>
-                            <div class="mt-8">
-                                <a href="#consultModal" onclick="document.getElementById('consultModal').classList.remove('hidden'); document.getElementById('consultModal').classList.add('flex');" class="inline-flex items-center justify-center px-8 py-3 bg-eu-blue text-white font-bold rounded-lg hover:bg-blue-800 transition-colors shadow-lg hover:shadow-xl w-full sm:w-auto text-center">
-                                    {% trans "Подать заявку" %}
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Right: Vacancies -->
-                        <div class="lg:w-1/2">
-                            <h4 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                                <span class="bg-blue-100 text-eu-blue p-2 rounded-lg mr-3">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                </span>
-                                {% trans "Популярные вакансии" %}
-                            </h4>
-                            <div class="space-y-3">
-                                ${jobsHtml}
-                            </div>
-                            <div class="mt-6 text-center">
-                                <a href="#" class="text-eu-blue font-medium hover:text-eu-gold transition-colors text-sm">{% trans "Смотреть все вакансии →" %}</a>
-                            </div>
-                        </div>
-                    </div>
-                `;
-        }
-
-        // Initialize Employment Tabs
-        document.addEventListener('DOMContentLoaded', () => {
-            selectEmploymentCountry('lithuania');
-        });
+        // Реальные данные из БД (main.models.EmploymentCountry / JobListing) — для модалки вакансии
+        const employmentData = {{ employment_json|safe }};
     </script>
 </section>
 

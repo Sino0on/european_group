@@ -160,7 +160,27 @@ class HeroSlideAdmin(TranslationAdmin):
 
 @admin.register(JobListing)
 class JobListingAdmin(TranslationAdmin):
-    list_display = ('role', 'country', 'salary', 'order', 'is_active')
+    list_display = ('role', 'country', 'salary', 'recruitment_status', 'order', 'is_active')
     list_editable = ('order', 'is_active')
     list_display_links = ('role',)
-    list_filter = ('country',)
+    list_filter = ('country', 'recruitment_status', 'required_gender')
+    fieldsets = (
+        ('Основное', {
+            'fields': ('country', 'role', 'salary', 'recruitment_status', 'image'),
+        }),
+        ('Набор', {
+            'fields': ('recruitment_cost', 'processing_time', 'documents_needed'),
+        }),
+        ('Требования к кандидату', {
+            'fields': ('required_gender', 'age_range', 'visa_type', 'work_schedule'),
+        }),
+        ('Условия проживания', {
+            'fields': ('housing', 'meals', 'flight'),
+        }),
+        ('Описание', {
+            'fields': ('description', 'requirements', 'duties', 'conditions'),
+        }),
+        ('Публикация', {
+            'fields': ('order', 'is_active'),
+        }),
+    )

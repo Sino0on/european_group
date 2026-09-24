@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 
 class CompanyInfo(models.Model):
@@ -112,10 +113,43 @@ class CountryBenefit(models.Model):
 
 
 class JobListing(models.Model):
+    STATUS_OPEN = 'open'
+    STATUS_CLOSED = 'closed'
+    STATUS_SOON = 'soon'
+    STATUS_CHOICES = [
+        (STATUS_OPEN, _('Актуально')),
+        (STATUS_CLOSED, _('Набор закрыт')),
+        (STATUS_SOON, _('Скоро')),
+    ]
+
+    GENDER_ANY = 'any'
+    GENDER_MALE = 'male'
+    GENDER_FEMALE = 'female'
+    GENDER_CHOICES = [
+        (GENDER_ANY, _('Мужчины и женщины')),
+        (GENDER_MALE, _('Мужчины')),
+        (GENDER_FEMALE, _('Женщины')),
+    ]
+
     country = models.ForeignKey(EmploymentCountry, on_delete=models.CASCADE,
                                 related_name='jobs', verbose_name='Страна')
     role = models.CharField('Должность', max_length=200)
     salary = models.CharField('Зарплата', max_length=100)
+
+    recruitment_status = models.CharField('Статус набора', max_length=10, choices=STATUS_CHOICES, default=STATUS_OPEN)
+    recruitment_cost = models.CharField('Стоимость набора', max_length=100, blank=True, help_text='Например: 300 евро')
+    processing_time = models.CharField('Сроки оформления', max_length=100, blank=True, help_text='Например: 2-3 мес')
+    documents_needed = models.TextField('Какие документы нужны сразу', blank=True,
+                                        help_text='Например: загранпаспорт, анкета, видеорезюме')
+
+    required_gender = models.CharField('Требуются', max_length=10, choices=GENDER_CHOICES, default=GENDER_ANY)
+    age_range = models.CharField('Возраст', max_length=100, blank=True, help_text='Например: от 18 до 35 лет')
+    visa_type = models.CharField('Виза / документы', max_length=150, blank=True, help_text='Например: Сезонная виза (3+3 месяца)')
+    work_schedule = models.CharField('График работы', max_length=150, blank=True, help_text='Например: Полный рабочий день')
+
+    housing = models.CharField('Жильё', max_length=150, blank=True, help_text='Например: Предоставляется бесплатно')
+    meals = models.CharField('Питание', max_length=150, blank=True, help_text='Например: Предоставляется бесплатно')
+    flight = models.CharField('Перелёт / транспорт', max_length=150, blank=True, help_text='Например: Авиаперелёт в обе стороны включён')
 
     description = models.TextField('Описание вакансии', blank=True)
     requirements = models.TextField('Требования', blank=True, help_text='Каждое требование с новой строки')
@@ -133,6 +167,31 @@ class JobListing(models.Model):
 
     def __str__(self):
         return f'{self.role} ({self.country.name})'
+
+    def to_dict(self):
+        """Единое представление вакансии для JS-виджетов (карточки + модалка)."""
+        return {
+            'role': self.role,
+            'salary': self.salary,
+            'recruitment_status': self.recruitment_status,
+            'recruitment_status_label': self.get_recruitment_status_display(),
+            'recruitment_cost': self.recruitment_cost,
+            'processing_time': self.processing_time,
+            'documents_needed': self.documents_needed,
+            'required_gender': self.required_gender,
+            'required_gender_label': self.get_required_gender_display(),
+            'age_range': self.age_range,
+            'visa_type': self.visa_type,
+            'work_schedule': self.work_schedule,
+            'housing': self.housing,
+            'meals': self.meals,
+            'flight': self.flight,
+            'description': self.description or '',
+            'requirements': self.requirements or '',
+            'duties': self.duties or '',
+            'conditions': self.conditions or '',
+            'image': self.image.url if self.image else '',
+        }
 
 
 class UniversityCountry(models.Model):
