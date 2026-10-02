@@ -717,12 +717,12 @@
                     </div>
 
                     <h3 class="text-xl font-bold text-white mb-6">{% trans "Запись на консультацию" %}</h3>
-                    <form class="space-y-4">
-                        <input type="text" placeholder="{% trans 'Ваше имя' %}"
+                    <form class="space-y-4" onsubmit="event.preventDefault();">
+                        <input type="text" name="name" placeholder="{% trans 'Ваше имя' %}"
                             class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-eu-gold">
-                        <input type="tel" placeholder="{% trans 'Номер WhatsApp' %}"
+                        <input type="tel" name="phone" placeholder="{% trans 'Номер WhatsApp' %}"
                             class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-eu-gold">
-                        <button
+                        <button type="button" onclick="sendLead(this, 'consultation')"
                             class="w-full bg-eu-gold hover:bg-yellow-500 text-eu-dark font-bold py-3 rounded-lg transition-colors shadow-lg">
                             {% trans "Получить консультацию" %}
                         </button>

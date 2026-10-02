@@ -13,6 +13,15 @@ services:
     depends_on:
       - db
 
+  leads_bot:
+    build: .
+    command: python -m leads_bot.bot
+    restart: always
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+
   db:
     image: postgres:15
     restart: always

@@ -4,6 +4,7 @@ from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.core.serializers.json import DjangoJSONEncoder
 from .telegram import send_telegram
+from .amocrm import send_amocrm
 from .models import (
     CompanyInfo, Statistic, Service, Testimonial,
     EmploymentCountry, UniversityCountry,
@@ -73,8 +74,11 @@ def submit_lead(request):
             lines.append(f'<b>{key}:</b> {value}')
 
     text = '\n'.join(lines)
-    ok = send_telegram(text)
-    return JsonResponse({'ok': ok})
+    tg_ok = send_telegram(text)
+    amo_ok = send_amocrm(data, is_new_site=is_new_site)
+
+    ok = tg_ok or amo_ok
+    return JsonResponse({'ok': ok, 'telegram': tg_ok, 'amocrm': amo_ok})
 
 
 def _get_base_context():
